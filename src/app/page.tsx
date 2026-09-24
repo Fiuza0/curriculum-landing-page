@@ -11,6 +11,7 @@ import Testimonials from '@/components/sections/Testimonials'
 import Education from '@/components/sections/Education'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/sections/Footer'
+import BackToTop from '@/components/sections/BackToTop'
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   )
 }

@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Briefcase, Calendar, MapPin } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import { Card, CardContent } from '@/components/ui/card'
 
 const experiences = [
   {
@@ -61,8 +62,11 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
+          <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
+            Career
+          </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Experience</h2>
-          <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-6" />
+          <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
             My professional journey building software that makes a difference.
           </p>
@@ -71,7 +75,7 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative max-w-3xl mx-auto">
           {/* Vertical line */}
-          <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-px bg-border" />
+          <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500/30 via-teal-500/20 to-transparent" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -83,22 +87,23 @@ export default function Experience() {
             >
               {/* Dot on timeline */}
               <div
-                className={`absolute left-2.5 sm:left-6.5 top-1 w-3 h-3 rounded-full border-2 ${
+                className={`absolute left-2.5 sm:left-6.5 top-2 w-3.5 h-3.5 rounded-full border-2 ${
                   exp.current
-                    ? 'bg-primary border-primary shadow-lg shadow-primary/30'
-                    : 'bg-background border-border'
+                    ? 'bg-emerald-500 border-emerald-500 shadow-lg shadow-emerald-500/30'
+                    : 'bg-background border-emerald-500/30'
                 }`}
               />
               {exp.current && (
-                <div className="absolute left-1 sm:left-5 top-0.5 w-4 h-4 rounded-full border-2 border-primary/30 animate-ping" />
+                <div className="absolute left-1.5 sm:left-5.5 top-1 w-4 h-4 rounded-full border-2 border-emerald-500/20 animate-ping" />
               )}
 
               {/* Content card */}
-              <div className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+              <Card className="border border-border/50 rounded-xl hover:shadow-lg hover:border-emerald-500/15 transition-all duration-300">
+              <CardContent className="p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
                   <h3 className="text-lg font-semibold">{exp.title}</h3>
                   {exp.current && (
-                    <Badge className="w-fit bg-green-500/10 text-green-600 border-green-500/20 hover:bg-green-500/15">
+                    <Badge className="w-fit bg-emerald-500/10 text-emerald-600 border-emerald-500/20 hover:bg-emerald-500/15">
                       Current
                     </Badge>
                   )}
@@ -127,12 +132,13 @@ export default function Experience() {
 
                 <div className="flex flex-wrap gap-2">
                   {exp.tech.map((t) => (
-                    <Badge key={t} variant="secondary" className="text-xs">
+                    <Badge key={t} variant="secondary" className="text-xs hover:bg-emerald-500/10 transition-colors">
                       {t}
                     </Badge>
                   ))}
                 </div>
-              </div>
+              </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>

@@ -10,24 +10,28 @@ const stats = [
     value: 50,
     suffix: '+',
     label: 'Projects Completed',
+    gradient: 'from-emerald-400 to-teal-500',
   },
   {
     icon: Users,
     value: 2,
     suffix: 'M+',
     label: 'Users Impacted',
+    gradient: 'from-teal-400 to-cyan-500',
   },
   {
     icon: GitBranch,
     value: 1200,
     suffix: '+',
     label: 'GitHub Commits',
+    gradient: 'from-cyan-400 to-blue-500',
   },
   {
     icon: Coffee,
     value: 365,
     suffix: '∞',
     label: 'Cups of Coffee',
+    gradient: 'from-amber-400 to-orange-500',
   },
 ]
 
@@ -60,8 +64,15 @@ export default function Stats() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 bg-primary text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="relative py-16 sm:py-20 overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.15)_100%)]" />
+      {/* Decorative shapes */}
+      <div className="absolute -top-20 -left-20 w-60 h-60 bg-white/5 rounded-full blur-2xl" />
+      <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-white/5 rounded-full blur-2xl" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <motion.div
@@ -69,19 +80,19 @@ export default function Stats() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
+              className="text-center group"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-foreground/10 mb-3">
-                <stat.icon className="w-6 h-6" />
+              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm mb-3 group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
+                <stat.icon className="w-7 h-7 text-white" />
               </div>
-              <div className="text-3xl sm:text-4xl font-bold mb-1">
+              <div className="text-3xl sm:text-4xl font-bold mb-1 text-white">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
                   isInView={isInView}
                 />
               </div>
-              <p className="text-sm text-primary-foreground/70">
+              <p className="text-sm text-white/70">
                 {stat.label}
               </p>
             </motion.div>

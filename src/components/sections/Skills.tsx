@@ -55,7 +55,10 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="skills" className="py-20 sm:py-28 bg-muted/30" ref={ref}>
+    <section id="skills" className="py-20 sm:py-28 bg-muted/30 relative" ref={ref}>
+      {/* Decorative background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-emerald-500/3 rounded-full blur-3xl -z-10" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,10 +66,13 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
+          <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
+            Skills
+          </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Skills & Expertise
           </h2>
-          <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-6" />
+          <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A comprehensive overview of my technical skills and proficiency
             levels across different domains.
@@ -82,7 +88,7 @@ export default function Skills() {
           <Tabs defaultValue="frontend" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-10">
               {skillCategories.map((cat) => (
-                <TabsTrigger key={cat.id} value={cat.id}>
+                <TabsTrigger key={cat.id} value={cat.id} className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white">
                   {cat.label}
                 </TabsTrigger>
               ))}
@@ -103,11 +109,13 @@ export default function Skills() {
                         <span className="font-medium text-sm">
                           {skill.name}
                         </span>
-                        <span className="text-muted-foreground text-xs">
+                        <span className={`text-xs font-medium ${skill.level >= 90 ? 'text-emerald-500' : skill.level >= 80 ? 'text-teal-500' : 'text-muted-foreground'}`}>
                           {skill.level}%
                         </span>
                       </div>
-                      <Progress value={isInView ? skill.level : 0} className="h-2" />
+                      <div className="relative">
+                        <Progress value={isInView ? skill.level : 0} className="h-2.5 [&>div]:bg-gradient-to-r [&>div]:from-emerald-500 [&>div]:to-teal-500" />
+                      </div>
                     </motion.div>
                   ))}
                 </div>
@@ -136,7 +144,7 @@ export default function Skills() {
               >
                 <Badge
                   variant="secondary"
-                  className="px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                  className="px-4 py-2 text-sm hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-500 hover:text-white transition-all cursor-default border border-border/50 hover:border-transparent"
                 >
                   {tool}
                 </Badge>

@@ -34,13 +34,18 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="border-t border-border bg-card relative overflow-hidden">
+      {/* Decorative gradient */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Code2 className="w-6 h-6 text-primary" />
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                <Code2 className="w-4 h-4 text-white" />
+              </div>
               <span className="font-bold text-lg">&lt;Dev /&gt;</span>
             </div>
             <p className="text-muted-foreground text-sm max-w-md mb-6 leading-relaxed">
@@ -48,27 +53,20 @@ export default function Footer() {
               complex problems. Always open to new challenges and collaborations.
             </p>
             <div className="flex gap-3">
-              <a
-                href="#"
-                className="p-2 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="p-2 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="p-2 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
+              {[
+                { Icon: Github, label: 'GitHub' },
+                { Icon: Linkedin, label: 'LinkedIn' },
+                { Icon: Twitter, label: 'Twitter' },
+              ].map(({ Icon, label }) => (
+                <a
+                  key={label}
+                  href="#"
+                  className="p-2 rounded-lg bg-muted hover:bg-gradient-to-br hover:from-emerald-500 hover:to-teal-500 hover:text-white transition-all duration-300"
+                  aria-label={label}
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -81,7 +79,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <button
                       onClick={() => handleClick(link.href)}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-muted-foreground hover:text-emerald-500 transition-colors"
                     >
                       {link.label}
                     </button>
@@ -98,7 +96,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Your Name. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground flex items-center gap-1">
-            Made with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> and lots of coffee
+            Made with <Heart className="w-3 h-3 text-emerald-500 fill-emerald-500" /> and lots of coffee
           </p>
         </div>
       </div>
