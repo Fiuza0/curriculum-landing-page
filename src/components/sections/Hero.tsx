@@ -6,6 +6,7 @@ import { ArrowDown, Github, Linkedin, Mail, MapPin, Download } from 'lucide-reac
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
+import Particles from '@/components/sections/Particles'
 
 const techIcons = [
   { label: 'React', color: 'from-cyan-400 to-blue-500', x: '10%', y: '20%', delay: 0 },
@@ -65,6 +66,9 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Particles background */}
+      <Particles />
+
       {/* Animated background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/8" />
