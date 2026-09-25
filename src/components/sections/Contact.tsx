@@ -17,6 +17,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { useConfetti } from '@/hooks/use-confetti'
 
 const contactInfo = [
   {
@@ -55,10 +56,12 @@ export default function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [submitted, setSubmitted] = useState(false)
+  const { fire: fireConfetti } = useConfetti()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitted(true)
+    fireConfetti()
     setTimeout(() => setSubmitted(false), 3000)
   }
 

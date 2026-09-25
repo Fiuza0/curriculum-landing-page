@@ -20,6 +20,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [dark, setDark] = useState(false)
   const [scrollPercent, setScrollPercent] = useState(0)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     const onScroll = () => {
@@ -34,6 +35,27 @@ export default function Navbar() {
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark)
   }, [dark])
+
+  // Scroll spy - detect which section is in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-20% 0px -80% 0px' }
+    )
+
+    navLinks.forEach((link) => {
+      const el = document.querySelector(link.href)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   const handleClick = (href: string) => {
     setMobileOpen(false)
@@ -80,17 +102,25 @@ export default function Navbar() {
 
             {/* Desktop links + dark mode */}
             <div className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <Button
-                  key={link.href}
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => handleClick(link.href)}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {link.label}
-                </Button>
-              ))}
+              {navLinks.map((link) => {
+                const sectionId = link.href.replace('#', '')
+                const isActive = activeSection === sectionId
+                return (
+                  <Button
+                    key={link.href}
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => handleClick(link.href)}
+                    className={`transition-all duration-200 ${
+                      isActive
+                        ? 'text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-500/10'
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {link.label}
+                  </Button>
+                )
+              })}
               <div className="w-px h-6 bg-border mx-2" />
               <Button
                 variant="ghost"
@@ -135,16 +165,24 @@ export default function Navbar() {
               className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
             >
               <div className="px-4 py-4 flex flex-col gap-2">
-                {navLinks.map((link) => (
-                  <Button
-                    key={link.href}
-                    variant="ghost"
-                    className="justify-start text-muted-foreground hover:text-foreground"
-                    onClick={() => handleClick(link.href)}
-                  >
-                    {link.label}
-                  </Button>
-                ))}
+                {navLinks.map((link) => {
+                  const sectionId = link.href.replace('#', '')
+                  const isActive = activeSection === sectionId
+                  return (
+                    <Button
+                      key={link.href}
+                      variant="ghost"
+                      className={`justify-start transition-all duration-200 ${
+                        isActive
+                          ? 'text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-500/10'
+                          : 'text-muted-foreground hover:text-foreground'
+                      }`}
+                      onClick={() => handleClick(link.href)}
+                    >
+                      {link.label}
+                    </Button>
+                  )
+                })}
               </div>
             </motion.div>
           )}

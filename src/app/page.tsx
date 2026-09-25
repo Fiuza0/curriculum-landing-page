@@ -15,10 +15,12 @@ import CTASection from '@/components/sections/CTASection'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/sections/Footer'
 import BackToTop from '@/components/sections/BackToTop'
+import PageLoader from '@/components/sections/PageLoader'
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <PageLoader />
       <Navbar />
       <main className="flex-1">
         <Hero />

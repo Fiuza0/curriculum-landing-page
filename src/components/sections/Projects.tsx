@@ -33,7 +33,7 @@ const projects = [
     description:
       'A full-stack e-commerce solution with real-time inventory management, payment processing, and an admin dashboard. Handles 10K+ daily transactions.',
     tech: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Redis'],
-    image: '/project-1-placeholder.jpg',
+    image: '/project-1.jpg',
     github: '#',
     demo: '#',
     featured: true,
@@ -43,7 +43,7 @@ const projects = [
     description:
       'An intelligent analytics platform that leverages ML models to provide predictive insights and automated reporting for business metrics.',
     tech: ['React', 'Python', 'TensorFlow', 'D3.js', 'FastAPI'],
-    image: '/project-2-placeholder.jpg',
+    image: '/project-2.jpg',
     github: '#',
     demo: '#',
     featured: true,
@@ -53,7 +53,7 @@ const projects = [
     description:
       'A scalable chat platform supporting WebSocket connections, file sharing, and end-to-end encryption. Built for enterprise communication.',
     tech: ['Next.js', 'Socket.io', 'MongoDB', 'Docker', 'AWS'],
-    image: '/project-3-placeholder.jpg',
+    image: '/project-3.jpg',
     github: '#',
     demo: '#',
     featured: false,
@@ -63,7 +63,7 @@ const projects = [
     description:
       'A CLI toolkit that automates deployment pipelines, infrastructure provisioning, and monitoring setup for cloud-native applications.',
     tech: ['Go', 'Terraform', 'Kubernetes', 'GitHub Actions'],
-    image: '/project-4-placeholder.jpg',
+    image: '/project-4.jpg',
     github: '#',
     demo: '#',
     featured: false,
@@ -73,7 +73,7 @@ const projects = [
     description:
       'A cross-platform mobile app with workout tracking, nutrition planning, and social features. 50K+ active users.',
     tech: ['React Native', 'Node.js', 'Firebase', 'Redux'],
-    image: '/project-5-placeholder.jpg',
+    image: '/project-5.jpg',
     github: '#',
     demo: '#',
     featured: false,
@@ -83,7 +83,7 @@ const projects = [
     description:
       'A comprehensive React component library with 50+ accessible components, theming support, and detailed documentation.',
     tech: ['React', 'Storybook', 'Radix UI', 'Tailwind CSS'],
-    image: '/project-6-placeholder.jpg',
+    image: '/project-6.jpg',
     github: '#',
     demo: '#',
     featured: false,
@@ -174,27 +174,16 @@ export default function Projects() {
                 layout
               >
                 <Card className="group overflow-hidden h-full hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-emerald-500/20">
-                  {/* Project image placeholder with gradient */}
-                  <div className={`relative aspect-video bg-gradient-to-br ${gradient} overflow-hidden`}>
-                    {/* Decorative grid */}
-                    <div
-                      className="absolute inset-0 opacity-10"
-                      style={{
-                        backgroundImage: `radial-gradient(circle, currentColor 0.5px, transparent 0.5px)`,
-                        backgroundSize: '16px 16px',
-                      }}
+                  {/* Project image */}
+                  <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-muted to-muted/50">
+                    {/* Actual project screenshot */}
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    {/* 📸 This is the project screenshot placeholder */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <motion.div
-                        whileHover={{ scale: 1.2, rotate: 5 }}
-                        transition={{ type: 'spring', stiffness: 300 }}
-                      >
-                        <ProjectIcon className="w-16 h-16 text-foreground/15 group-hover:text-foreground/25 transition-colors duration-500" />
-                      </motion.div>
-                    </div>
-                    {/* Animated gradient border on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Subtle gradient overlay at bottom */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/60 to-transparent" />
                     {/* Overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/90 to-teal-600/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                       <motion.a
