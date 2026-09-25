@@ -391,3 +391,22 @@ Unresolved issues / Next phase recommendations:
 - Could add accessibility audit and WCAG improvements
 - Could add performance optimization (lazy loading, code splitting)
 - Could persist language preference in localStorage
+
+---
+Task ID: 2
+Agent: i18n Update Agent
+Task: Update i18n translation file with new keys and name changes
+
+Work Log:
+- Updated en.nav.logo and pt.nav.logo to '<Dev />'
+- Updated en.hero.downloadFilename from 'RodrigoOliveira_Resume.pdf' to 'RodrigoOliveira_CV.pdf'
+- Updated pt.hero.downloadFilename from 'RodrigoOliveira_Curriculo.pdf' to 'RodrigoOliveira_CV.pdf'
+- Added en.contact.values (email, phone, location) and pt.contact.values
+- Added en.contact.placeholders (name, email, subject, message) and pt.contact.placeholders
+- Added en.footer.name 'Rodrigo Oliveira' and pt.footer.name 'Rodrigo Oliveira'
+- Added en.terminal.content (whoami, uptime, quote, windowTitle) and pt.terminal.content
+- Added en.playground.copy/copied and pt.playground.copy/copied (Copiar/Copiado!)
+- Added en.nowPlaying.title 'Now Playing' and pt.nowPlaying.title 'Tocando Agora'
+- Added en.pageLoader.loading 'Loading' and pt.pageLoader.loading 'Carregando'
+- All existing translation content preserved — only additions and targeted updates
+- Lint: clean, zero errors

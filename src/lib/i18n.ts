@@ -10,6 +10,7 @@ export const translations = {
       projects: 'Projects',
       learning: 'Learning',
       contact: 'Contact',
+      logo: '<Dev />',
     },
 
     // ─── Hero ────────────────────────────────────────────────────────────────
@@ -29,7 +30,7 @@ export const translations = {
       viewWork: 'View My Work',
       getInTouch: 'Get In Touch',
       downloadCV: 'Download CV',
-      downloadFilename: 'RodrigoOliveira_Resume.pdf',
+      downloadFilename: 'RodrigoOliveira_CV.pdf',
       available: 'Available',
     },
 
@@ -336,6 +337,12 @@ export const translations = {
       badge: 'Interactive',
       title: 'Developer at a Glance',
       subtitle: 'Quick terminal-style overview of development setup and stats',
+      content: {
+        whoami: 'rodrigo — Senior Software Engineer',
+        uptime: '5+ years building production software',
+        quote: '"First, solve the problem. Then, write the code." — John Johnson',
+        windowTitle: 'developer-stats',
+      },
       stats: {
         lines: 'Lines of Code',
         projects: 'Projects Shipped',
@@ -349,6 +356,8 @@ export const translations = {
       badge: 'Live Code',
       title: 'Code Snippets',
       subtitle: 'Real code from real projects',
+      copy: 'Copy',
+      copied: 'Copied!',
       stats: {
         snippets: '50+ Snippets',
         languages: '10 Languages',
@@ -383,10 +392,22 @@ export const translations = {
       sent: 'Message Sent!',
       sentMessage: "Thank you for reaching out. I'll get back to you soon!",
       followMe: 'Follow me',
+      values: {
+        email: 'rodrigo@oliveira.dev',
+        phone: '+55 11 99999-9999',
+        location: 'São Paulo, SP, Brasil',
+      },
+      placeholders: {
+        name: 'Your name',
+        email: 'your@email.com',
+        subject: 'Project Discussion',
+        message: 'Tell me about your project or opportunity...',
+      },
     },
 
     // ─── Footer ──────────────────────────────────────────────────────────────
     footer: {
+      name: 'Rodrigo Oliveira',
       brandDescription:
         'Software Engineer passionate about building elegant solutions to complex problems. Always open to new challenges and collaborations.',
       navigation: 'Navigation',
@@ -419,6 +440,16 @@ export const translations = {
         'A multi-dimensional view of my core competencies, visualized as an interactive radar chart that reveals proficiency across every key discipline.',
       breakdown: 'Skill Breakdown',
     },
+
+    // ─── Now Playing ────────────────────────────────────────────────────────
+    nowPlaying: {
+      title: 'Now Playing',
+    },
+
+    // ─── Page Loader ────────────────────────────────────────────────────────
+    pageLoader: {
+      loading: 'Loading',
+    },
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -433,6 +464,7 @@ export const translations = {
       projects: 'Projetos',
       learning: 'Aprendizado',
       contact: 'Contato',
+      logo: '<Dev />',
     },
 
     // ─── Hero ────────────────────────────────────────────────────────────────
@@ -452,7 +484,7 @@ export const translations = {
       viewWork: 'Ver Meu Trabalho',
       getInTouch: 'Entre em Contato',
       downloadCV: 'Baixar CV',
-      downloadFilename: 'RodrigoOliveira_Curriculo.pdf',
+      downloadFilename: 'RodrigoOliveira_CV.pdf',
       available: 'Disponível',
     },
 
@@ -759,6 +791,12 @@ export const translations = {
       badge: 'Interativo',
       title: 'Dev num Relance',
       subtitle: 'Visão geral rápida no estilo terminal do setup e estatísticas de desenvolvimento',
+      content: {
+        whoami: 'rodrigo — Engenheiro de Software Sênior',
+        uptime: '5+ anos construindo software de produção',
+        quote: '"Primeiro, resolva o problema. Depois, escreva o código." — John Johnson',
+        windowTitle: 'estatisticas-dev',
+      },
       stats: {
         lines: 'Linhas de Código',
         projects: 'Projetos Entregues',
@@ -772,6 +810,8 @@ export const translations = {
       badge: 'Código ao Vivo',
       title: 'Snippets de Código',
       subtitle: 'Código real de projetos reais',
+      copy: 'Copiar',
+      copied: 'Copiado!',
       stats: {
         snippets: '50+ Snippets',
         languages: '10 Linguagens',
@@ -806,10 +846,22 @@ export const translations = {
       sent: 'Mensagem Enviada!',
       sentMessage: 'Obrigado pelo contato. Responderei em breve!',
       followMe: 'Me siga',
+      values: {
+        email: 'rodrigo@oliveira.dev',
+        phone: '+55 11 99999-9999',
+        location: 'São Paulo, SP, Brasil',
+      },
+      placeholders: {
+        name: 'Seu nome',
+        email: 'seu@email.com',
+        subject: 'Discussão de Projeto',
+        message: 'Conte-me sobre seu projeto ou oportunidade...',
+      },
     },
 
     // ─── Footer ──────────────────────────────────────────────────────────────
     footer: {
+      name: 'Rodrigo Oliveira',
       brandDescription:
         'Engenheiro de Software apaixonado por construir soluções elegantes para problemas complexos. Sempre aberto a novos desafios e colaborações.',
       navigation: 'Navegação',
@@ -841,6 +893,16 @@ export const translations = {
       subtitle:
         'Uma visão multidimensional das minhas competências centrais, visualizada como um radar interativo que revela a proficiência em cada disciplina-chave.',
       breakdown: 'Detalhamento',
+    },
+
+    // ─── Now Playing ────────────────────────────────────────────────────────
+    nowPlaying: {
+      title: 'Tocando Agora',
+    },
+
+    // ─── Page Loader ────────────────────────────────────────────────────────
+    pageLoader: {
+      loading: 'Carregando',
     },
   },
 }
