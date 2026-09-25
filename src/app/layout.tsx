@@ -41,6 +41,38 @@ export const metadata: Metadata = {
   },
 };
 
+function JsonLd() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Your Name',
+    url: 'https://yourname.dev',
+    jobTitle: 'Senior Software Engineer',
+    description: 'Full-stack software engineer specializing in React, Next.js, TypeScript, and cloud architecture.',
+    sameAs: [
+      'https://github.com/yourname',
+      'https://linkedin.com/in/yourname',
+      'https://twitter.com/yourname',
+    ],
+    knowsAbout: ['React', 'Next.js', 'TypeScript', 'Python', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'GraphQL', 'Node.js'],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Open to Opportunities',
+    },
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'University of Technology',
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,6 +80,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <JsonLd />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >

@@ -34,9 +34,17 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t border-border bg-card/95 backdrop-blur-sm relative overflow-hidden">
+    <footer className="border-t border-border bg-card/95 backdrop-blur-md relative overflow-hidden">
       {/* Decorative gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+      {/* Subtle mesh pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(16,185,129,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.3) 1px, transparent 1px)`,
+          backgroundSize: '32px 32px',
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -96,7 +104,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Your Name. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground/80 flex items-center gap-1">
-            Made with <Heart className="w-3 h-3 text-emerald-500 fill-emerald-500" /> and lots of coffee
+            Made with <Heart className="w-3 h-3 text-emerald-500 fill-emerald-500" /> and lots of <span className="inline-block hover:rotate-12 transition-transform duration-200">☕</span>
           </p>
         </div>
       </div>

@@ -109,7 +109,15 @@ export default function Projects() {
   const featuredCount = projects.filter((p) => p.featured).length
 
   return (
-    <section id="projects" className="py-20 sm:py-28 bg-muted/30" ref={ref}>
+    <section id="projects" className="py-20 sm:py-28 bg-muted/30 relative overflow-hidden" ref={ref}>
+      {/* Subtle dot pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(16,185,129,0.4) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

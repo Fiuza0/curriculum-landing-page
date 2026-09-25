@@ -1,115 +1,138 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
-const HOVERABLE_SELECTOR = 'a, button, [role="button"], input, textarea, select';
-
-export default function CustomCursor() {
-  const [isHovering, setIsHovering] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  // Raw motion values for mouse position
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Outer ring: smooth spring with slight lag
-  const ringX = useSpring(mouseX, { stiffness: 150, damping: 15 });
-  const ringY = useSpring(mouseY, { stiffness: 150, damping: 15 });
-
-  // Inner dot: snappier spring to follow mouse more precisely
-  const dotX = useSpring(mouseX, { stiffness: 500, damping: 28 });
-  const dotY = useSpring(mouseY, { stiffness: 500, damping: 28 });
+function useIsTouchDevice() {
+  const [isTouch, setIsTouch] = useState(false)
 
   useEffect(() => {
-    // Only show on non-touch devices with a fine pointer
-    const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
-    if (!hasFinePointer) return;
+    const checkTouch = () => {
+      setIsTouch('ontouchstart' in window || navigator.maxTouchPoints > 0)
+    }
+    // Use requestAnimationFrame to avoid synchronous setState in effect
+    const raf = requestAnimationFrame(checkTouch)
+    return () => cancelAnimationFrame(raf)
+  }, [])
 
-    // Only show on viewports wider than 1024px
-    const checkViewport = () => {
-      setIsVisible(window.innerWidth > 1024);
-    };
+  return isTouch
+}
 
-    checkViewport();
+export default function CustomCursor() {
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [isHovering, setIsHovering] = useState(false)
+  const [isClicking, setIsClicking] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const isTouchDevice = useIsTouchDevice()
 
-    const handleResize = () => checkViewport();
-    window.addEventListener('resize', handleResize);
+  useEffect(() => {
+    if (isTouchDevice) return
 
-    // Hide the default cursor
-    document.body.style.cursor = 'none';
+    const onMouseMove = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY })
+      if (!isVisible) setIsVisible(true)
+    }
 
-    // Track mouse movement
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
-    };
+    const onMouseDown = () => setIsClicking(true)
+    const onMouseUp = () => setIsClicking(false)
 
-    // Detect when hovering over interactive elements
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.closest(HOVERABLE_SELECTOR)) {
-        setIsHovering(true);
+    const onMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (
+        target.tagName === 'A' ||
+        target.tagName === 'BUTTON' ||
+        target.closest('a') ||
+        target.closest('button') ||
+        target.closest('[role="button"]') ||
+        target.closest('.cursor-pointer')
+      ) {
+        setIsHovering(true)
       }
-    };
+    }
 
-    const handleMouseOut = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.closest(HOVERABLE_SELECTOR)) {
-        setIsHovering(false);
+    const onMouseOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (
+        target.tagName === 'A' ||
+        target.tagName === 'BUTTON' ||
+        target.closest('a') ||
+        target.closest('button') ||
+        target.closest('[role="button"]') ||
+        target.closest('.cursor-pointer')
+      ) {
+        setIsHovering(false)
       }
-    };
+    }
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseover', handleMouseOver);
-    window.addEventListener('mouseout', handleMouseOut);
+    const onMouseLeave = () => setIsVisible(false)
+    const onMouseEnter = () => setIsVisible(true)
+
+    window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('mousedown', onMouseDown)
+    window.addEventListener('mouseup', onMouseUp)
+    document.addEventListener('mouseover', onMouseOver)
+    document.addEventListener('mouseout', onMouseOut)
+    document.documentElement.addEventListener('mouseleave', onMouseLeave)
+    document.documentElement.addEventListener('mouseenter', onMouseEnter)
 
     return () => {
-      // Restore default cursor on unmount
-      document.body.style.cursor = '';
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseover', handleMouseOver);
-      window.removeEventListener('mouseout', handleMouseOut);
-    };
-  }, [mouseX, mouseY]);
+      window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('mousedown', onMouseDown)
+      window.removeEventListener('mouseup', onMouseUp)
+      document.removeEventListener('mouseover', onMouseOver)
+      document.removeEventListener('mouseout', onMouseOut)
+      document.documentElement.removeEventListener('mouseleave', onMouseLeave)
+      document.documentElement.removeEventListener('mouseenter', onMouseEnter)
+    }
+  }, [isTouchDevice, isVisible])
 
-  // Don't render anything on touch devices or small viewports
-  if (!isVisible) return null;
+  if (isTouchDevice) return null
 
   return (
     <>
-      {/* Outer ring - follows with spring lag */}
+      {/* Main cursor dot */}
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9999] rounded-full border-2 border-emerald-500/50"
-        style={{
-          x: ringX,
-          y: ringY,
+        className="fixed top-0 left-0 pointer-events-none z-[100] mix-blend-difference hidden md:block"
+        animate={{
+          x: position.x - 6,
+          y: position.y - 6,
+          scale: isClicking ? 0.8 : 1,
+          opacity: isVisible ? 1 : 0,
+        }}
+        transition={{
+          type: 'spring',
+          stiffness: 500,
+          damping: 28,
+          mass: 0.5,
+        }}
+      >
+        <div className="w-3 h-3 rounded-full bg-white" />
+      </motion.div>
+
+      {/* Cursor ring / follower */}
+      <motion.div
+        className="fixed top-0 left-0 pointer-events-none z-[99] hidden md:block"
+        animate={{
+          x: position.x - (isHovering ? 24 : 16),
+          y: position.y - (isHovering ? 24 : 16),
           width: isHovering ? 48 : 32,
           height: isHovering ? 48 : 32,
-          translateX: isHovering ? -24 : -16,
-          translateY: isHovering ? -24 : -16,
-          backgroundColor: isHovering ? 'rgba(16, 185, 129, 0.1)' : 'transparent',
-          borderColor: isHovering ? 'rgb(16, 185, 129)' : 'rgba(16, 185, 129, 0.5)',
+          opacity: isVisible ? (isHovering ? 0.8 : 0.4) : 0,
+          borderColor: isHovering ? 'rgba(16, 185, 129, 0.6)' : 'rgba(16, 185, 129, 0.3)',
         }}
-        transition={{ type: 'spring', stiffness: 150, damping: 15 }}
-      />
-
-      {/* Inner dot - follows precisely */}
-      <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9999] rounded-full"
-        style={{
-          x: dotX,
-          y: dotY,
-          width: isHovering ? 4 : 8,
-          height: isHovering ? 4 : 8,
-          translateX: isHovering ? -2 : -4,
-          translateY: isHovering ? -2 : -4,
-          backgroundColor: isHovering ? 'rgb(20, 184, 166)' : 'rgb(16, 185, 129)',
-          mixBlendMode: 'difference',
+        transition={{
+          type: 'spring',
+          stiffness: 150,
+          damping: 15,
+          mass: 0.8,
         }}
-        transition={{ type: 'spring', stiffness: 500, damping: 28 }}
-      />
+      >
+        <div
+          className={`w-full h-full rounded-full border-2 transition-all duration-200 ${
+            isHovering ? 'bg-emerald-500/10' : ''
+          }`}
+        />
+      </motion.div>
     </>
-  );
+  )
 }

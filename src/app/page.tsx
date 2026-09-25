@@ -22,30 +22,73 @@ import Footer from '@/components/sections/Footer'
 import BackToTop from '@/components/sections/BackToTop'
 import PageLoader from '@/components/sections/PageLoader'
 import NowPlaying from '@/components/sections/NowPlaying'
+import CustomCursor from '@/components/sections/CustomCursor'
+import SectionReveal from '@/components/sections/SectionReveal'
+import SectionDivider from '@/components/sections/SectionDivider'
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background overflow-x-hidden">
       <PageLoader />
+      <CustomCursor />
       <Navbar />
       <main className="flex-1">
         <Hero />
         <TechMarquee />
-        <Stats />
-        <About />
-        <Skills />
-        <SkillsRadarChart />
-        <TechShowcase />
-        <ContributionGraph />
-        <Experience />
-        <Projects />
-        <Testimonials />
-        <Education />
-        <Learning />
-        <Blog />
-        <InteractiveTerminal />
-        <CTASection />
-        <Contact />
+        <SectionReveal>
+          <Stats />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <About />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <Skills />
+        </SectionReveal>
+        <SectionReveal>
+          <SkillsRadarChart />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <TechShowcase />
+        </SectionReveal>
+        <SectionReveal>
+          <ContributionGraph />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <Experience />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <Projects />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <Testimonials />
+        </SectionReveal>
+        <SectionReveal>
+          <Education />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <Learning />
+        </SectionReveal>
+        <SectionReveal>
+          <Blog />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <InteractiveTerminal />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <CTASection />
+        </SectionReveal>
+        <SectionReveal>
+          <Contact />
+        </SectionReveal>
       </main>
       <Footer />
       <BackToTop />

@@ -155,7 +155,7 @@ export default function InteractiveTerminal() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="mx-auto w-full max-w-2xl"
         >
-          <Card className="overflow-hidden border border-gray-700/50 bg-gray-950/80 backdrop-blur-xl shadow-2xl shadow-emerald-500/5">
+          <Card className="overflow-hidden border border-gray-700/50 bg-gray-950/80 backdrop-blur-xl shadow-2xl shadow-emerald-500/5 conic-border">
             {/* macOS title bar */}
             <div className="flex items-center justify-between px-4 py-3 bg-gray-900/90 border-b border-gray-700/50">
               <div className="flex items-center gap-2">
@@ -180,7 +180,7 @@ export default function InteractiveTerminal() {
             </div>
 
             {/* Terminal body */}
-            <CardContent className="p-4 sm:p-6 font-mono text-sm leading-relaxed overflow-x-auto">
+            <CardContent className="p-3 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
               {terminalLines.slice(0, visibleLines).map((line, index) => {
                 const isCursorLine = line.type === 'cursor'
                 const isBlank = line.type === 'blank'

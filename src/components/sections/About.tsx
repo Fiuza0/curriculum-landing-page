@@ -83,18 +83,20 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="group h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-emerald-500/20 relative overflow-hidden backdrop-blur-sm bg-card/80">
+              <Card className="group h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-emerald-500/20 relative overflow-hidden backdrop-blur-sm bg-card/80 card-lift">
                 {/* Gradient top border on hover */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                <CardContent className="p-6 text-center">
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${item.bg} ${item.hover} mb-4 group-hover:scale-110 transition-all duration-300`}>
+                {/* Hover gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/5 group-hover:to-teal-500/3 transition-all duration-300" />
+                <CardContent className="relative p-6 text-center">
+                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${item.bg} ${item.hover} mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                     <item.icon className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                  <h3 className="font-semibold text-lg mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">{item.title}</h3>
                   <p className="text-muted-foreground text-sm mb-3">
                     {item.description}
                   </p>
-                  <div className="flex items-center justify-center gap-1 text-emerald-500 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center justify-center gap-1 text-emerald-500 text-xs font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     Learn more <ArrowRight className="w-3 h-3" />
                   </div>
                 </CardContent>

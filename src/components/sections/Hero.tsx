@@ -64,7 +64,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-emerald-500/[0.02] via-transparent to-transparent"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-emerald-500/[0.02] via-transparent to-transparent noise-overlay"
     >
       {/* Particles background */}
       <Particles />
@@ -124,7 +124,7 @@ export default function Hero() {
               {/* Decorative rings */}
               <div className="absolute -inset-3 rounded-full border-2 border-dashed border-emerald-500/20 animate-spin [animation-duration:30s]" />
               <div className="absolute -inset-6 rounded-full border border-dashed border-teal-500/10 animate-spin [animation-duration:45s] [animation-direction:reverse]" />
-              <Avatar className="w-40 h-40 sm:w-52 sm:h-52 relative border-4 border-background shadow-2xl">
+              <Avatar className="w-40 h-40 sm:w-52 sm:h-52 relative border-4 border-background shadow-2xl ring-4 ring-emerald-500/20">
                 {/* 📸 PLACEHOLDER: Replace with your photo URL */}
                 <AvatarImage
                   src="/photo-placeholder.jpg"
@@ -220,9 +220,13 @@ export default function Hero() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="gap-2 text-muted-foreground hover:text-foreground"
+                className="gap-2 text-muted-foreground hover:text-foreground border border-dashed border-border/50 hover:border-emerald-500/30 hover:bg-emerald-500/5"
                 onClick={() => {
                   /* 📄 PLACEHOLDER: Add your CV download link */
+                  const link = document.createElement('a')
+                  link.href = '/resume.pdf'
+                  link.download = 'YourName_Resume.pdf'
+                  link.click()
                 }}
               >
                 <Download className="w-4 h-4" />

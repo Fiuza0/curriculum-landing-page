@@ -98,10 +98,10 @@ export default function Experience() {
               )}
 
               {/* Content card */}
-              <Card className="border border-border/50 rounded-xl hover:shadow-lg hover:border-emerald-500/15 hover:-translate-y-0.5 transition-all duration-300 group backdrop-blur-sm bg-card/80">
+              <Card className="border border-border/50 rounded-xl hover:shadow-lg hover:border-emerald-500/15 hover:-translate-y-0.5 transition-all duration-300 group backdrop-blur-sm bg-card/80 card-lift">
               <CardContent className="p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                  <h3 className="text-lg font-semibold">{exp.title}</h3>
+                  <h3 className="text-lg font-semibold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">{exp.title}</h3>
                   {exp.current && (
                     <Badge className="w-fit bg-emerald-500/10 text-emerald-600 border-emerald-500/20 hover:bg-emerald-500/15">
                       Current

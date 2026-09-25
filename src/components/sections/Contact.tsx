@@ -142,8 +142,8 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="lg:col-span-3"
           >
-            <Card className="border-border/50 hover:border-emerald-500/10 transition-colors backdrop-blur-sm bg-card/80 neon-glow">
-              <CardContent className="p-6 sm:p-8">
+            <Card className="border-border/50 hover:border-emerald-500/10 transition-all duration-300 backdrop-blur-sm bg-card/80 neon-glow conic-border">
+              <CardContent className="p-6 sm:p-8 relative z-10">
                 {submitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
