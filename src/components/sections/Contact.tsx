@@ -99,7 +99,7 @@ export default function Contact() {
               <a
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:shadow-lg hover:border-emerald-500/20 transition-all duration-300 group"
+                className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:shadow-lg hover:border-emerald-500/20 hover:-translate-y-0.5 transition-all duration-300 group"
               >
                 <div className={`w-11 h-11 rounded-xl ${item.bg} flex items-center justify-center group-hover:text-white transition-all duration-300`}>
                   <item.icon className={`w-5 h-5 ${item.color} group-hover:text-white transition-colors`} />

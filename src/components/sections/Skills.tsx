@@ -144,7 +144,7 @@ export default function Skills() {
               >
                 <Badge
                   variant="secondary"
-                  className="px-4 py-2 text-sm hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-500 hover:text-white transition-all cursor-default border border-border/50 hover:border-transparent"
+                  className="px-4 py-2 text-sm hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-500 hover:text-white transition-all cursor-default border border-border/50 hover:border-transparent hover:shadow-md hover:shadow-emerald-500/10 hover:-translate-y-0.5"
                 >
                   {tool}
                 </Badge>

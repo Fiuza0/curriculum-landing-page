@@ -64,7 +64,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-emerald-500/[0.02] via-transparent to-transparent"
     >
       {/* Particles background */}
       <Particles />
@@ -169,7 +169,7 @@ export default function Hero() {
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
               Hi, I&apos;m{' '}
-              <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block">
                 {/* ✏️ PLACEHOLDER: Replace with your name */}
                 Your Name
               </span>
@@ -190,20 +190,22 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start mb-8">
               <Button
                 size="lg"
-                className="gap-2 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0"
+                className="gap-2 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0 relative overflow-hidden"
                 onClick={() =>
                   document
                     .querySelector('#projects')
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
               >
+                {/* Shimmer effect */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_3s_infinite]" />
                 View My Work
                 <ArrowDown className="w-4 h-4" />
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="gap-2 border-emerald-500/30 text-emerald-600 hover:bg-emerald-500/10 hover:text-emerald-600 hover:border-emerald-500/50"
+                className="gap-2 border-emerald-500/30 text-emerald-600 hover:bg-emerald-500/10 hover:text-emerald-600 hover:border-emerald-500/50 hover:shadow-md hover:shadow-emerald-500/10"
                 onClick={() =>
                   document
                     .querySelector('#contact')

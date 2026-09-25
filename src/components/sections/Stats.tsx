@@ -64,7 +64,7 @@ export default function Stats() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} className="relative py-16 sm:py-20 overflow-hidden">
+    <section id="stats" ref={ref} className="relative py-16 sm:py-20 overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.15)_100%)]" />
@@ -85,7 +85,7 @@ export default function Stats() {
               <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm mb-3 group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
                 <stat.icon className="w-7 h-7 text-white" />
               </div>
-              <div className="text-3xl sm:text-4xl font-bold mb-1 text-white">
+              <div className="text-3xl sm:text-4xl font-bold mb-1 text-white drop-shadow-sm">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}

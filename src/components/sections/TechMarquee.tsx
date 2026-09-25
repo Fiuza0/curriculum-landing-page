@@ -44,7 +44,7 @@ function MarqueeRow({ items, reverse = false }: { items: typeof techItems; rever
         {doubled.map((item, idx) => (
           <div
             key={`${item.name}-${idx}`}
-            className="flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-border/50 bg-card hover:bg-emerald-500/10 hover:border-emerald-500/20 transition-all duration-300 cursor-default group shrink-0"
+            className="flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-border/50 bg-card/80 backdrop-blur-sm hover:bg-emerald-500/10 hover:border-emerald-500/20 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300 cursor-default group shrink-0"
           >
             <div
               className="w-3 h-3 rounded-full ring-2 ring-offset-1 ring-offset-background group-hover:scale-125 transition-transform duration-300"
@@ -68,7 +68,7 @@ export default function TechMarquee() {
   const secondHalf = techItems.slice(Math.ceil(techItems.length / 2))
 
   return (
-    <section ref={ref} className="py-12 sm:py-16 overflow-hidden">
+    <section id="technologies" ref={ref} className="py-12 sm:py-16 overflow-hidden border-y border-border/30 bg-muted/20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}

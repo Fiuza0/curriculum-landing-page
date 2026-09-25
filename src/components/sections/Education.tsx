@@ -138,9 +138,9 @@ export default function Education() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.3, delay: 0.5 + idx * 0.1 }}
-                className="flex items-center gap-3 p-3.5 rounded-lg bg-card border border-border/50 hover:border-emerald-500/20 hover:shadow-sm transition-all duration-300"
+                className="flex items-center gap-3 p-3.5 rounded-lg bg-card border border-border/50 hover:border-emerald-500/20 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 group"
               >
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500/20 transition-colors duration-300">
                   <Award className="w-4 h-4 text-emerald-500" />
                 </div>
                 <span className="text-sm font-medium">{cert}</span>

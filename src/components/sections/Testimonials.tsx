@@ -42,7 +42,7 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="py-20 sm:py-28 relative" ref={ref}>
+    <section id="testimonials" className="py-20 sm:py-28 relative" ref={ref}>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500/3 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,7 +72,7 @@ export default function Testimonials() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.15 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-border/50 hover:border-emerald-500/15 relative overflow-hidden">
+              <Card className="h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-emerald-500/15 relative overflow-hidden group">
                 {/* Gradient top border */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${testimonial.gradient.replace('/10', '').replace('/5', '')} opacity-0 group-hover:opacity-100`} />
                 <CardContent className="p-6">
@@ -85,7 +85,7 @@ export default function Testimonials() {
                       />
                     ))}
                   </div>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed relative z-10">
+                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed relative z-10 group-hover:text-foreground/80 transition-colors duration-300">
                     &ldquo;{testimonial.text}&rdquo;
                   </p>
                   <div className="flex items-center gap-3">

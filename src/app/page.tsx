@@ -6,6 +6,7 @@ import TechMarquee from '@/components/sections/TechMarquee'
 import Stats from '@/components/sections/Stats'
 import About from '@/components/sections/About'
 import Skills from '@/components/sections/Skills'
+import ContributionGraph from '@/components/sections/ContributionGraph'
 import Experience from '@/components/sections/Experience'
 import Projects from '@/components/sections/Projects'
 import Testimonials from '@/components/sections/Testimonials'
@@ -16,6 +17,7 @@ import Contact from '@/components/sections/Contact'
 import Footer from '@/components/sections/Footer'
 import BackToTop from '@/components/sections/BackToTop'
 import PageLoader from '@/components/sections/PageLoader'
+import NowPlaying from '@/components/sections/NowPlaying'
 
 export default function Home() {
   return (
@@ -28,6 +30,7 @@ export default function Home() {
         <Stats />
         <About />
         <Skills />
+        <ContributionGraph />
         <Experience />
         <Projects />
         <Testimonials />
@@ -38,6 +41,7 @@ export default function Home() {
       </main>
       <Footer />
       <BackToTop />
+      <NowPlaying />
     </div>
   )
 }

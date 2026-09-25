@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useCallback } from 'react'
 import {
   ExternalLink,
   Github,
@@ -12,6 +12,7 @@ import {
   Terminal,
   Smartphone,
   Blocks,
+  Sparkles,
 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -116,6 +117,10 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
+          <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
+            <Sparkles className="w-3.5 h-3.5 mr-1.5" />
+            Portfolio
+          </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Featured Projects
           </h2>
@@ -173,7 +178,25 @@ export default function Projects() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 layout
               >
-                <Card className="group overflow-hidden h-full hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-emerald-500/20">
+                <Card className="group overflow-hidden h-full hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-emerald-500/20"
+                  onMouseMove={(e) => {
+                    const card = e.currentTarget
+                    const rect = card.getBoundingClientRect()
+                    const x = e.clientX - rect.left
+                    const y = e.clientY - rect.top
+                    const halfW = rect.width / 2
+                    const halfH = rect.height / 2
+                    const tiltX = ((y - halfH) / halfH) * -4
+                    const tiltY = ((x - halfW) / halfW) * 4
+                    card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02,1.02,1.02)`
+                    card.style.transition = 'transform 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99)'
+                  }}
+                  onMouseLeave={(e) => {
+                    const card = e.currentTarget
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)'
+                    card.style.transition = 'transform 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99)'
+                  }}
+                >
                   {/* Project image */}
                   <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-muted to-muted/50">
                     {/* Actual project screenshot */}

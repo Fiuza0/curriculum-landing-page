@@ -98,7 +98,7 @@ export default function Experience() {
               )}
 
               {/* Content card */}
-              <Card className="border border-border/50 rounded-xl hover:shadow-lg hover:border-emerald-500/15 transition-all duration-300">
+              <Card className="border border-border/50 rounded-xl hover:shadow-lg hover:border-emerald-500/15 hover:-translate-y-0.5 transition-all duration-300 group">
               <CardContent className="p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
                   <h3 className="text-lg font-semibold">{exp.title}</h3>
@@ -125,7 +125,7 @@ export default function Experience() {
                   </span>
                 </div>
 
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                   {/* ✏️ PLACEHOLDER: Replace with your experience description */}
                   {exp.description}
                 </p>
