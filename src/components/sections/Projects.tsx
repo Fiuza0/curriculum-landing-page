@@ -178,7 +178,7 @@ export default function Projects() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 layout
               >
-                <Card className="group overflow-hidden h-full hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-emerald-500/20 backdrop-blur-sm bg-card/80"
+                <Card className={`group overflow-hidden h-full hover:shadow-2xl transition-all duration-500 border-border/50 hover:border-emerald-500/20 backdrop-blur-sm bg-card/80 ${project.featured ? 'gradient-border-animated' : ''}`}
                   onMouseMove={(e) => {
                     const card = e.currentTarget
                     const rect = card.getBoundingClientRect()

@@ -45,9 +45,27 @@ const skillCategories = [
   },
 ]
 
-const tools = [
-  'VS Code', 'Figma', 'Postman', 'Jira', 'Notion', 'Slack',
-  'Chrome DevTools', 'Storybook', 'Jest', 'Cypress', 'Vercel', 'Netlify',
+const toolGroups = [
+  {
+    category: 'IDE & Design',
+    items: ['VS Code', 'Figma', 'Postman', 'Chrome DevTools'],
+    color: 'from-emerald-500 to-teal-500',
+  },
+  {
+    category: 'Project Management',
+    items: ['Jira', 'Notion', 'Slack', 'Linear'],
+    color: 'from-teal-500 to-cyan-500',
+  },
+  {
+    category: 'Testing & CI',
+    items: ['Jest', 'Cypress', 'Storybook', 'Vercel'],
+    color: 'from-cyan-500 to-sky-500',
+  },
+  {
+    category: 'Deployment',
+    items: ['Netlify', 'Docker Hub', 'GitHub Actions', 'AWS Console'],
+    color: 'from-amber-500 to-orange-500',
+  },
 ]
 
 export default function Skills() {
@@ -113,8 +131,14 @@ export default function Skills() {
                           {skill.level}%
                         </span>
                       </div>
-                      <div className="relative">
-                        <Progress value={isInView ? skill.level : 0} className="h-2.5 [&>div]:bg-gradient-to-r [&>div]:from-emerald-500 [&>div]:to-teal-500" />
+                      <div className="relative overflow-hidden rounded-full">
+                        <Progress value={isInView ? skill.level : 0} className="h-2.5 [&>div]:bg-gradient-to-r [&>div]:from-emerald-500 [&>div]:to-teal-500 [&>div]:relative [&>div]:overflow-hidden" />
+                        {/* Shimmer overlay on progress bar */}
+                        {isInView && (
+                          <div className="absolute inset-0 pointer-events-none">
+                            <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[shimmer_2.5s_infinite] rounded-full" style={{ width: `${skill.level}%` }} />
+                          </div>
+                        )}
                       </div>
                     </motion.div>
                   ))}
@@ -124,30 +148,48 @@ export default function Skills() {
           </Tabs>
         </motion.div>
 
-        {/* Tools & Platforms */}
+        {/* Tools & Platforms - Grouped by category */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-16"
         >
-          <h3 className="text-xl font-semibold text-center mb-6">
+          <h3 className="text-xl font-semibold text-center mb-8">
             Tools & Platforms
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {tools.map((tool, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {toolGroups.map((group, gIdx) => (
               <motion.div
-                key={tool}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.3, delay: 0.5 + idx * 0.04 }}
+                key={group.category}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.5 + gIdx * 0.1 }}
+                className="group"
               >
-                <Badge
-                  variant="secondary"
-                  className="px-4 py-2 text-sm hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-500 hover:text-white transition-all cursor-default border border-border/50 hover:border-transparent hover:shadow-md hover:shadow-emerald-500/10 hover:-translate-y-0.5"
-                >
-                  {tool}
-                </Badge>
+                <div className="text-center mb-3">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-emerald-500 transition-colors">
+                    {group.category}
+                  </span>
+                  <div className={`mx-auto mt-1 w-8 h-0.5 rounded-full bg-gradient-to-r ${group.color} opacity-50 group-hover:opacity-100 transition-opacity`} />
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {group.items.map((tool, idx) => (
+                    <motion.div
+                      key={tool}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.3, delay: 0.6 + gIdx * 0.1 + idx * 0.03 }}
+                    >
+                      <Badge
+                        variant="secondary"
+                        className="px-3 py-1.5 text-xs hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-500 hover:text-white transition-all cursor-default border border-border/50 hover:border-transparent hover:shadow-md hover:shadow-emerald-500/10 hover:-translate-y-0.5"
+                      >
+                        {tool}
+                      </Badge>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>

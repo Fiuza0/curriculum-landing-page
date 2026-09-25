@@ -14,22 +14,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Software Engineer Portfolio",
-  description: "Portfolio and curriculum of a Software Engineer — projects, skills, experience, and contact information.",
-  keywords: ["Software Engineer", "Portfolio", "Full-Stack Developer", "React", "TypeScript", "Next.js"],
+  title: "Your Name — Software Engineer Portfolio",
+  description: "Full-stack software engineer specializing in React, Next.js, TypeScript, and cloud architecture. View projects, skills, and experience.",
+  keywords: ["Software Engineer", "Portfolio", "Full-Stack Developer", "React", "TypeScript", "Next.js", "Python", "AWS", "Docker", "Cloud Architecture"],
   authors: [{ name: "Your Name" }],
+  creator: "Your Name",
   icons: {
     icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
-    title: "Software Engineer Portfolio",
-    description: "Portfolio and curriculum of a Software Engineer",
+    title: "Your Name — Software Engineer Portfolio",
+    description: "Full-stack software engineer specializing in React, Next.js, TypeScript, and cloud architecture.",
     type: "website",
+    locale: "en_US",
+    siteName: "Your Name Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Software Engineer Portfolio",
-    description: "Portfolio and curriculum of a Software Engineer",
+    title: "Your Name — Software Engineer Portfolio",
+    description: "Full-stack software engineer specializing in React, Next.js, TypeScript, and cloud architecture.",
+    creator: "@yourname",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

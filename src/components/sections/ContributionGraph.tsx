@@ -121,7 +121,7 @@ export default function ContributionGraph() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative max-w-4xl mx-auto"
         >
-          <div className="rounded-2xl border border-border/50 bg-card p-4 sm:p-6 hover:border-emerald-500/15 transition-colors duration-300 shadow-sm">
+          <div className="rounded-2xl border border-border/50 bg-card/70 backdrop-blur-sm p-4 sm:p-6 hover:border-emerald-500/20 transition-all duration-300 shadow-sm hover:shadow-md neon-glow">
             {/* Overflow container for mobile */}
             <div className="overflow-x-auto">
               <div className="inline-block min-w-full">

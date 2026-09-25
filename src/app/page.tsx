@@ -7,6 +7,7 @@ import Stats from '@/components/sections/Stats'
 import About from '@/components/sections/About'
 import Skills from '@/components/sections/Skills'
 import SkillsRadarChart from '@/components/sections/SkillsRadarChart'
+import TechShowcase from '@/components/sections/TechShowcase'
 import ContributionGraph from '@/components/sections/ContributionGraph'
 import Experience from '@/components/sections/Experience'
 import Projects from '@/components/sections/Projects'
@@ -34,6 +35,7 @@ export default function Home() {
         <About />
         <Skills />
         <SkillsRadarChart />
+        <TechShowcase />
         <ContributionGraph />
         <Experience />
         <Projects />

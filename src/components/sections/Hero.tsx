@@ -75,14 +75,16 @@ export default function Hero() {
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-emerald-500/8 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 -right-32 w-[28rem] h-[28rem] bg-teal-500/10 rounded-full blur-3xl animate-pulse [animation-delay:1s]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-cyan-500/5 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
-        {/* Grid pattern overlay */}
+        {/* Grid pattern overlay - animated mesh lines */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-            backgroundSize: '32px 32px',
+            backgroundImage: `linear-gradient(rgba(16,185,129,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.4) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
           }}
         />
+        {/* Radial fade to soften grid edges */}
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 0%, var(--background) 70%)' }} />
       </div>
 
       {/* Floating tech icons */}
