@@ -14,26 +14,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Software Engineer Portfolio",
-  description: "Full-stack software engineer specializing in React, Next.js, TypeScript, and cloud architecture. View projects, skills, and experience.",
-  keywords: ["Software Engineer", "Portfolio", "Full-Stack Developer", "React", "TypeScript", "Next.js", "Python", "AWS", "Docker", "Cloud Architecture"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+  title: "Rodrigo Oliveira — Engenheiro de Software | Software Engineer",
+  description: "Engenheiro de software full-stack especializado em React, Next.js, TypeScript e arquitetura cloud. Veja projetos, habilidades e experiência. | Full-stack software engineer specializing in React, Next.js, TypeScript, and cloud architecture.",
+  keywords: ["Engenheiro de Software", "Software Engineer", "Portfolio", "Full-Stack Developer", "React", "TypeScript", "Next.js", "Python", "AWS", "Docker", "Cloud Architecture"],
+  authors: [{ name: "Rodrigo Oliveira" }],
+  creator: "Rodrigo Oliveira",
   icons: {
     icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
-    title: "Your Name — Software Engineer Portfolio",
-    description: "Full-stack software engineer specializing in React, Next.js, TypeScript, and cloud architecture.",
+    title: "Rodrigo Oliveira — Engenheiro de Software | Software Engineer",
+    description: "Engenheiro de software full-stack especializado em React, Next.js, TypeScript e arquitetura cloud.",
     type: "website",
-    locale: "en_US",
-    siteName: "Your Name Portfolio",
+    locale: "pt_BR",
+    siteName: "Rodrigo Oliveira Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Your Name — Software Engineer Portfolio",
-    description: "Full-stack software engineer specializing in React, Next.js, TypeScript, and cloud architecture.",
-    creator: "@yourname",
+    title: "Rodrigo Oliveira — Engenheiro de Software | Software Engineer",
+    description: "Engenheiro de software full-stack especializado em React, Next.js, TypeScript e arquitetura cloud.",
+    creator: "@rodrigo_oliveira",
   },
   robots: {
     index: true,
@@ -45,14 +45,14 @@ function JsonLd() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Your Name',
-    url: 'https://yourname.dev',
-    jobTitle: 'Senior Software Engineer',
-    description: 'Full-stack software engineer specializing in React, Next.js, TypeScript, and cloud architecture.',
+    name: 'Rodrigo Oliveira',
+    url: 'https://rodrigo-oliveira.dev',
+    jobTitle: 'Engenheiro de Software Sênior',
+    description: 'Engenheiro de software full-stack especializado em React, Next.js, TypeScript e arquitetura cloud.',
     sameAs: [
-      'https://github.com/yourname',
-      'https://linkedin.com/in/yourname',
-      'https://twitter.com/yourname',
+      'https://github.com/rodrigo-oliveira',
+      'https://linkedin.com/in/rodrigo-oliveira',
+      'https://twitter.com/rodrigo_oliveira',
     ],
     knowsAbout: ['React', 'Next.js', 'TypeScript', 'Python', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL', 'GraphQL', 'Node.js'],
     worksFor: {
@@ -79,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt" suppressHydrationWarning>
       <head>
         <JsonLd />
       </head>

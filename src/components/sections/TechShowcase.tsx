@@ -5,6 +5,7 @@ import { useRef, useState } from 'react'
 import { Code2, Database, Cloud, TestTube2, Shield, Badge as BadgeIcon } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import type { LucideIcon } from 'lucide-react'
+import { useLanguage } from '@/hooks/use-language'
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -29,7 +30,7 @@ interface TechCategory {
 
 const categories: TechCategory[] = [
   {
-    title: 'Languages',
+    title: 'Languages', // i18n: t.techShowcase.languages
     icon: Code2,
     theme: {
       gradient: 'from-emerald-500 to-emerald-600',
@@ -48,7 +49,7 @@ const categories: TechCategory[] = [
     ],
   },
   {
-    title: 'Frameworks',
+    title: 'Frameworks', // i18n: t.techShowcase.frameworks
     icon: BadgeIcon,
     theme: {
       gradient: 'from-teal-500 to-teal-600',
@@ -67,7 +68,7 @@ const categories: TechCategory[] = [
     ],
   },
   {
-    title: 'Cloud & Infra',
+    title: 'Cloud & Infra', // i18n: t.techShowcase.cloud
     icon: Cloud,
     theme: {
       gradient: 'from-cyan-500 to-cyan-600',
@@ -86,7 +87,7 @@ const categories: TechCategory[] = [
     ],
   },
   {
-    title: 'Data & Testing',
+    title: 'Data & Testing', // i18n: t.techShowcase.data
     icon: Database,
     theme: {
       gradient: 'from-amber-500 to-amber-600',
@@ -283,6 +284,7 @@ function CategoryCard({
 // ─── Main Component ─────────────────────────────────────────────────────────
 
 export default function TechShowcase() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -315,19 +317,17 @@ export default function TechShowcase() {
             className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20"
           >
             <Code2 className="w-3.5 h-3.5 mr-1" />
-            Stack
+            {t.techShowcase.badge}
           </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            My Tech{' '}
+            {t.techShowcase.title}{' '}
             <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
-              Universe
+              {t.techShowcase.titleAccent}
             </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-            The full technology ecosystem I wield daily — from languages and
-            frameworks to cloud infrastructure and data tools — each chosen to
-            ship reliable, scalable software faster.
+            {t.techShowcase.subtitle}
           </p>
         </motion.div>
 

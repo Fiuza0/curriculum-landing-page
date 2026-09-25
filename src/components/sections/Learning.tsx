@@ -13,6 +13,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useLanguage } from '@/hooks/use-language'
 
 type LearningType = 'Book' | 'Podcast' | 'Video' | 'Course'
 
@@ -127,6 +128,7 @@ const typeBadgeColorMap: Record<LearningType, string> = {
 }
 
 export default function Learning() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -149,14 +151,12 @@ export default function Learning() {
             variant="secondary"
             className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20"
           >
-            Growth
+            {t.learning.badge}
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Always Learning</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t.learning.title}</h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Continuous learning is at the heart of great engineering. Here&apos;s what
-            I&apos;m currently reading, watching, and exploring to stay sharp and grow
-            every day.
+            {t.learning.subtitle}
           </p>
         </motion.div>
 
@@ -211,7 +211,7 @@ export default function Learning() {
                           <div className="space-y-1.5">
                             <div className="flex justify-between items-center">
                               <span className="text-xs text-muted-foreground">
-                                Progress
+                                {t.learning.progress}
                               </span>
                               <span
                                 className={`text-xs font-medium ${item.iconColor}`}
@@ -267,7 +267,7 @@ export default function Learning() {
             size="lg"
             className="gap-2 border-emerald-500/20 text-emerald-600 hover:bg-emerald-500/10 hover:text-emerald-600 hover:border-emerald-500/30 dark:text-emerald-400 dark:hover:text-emerald-400"
           >
-            View Full List
+            {t.learning.viewFullList}
             <ArrowRight className="w-4 h-4" />
           </Button>
         </motion.div>

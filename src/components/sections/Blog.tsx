@@ -6,6 +6,7 @@ import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useLanguage } from '@/hooks/use-language'
 
 const articles = [
   {
@@ -41,6 +42,7 @@ const categoryColors: Record<string, string> = {
 }
 
 export default function Blog() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -55,15 +57,14 @@ export default function Blog() {
         >
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
             <BookOpen className="w-3.5 h-3.5 mr-1.5" />
-            Blog
+            {t.blog.badge}
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Latest Articles
+            {t.blog.title}
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Sharing insights, tutorials, and lessons learned from building
-            production-grade software.
+            {t.blog.subtitle}
           </p>
         </motion.div>
 
@@ -121,7 +122,7 @@ export default function Blog() {
 
                   {/* Read more */}
                   <div className="flex items-center gap-1 text-emerald-500 text-sm font-medium group-hover:gap-2 transition-all duration-300">
-                    Read article
+                    {t.blog.readArticle}
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </CardContent>
@@ -143,7 +144,7 @@ export default function Blog() {
             className="gap-2 border-emerald-500/20 text-emerald-600 hover:bg-emerald-500/10 hover:text-emerald-600 hover:border-emerald-500/30"
           >
             <BookOpen className="w-4 h-4" />
-            View All Articles
+            {t.blog.viewAll}
           </Button>
         </motion.div>
       </div>

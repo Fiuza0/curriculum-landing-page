@@ -4,8 +4,10 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Rocket, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useLanguage } from '@/hooks/use-language'
 
 export default function CTASection() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -37,16 +39,14 @@ export default function CTASection() {
         </motion.div>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-          Ready to Build Something{' '}
+          {t.cta.title1}{' '}
           <span className="bg-gradient-to-r from-emerald-200 via-teal-200 to-cyan-200 bg-clip-text text-transparent">
-            Amazing Together?
+            {t.cta.title2}
           </span>
         </h2>
 
         <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Whether you need a full-stack application, a performance audit, or
-          technical consulting — I&apos;m here to help turn your vision into
-          reality.
+          {t.cta.subtitle}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -59,7 +59,7 @@ export default function CTASection() {
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            Let&apos;s Talk
+            {t.cta.button1}
             <ArrowRight className="w-4 h-4" />
           </Button>
           <Button
@@ -72,7 +72,7 @@ export default function CTASection() {
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            View My Work
+            {t.cta.button2}
           </Button>
         </div>
       </motion.div>

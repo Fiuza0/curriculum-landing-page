@@ -5,11 +5,12 @@ import { useRef } from 'react'
 import { Progress } from '@/components/ui/progress'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useLanguage } from '@/hooks/use-language'
 
 const skillCategories = [
   {
     id: 'frontend',
-    label: 'Frontend',
+    labelKey: 'frontend' as const,
     skills: [
       { name: 'React / Next.js', level: 95 },
       { name: 'TypeScript', level: 90 },
@@ -21,7 +22,7 @@ const skillCategories = [
   },
   {
     id: 'backend',
-    label: 'Backend',
+    labelKey: 'backend' as const,
     skills: [
       { name: 'Node.js / Express', level: 90 },
       { name: 'Python / FastAPI', level: 85 },
@@ -33,7 +34,7 @@ const skillCategories = [
   },
   {
     id: 'devops',
-    label: 'DevOps',
+    labelKey: 'devops' as const,
     skills: [
       { name: 'Docker / K8s', level: 82 },
       { name: 'AWS / GCP', level: 78 },
@@ -71,6 +72,7 @@ const toolGroups = [
 export default function Skills() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const { t } = useLanguage()
 
   return (
     <section id="skills" className="py-20 sm:py-28 bg-muted/30 relative" ref={ref}>
@@ -85,15 +87,14 @@ export default function Skills() {
           className="text-center mb-16"
         >
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
-            Skills
+            {t.skills.badge}
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Skills & Expertise
+            {t.skills.title}
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and proficiency
-            levels across different domains.
+            {t.skills.subtitle}
           </p>
         </motion.div>
 
@@ -107,7 +108,7 @@ export default function Skills() {
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-10">
               {skillCategories.map((cat) => (
                 <TabsTrigger key={cat.id} value={cat.id} className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white">
-                  {cat.label}
+                  {t.skills[cat.labelKey]}
                 </TabsTrigger>
               ))}
             </TabsList>
@@ -156,7 +157,7 @@ export default function Skills() {
           className="mt-16"
         >
           <h3 className="text-xl font-semibold text-center mb-8">
-            Tools & Platforms
+            {t.skills.toolsTitle}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {toolGroups.map((group, gIdx) => (

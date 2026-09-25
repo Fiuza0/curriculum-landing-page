@@ -6,6 +6,7 @@ import { Terminal, Copy, Check, ChevronRight } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useLanguage } from '@/hooks/use-language'
 
 const terminalLines: { text: string; type: 'prompt' | 'output' | 'json-key' | 'json-value' | 'json-bracket' | 'blank' | 'cursor' }[] = [
   { text: '$ whoami', type: 'prompt' },
@@ -30,11 +31,11 @@ const terminalLines: { text: string; type: 'prompt' | 'output' | 'json-key' | 'j
   { text: '$ _', type: 'cursor' },
 ]
 
-const quickStats = [
-  { icon: '⌨', value: '500K+', label: 'Lines of Code' },
-  { icon: '🏗️', value: '50+', label: 'Projects Shipped' },
-  { icon: '🌍', value: '12', label: 'Countries Reached' },
-  { icon: '⚡', value: '99.9%', label: 'Uptime Record' },
+const quickStatsData = [
+  { icon: '⌨', value: '500K+', labelKey: 'lines' as const },
+  { icon: '🏗️', value: '50+', labelKey: 'projects' as const },
+  { icon: '🌍', value: '12', labelKey: 'countries' as const },
+  { icon: '⚡', value: '99.9%', labelKey: 'uptime' as const },
 ]
 
 function getLineColor(type: string): string {
@@ -64,6 +65,7 @@ const fullTerminalText = terminalLines
   .join('\n')
 
 export default function InteractiveTerminal() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -137,14 +139,14 @@ export default function InteractiveTerminal() {
             className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20"
           >
             <Terminal className="w-3.5 h-3.5 mr-1.5" />
-            Interactive
+            {t.terminal.badge}
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Developer at a Glance
+            {t.terminal.title}
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Quick terminal-style overview of development setup and stats
+            {t.terminal.subtitle}
           </p>
         </motion.div>
 
@@ -219,9 +221,9 @@ export default function InteractiveTerminal() {
 
         {/* Quick stat cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-2xl mx-auto">
-          {quickStats.map((stat, index) => (
+          {quickStatsData.map((stat, index) => (
             <motion.div
-              key={stat.label}
+              key={stat.labelKey}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
@@ -237,7 +239,7 @@ export default function InteractiveTerminal() {
                     {stat.value}
                   </div>
                   <div className="text-xs sm:text-sm text-muted-foreground mt-1">
-                    {stat.label}
+                    {t.terminal.stats[stat.labelKey]}
                   </div>
                 </CardContent>
               </Card>

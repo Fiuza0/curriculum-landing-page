@@ -1,31 +1,27 @@
 'use client'
 
 import { Code2, Github, Linkedin, Twitter, Heart } from 'lucide-react'
+import { useLanguage } from '@/hooks/use-language'
 
-const footerLinks = [
-  {
-    title: 'Navigation',
-    links: [
-      { label: 'About', href: '#about' },
-      { label: 'Skills', href: '#skills' },
-      { label: 'Experience', href: '#experience' },
-      { label: 'Projects', href: '#projects' },
-      { label: 'Education', href: '#education' },
-      { label: 'Contact', href: '#contact' },
-    ],
-  },
-  {
-    title: 'Social',
-    links: [
-      { label: 'GitHub', href: '#' },
-      { label: 'LinkedIn', href: '#' },
-      { label: 'Twitter', href: '#' },
-      { label: 'Blog', href: '#' },
-    ],
-  },
+const footerNavLinks = [
+  { labelKey: 'about', href: '#about' },
+  { labelKey: 'skills', href: '#skills' },
+  { labelKey: 'experience', href: '#experience' },
+  { labelKey: 'projects', href: '#projects' },
+  { labelKey: 'education', href: '#education' },
+  { labelKey: 'contact', href: '#contact' },
+]
+
+const footerSocialLinks = [
+  { label: 'GitHub', href: '#' },
+  { label: 'LinkedIn', href: '#' },
+  { label: 'Twitter', href: '#' },
+  { label: 'Blog', href: '#' },
 ]
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   const handleClick = (href: string) => {
     if (href.startsWith('#')) {
       const el = document.querySelector(href)
@@ -57,8 +53,7 @@ export default function Footer() {
               <span className="font-bold text-lg">&lt;Dev /&gt;</span>
             </div>
             <p className="text-muted-foreground text-sm max-w-md mb-6 leading-relaxed font-medium">
-              Software Engineer passionate about building elegant solutions to
-              complex problems. Always open to new challenges and collaborations.
+              {t.footer.brandDescription}
             </p>
             <div className="flex gap-3">
               {[
@@ -78,33 +73,48 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link groups */}
-          {footerLinks.map((group) => (
-            <div key={group.title}>
-              <h4 className="font-semibold text-sm mb-4">{group.title}</h4>
-              <ul className="space-y-2.5">
-                {group.links.map((link) => (
-                  <li key={link.label}>
-                    <button
-                      onClick={() => handleClick(link.href)}
-                      className="text-sm text-muted-foreground hover:text-emerald-500 transition-colors"
-                    >
-                      {link.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Navigation group */}
+          <div>
+            <h4 className="font-semibold text-sm mb-4">{t.footer.navigation}</h4>
+            <ul className="space-y-2.5">
+              {footerNavLinks.map((link) => (
+                <li key={link.labelKey}>
+                  <button
+                    onClick={() => handleClick(link.href)}
+                    className="text-sm text-muted-foreground hover:text-emerald-500 transition-colors"
+                  >
+                    {t.nav[link.labelKey as keyof typeof t.nav]}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social group */}
+          <div>
+            <h4 className="font-semibold text-sm mb-4">{t.footer.social}</h4>
+            <ul className="space-y-2.5">
+              {footerSocialLinks.map((link) => (
+                <li key={link.label}>
+                  <button
+                    onClick={() => handleClick(link.href)}
+                    className="text-sm text-muted-foreground hover:text-emerald-500 transition-colors"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground/70">
-            &copy; {new Date().getFullYear()} <span className="font-medium text-foreground/80">Your Name</span>. All rights reserved.
+            &copy; {new Date().getFullYear()} <span className="font-medium text-foreground/80">Your Name</span>. {t.footer.copyright}
           </p>
           <p className="text-sm text-muted-foreground/70 flex items-center gap-1.5">
-            Crafted with <Heart className="w-3.5 h-3.5 text-emerald-500 fill-emerald-500 breathe" /> and <span className="inline-block hover:rotate-12 hover:scale-110 transition-transform duration-200">☕</span>
+            {t.footer.madeWith} <Heart className="w-3.5 h-3.5 text-emerald-500 fill-emerald-500 breathe" /> {t.footer.madeWithAnd} <span className="inline-block hover:rotate-12 hover:scale-110 transition-transform duration-200">☕</span>
           </p>
         </div>
       </div>

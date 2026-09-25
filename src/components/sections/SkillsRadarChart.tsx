@@ -11,6 +11,7 @@ import {
   TestTube2,
   Box,
 } from 'lucide-react'
+import { useLanguage } from '@/hooks/use-language'
 
 /* ───────────────────── data ───────────────────── */
 
@@ -52,6 +53,7 @@ function axisEndpoint(
 /* ───────────────────── component ───────────────────── */
 
 export default function SkillsRadarChart() {
+  const { t } = useLanguage()
   const sectionRef = useRef<HTMLElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
@@ -317,14 +319,12 @@ export default function SkillsRadarChart() {
             variant="secondary"
             className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20"
           >
-            Visualization
+            {t.radar.badge}
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Skill Radar</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t.radar.title}</h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A multi-dimensional view of my core competencies, visualized as an
-            interactive radar chart that reveals proficiency across every key
-            discipline.
+            {t.radar.subtitle}
           </p>
         </motion.div>
 
@@ -373,7 +373,7 @@ export default function SkillsRadarChart() {
             className="flex-1 w-full max-w-md"
           >
             <h3 className="text-lg font-semibold mb-6 text-foreground/90">
-              Skill Breakdown
+              {t.radar.breakdown}
             </h3>
             <div className="space-y-4">
               {SKILLS.map((skill, idx) => {

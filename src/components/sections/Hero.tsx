@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import Particles from '@/components/sections/Particles'
+import { useLanguage } from '@/hooks/use-language'
 
 const techIcons = [
   { label: 'React', color: 'from-cyan-400 to-blue-500', x: '10%', y: '20%', delay: 0 },
@@ -15,14 +16,6 @@ const techIcons = [
   { label: 'AWS', color: 'from-orange-400 to-amber-500', x: '90%', y: '65%', delay: 1.5 },
   { label: 'Git', color: 'from-red-400 to-rose-500', x: '15%', y: '45%', delay: 0.7 },
   { label: 'Docker', color: 'from-sky-400 to-blue-500', x: '80%', y: '40%', delay: 1.2 },
-]
-
-const roles = [
-  'Software Engineer',
-  'Full-Stack Developer',
-  'Cloud Architect',
-  'UI/UX Enthusiast',
-  'Open Source Contributor',
 ]
 
 function Typewriter({ texts }: { texts: string[] }) {
@@ -61,6 +54,8 @@ function Typewriter({ texts }: { texts: string[] }) {
 }
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="hero"
@@ -125,13 +120,12 @@ export default function Hero() {
               <div className="absolute -inset-3 rounded-full border-2 border-dashed border-emerald-500/20 animate-spin [animation-duration:30s]" />
               <div className="absolute -inset-6 rounded-full border border-dashed border-teal-500/10 animate-spin [animation-duration:45s] [animation-direction:reverse]" />
               <Avatar className="w-40 h-40 sm:w-52 sm:h-52 relative border-4 border-background shadow-2xl ring-4 ring-emerald-500/20">
-                {/* 📸 PLACEHOLDER: Replace with your photo URL */}
                 <AvatarImage
                   src="/photo-placeholder.jpg"
-                  alt="Your Photo"
+                  alt={t.hero.name}
                 />
                 <AvatarFallback className="text-3xl sm:text-4xl font-bold bg-gradient-to-br from-emerald-500/20 to-teal-500/10 text-emerald-600 dark:text-emerald-400">
-                  YN
+                  RO
                 </AvatarFallback>
               </Avatar>
               {/* Status badge */}
@@ -143,7 +137,7 @@ export default function Hero() {
               >
                 <Badge className="bg-emerald-500 text-white border-0 px-3 py-1 shadow-lg">
                   <span className="mr-1.5 inline-block w-2 h-2 bg-white rounded-full animate-pulse" />
-                  Available
+                  {t.hero.available}
                 </Badge>
               </motion.div>
             </div>
@@ -164,28 +158,23 @@ export default function Hero() {
             >
               <MapPin className="w-4 h-4 text-emerald-500" />
               <span className="text-muted-foreground text-sm">
-                {/* 📍 PLACEHOLDER: Replace with your location */}
-                San Francisco, CA
+                {t.hero.location}
               </span>
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6">
-              Hi, I&apos;m{' '}
+              {t.hero.greeting}{' '}
               <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block gradient-text-animated">
-                {/* ✏️ PLACEHOLDER: Replace with your name */}
-                Your Name
+                {t.hero.name}
               </span>
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-foreground mb-3 font-semibold">
-              <Typewriter texts={roles} />
+              <Typewriter texts={t.hero.roles} />
             </p>
 
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-              {/* ✏️ PLACEHOLDER: Replace with your tagline */}
-              Passionate about building elegant solutions to complex problems.
-              Specializing in full-stack development, cloud architecture, and
-              creating impactful user experiences.
+              {t.hero.tagline}
             </p>
 
             {/* CTA buttons - clear visual hierarchy */}
@@ -202,7 +191,7 @@ export default function Hero() {
               >
                 {/* Shimmer effect */}
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_3s_infinite]" />
-                View My Work
+                {t.hero.viewWork}
                 <ArrowDown className="w-5 h-5" />
               </Button>
               {/* Secondary CTA - medium emphasis */}
@@ -217,7 +206,7 @@ export default function Hero() {
                 }
               >
                 <Mail className="w-4 h-4" />
-                Get In Touch
+                {t.hero.getInTouch}
               </Button>
               {/* Tertiary CTA - subtle */}
               <Button
@@ -227,12 +216,12 @@ export default function Hero() {
                 onClick={() => {
                   const link = document.createElement('a')
                   link.href = '/resume.pdf'
-                  link.download = 'YourName_Resume.pdf'
+                  link.download = t.hero.downloadFilename
                   link.click()
                 }}
               >
                 <Download className="w-4 h-4" />
-                Download CV
+                {t.hero.downloadCV}
               </Button>
             </div>
 

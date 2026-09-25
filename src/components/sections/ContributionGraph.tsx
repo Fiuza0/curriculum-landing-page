@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useMemo } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { GitCommitHorizontal } from 'lucide-react'
+import { useLanguage } from '@/hooks/use-language'
 
 // Generate contribution data for the last 52 weeks
 function generateContributions() {
@@ -63,6 +64,7 @@ const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
 const dayLabels = ['', 'Mon', '', 'Wed', '', 'Fri', '']
 
 export default function ContributionGraph() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -105,12 +107,12 @@ export default function ContributionGraph() {
         >
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
             <GitCommitHorizontal className="w-3.5 h-3.5 mr-1.5" />
-            Activity
+            {t.contributions.badge}
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Open Source Activity</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t.contributions.title}</h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            My contribution history across open source projects and personal repositories.
+            {t.contributions.subtitle}
           </p>
         </motion.div>
 
@@ -201,17 +203,17 @@ export default function ContributionGraph() {
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <GitCommitHorizontal className="w-4 h-4 text-emerald-500" />
                 <span className="font-medium text-foreground">{totalCount.toLocaleString()}</span>
-                contributions in the last year
+                {t.contributions.inLastYear}
               </div>
               <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <span>Less</span>
+                <span>{t.contributions.legendLess}</span>
                 {[0, 1, 2, 3, 4, 5].map((level) => (
                   <div
                     key={level}
                     className={`w-[10px] h-[10px] rounded-[2px] ${getCellColor(level)} ${getCellDarkColor(level)}`}
                   />
                 ))}
-                <span>More</span>
+                <span>{t.contributions.legendMore}</span>
               </div>
             </div>
           </div>

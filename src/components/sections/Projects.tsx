@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState, useCallback } from 'react'
+import { useRef, useState } from 'react'
 import {
   ExternalLink,
   Github,
@@ -17,6 +17,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useLanguage } from '@/hooks/use-language'
 
 const projectIcons = [Monitor, BarChart3, MessageSquare, Terminal, Smartphone, Blocks]
 const projectGradients = [
@@ -30,9 +31,6 @@ const projectGradients = [
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description:
-      'A full-stack e-commerce solution with real-time inventory management, payment processing, and an admin dashboard. Handles 10K+ daily transactions.',
     tech: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Redis'],
     image: '/project-1.jpg',
     github: '#',
@@ -40,9 +38,6 @@ const projects = [
     featured: true,
   },
   {
-    title: 'AI Analytics Dashboard',
-    description:
-      'An intelligent analytics platform that leverages ML models to provide predictive insights and automated reporting for business metrics.',
     tech: ['React', 'Python', 'TensorFlow', 'D3.js', 'FastAPI'],
     image: '/project-2.jpg',
     github: '#',
@@ -50,9 +45,6 @@ const projects = [
     featured: true,
   },
   {
-    title: 'Real-Time Chat Application',
-    description:
-      'A scalable chat platform supporting WebSocket connections, file sharing, and end-to-end encryption. Built for enterprise communication.',
     tech: ['Next.js', 'Socket.io', 'MongoDB', 'Docker', 'AWS'],
     image: '/project-3.jpg',
     github: '#',
@@ -60,9 +52,6 @@ const projects = [
     featured: false,
   },
   {
-    title: 'DevOps Automation Toolkit',
-    description:
-      'A CLI toolkit that automates deployment pipelines, infrastructure provisioning, and monitoring setup for cloud-native applications.',
     tech: ['Go', 'Terraform', 'Kubernetes', 'GitHub Actions'],
     image: '/project-4.jpg',
     github: '#',
@@ -70,9 +59,6 @@ const projects = [
     featured: false,
   },
   {
-    title: 'Mobile Fitness Tracker',
-    description:
-      'A cross-platform mobile app with workout tracking, nutrition planning, and social features. 50K+ active users.',
     tech: ['React Native', 'Node.js', 'Firebase', 'Redux'],
     image: '/project-5.jpg',
     github: '#',
@@ -80,9 +66,6 @@ const projects = [
     featured: false,
   },
   {
-    title: 'Open Source UI Component Library',
-    description:
-      'A comprehensive React component library with 50+ accessible components, theming support, and detailed documentation.',
     tech: ['React', 'Storybook', 'Radix UI', 'Tailwind CSS'],
     image: '/project-6.jpg',
     github: '#',
@@ -99,6 +82,7 @@ export default function Projects() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [showAll, setShowAll] = useState(false)
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
+  const { t } = useLanguage()
 
   const filteredProjects = projects.filter((p) => {
     if (activeFilter && !p.tech.includes(activeFilter)) return false
@@ -127,15 +111,14 @@ export default function Projects() {
         >
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
             <Sparkles className="w-3.5 h-3.5 mr-1.5" />
-            Portfolio
+            {t.projects.badge}
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Featured Projects
+            {t.projects.title}
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A selection of projects I&apos;ve built that showcase my skills and
-            passion for software development.
+            {t.projects.subtitle}
           </p>
         </motion.div>
 
@@ -175,12 +158,14 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => {
-            const ProjectIcon = projectIcons[projects.indexOf(project) % projectIcons.length]
-            const gradient = projectGradients[projects.indexOf(project) % projectGradients.length]
+            const projectIndex = projects.indexOf(project)
+            const ProjectIcon = projectIcons[projectIndex % projectIcons.length]
+            const item = t.projects.items[projectIndex]
+            const gradient = projectGradients[projectIndex % projectGradients.length]
 
             return (
               <motion.div
-                key={project.title}
+                key={projectIndex}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -210,7 +195,7 @@ export default function Projects() {
                     {/* Actual project screenshot */}
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     {/* Subtle gradient overlay at bottom */}
@@ -237,32 +222,30 @@ export default function Projects() {
                     {/* Featured badge */}
                     {project.featured && (
                       <Badge className="absolute top-3 right-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-0 shadow-md">
-                        Featured
+                        {t.projects.featured}
                       </Badge>
                     )}
                   </div>
 
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                      {/* ✏️ PLACEHOLDER: Replace with your project name */}
-                      {project.title}
+                      {item.title}
                     </h3>
                     <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                      {/* ✏️ PLACEHOLDER: Replace with your project description */}
-                      {project.description}
+                      {item.description}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.map((t) => (
+                      {project.tech.map((tech) => (
                         <Badge
-                          key={t}
+                          key={tech}
                           variant="secondary"
                           className={`text-xs ${
-                            activeFilter === t
+                            activeFilter === tech
                               ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400'
                               : ''
                           }`}
                         >
-                          {t}
+                          {tech}
                         </Badge>
                       ))}
                     </div>
@@ -275,7 +258,7 @@ export default function Projects() {
                       >
                         <a href={project.demo} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="w-3.5 h-3.5" />
-                          Live Demo
+                          {t.projects.liveDemo}
                         </a>
                       </Button>
                       <Button
@@ -286,7 +269,7 @@ export default function Projects() {
                       >
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                           <Github className="w-3.5 h-3.5" />
-                          Source Code
+                          {t.projects.sourceCode}
                         </a>
                       </Button>
                     </div>
@@ -312,7 +295,7 @@ export default function Projects() {
               className="gap-2 border-emerald-500/20 text-emerald-600 hover:bg-emerald-500/10 hover:text-emerald-600 hover:border-emerald-500/30"
             >
               <Blocks className="w-4 h-4" />
-              View All Projects ({projects.length})
+              {t.projects.viewAll} ({projects.length})
             </Button>
           </motion.div>
         )}
@@ -323,7 +306,7 @@ export default function Projects() {
               size="lg"
               onClick={() => setShowAll(false)}
             >
-              Show Less
+              {t.projects.showLess}
             </Button>
           </div>
         )}

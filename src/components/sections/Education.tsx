@@ -5,44 +5,12 @@ import { useRef } from 'react'
 import { GraduationCap, Award, Calendar, MapPin } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-
-const education = [
-  {
-    degree: 'M.S. Computer Science',
-    school: 'Stanford University',
-    location: 'Stanford, CA',
-    period: '2016 - 2018',
-    gpa: '3.9 / 4.0',
-    highlights: [
-      'Specialization in Distributed Systems',
-      'Research in Machine Learning Optimization',
-      'Teaching Assistant for CS 229',
-    ],
-  },
-  {
-    degree: 'B.S. Computer Science',
-    school: 'UC Berkeley',
-    location: 'Berkeley, CA',
-    period: '2012 - 2016',
-    gpa: '3.8 / 4.0',
-    highlights: [
-      'Dean\'s List - All Semesters',
-      'ACM Programming Team Captain',
-      'Senior Capstone: AI-Powered Code Review Tool',
-    ],
-  },
-]
-
-const certifications = [
-  'AWS Solutions Architect - Professional',
-  'Google Cloud Professional Developer',
-  'Certified Kubernetes Administrator (CKA)',
-  'Meta Front-End Developer Certificate',
-]
+import { useLanguage } from '@/hooks/use-language'
 
 export default function Education() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const { t } = useLanguage()
 
   return (
     <section id="education" className="py-20 sm:py-28 bg-muted/30" ref={ref}>
@@ -54,17 +22,17 @@ export default function Education() {
           className="text-center mb-16"
         >
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
-            Education
+            {t.education.badge}
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Education</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t.education.title}</h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            My academic background and professional certifications.
+            {t.education.subtitle}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-          {education.map((edu, index) => (
+          {t.education.items.map((edu, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -81,11 +49,9 @@ export default function Education() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold mb-1">
-                        {/* ✏️ PLACEHOLDER: Replace with your degree */}
                         {edu.degree}
                       </h3>
                       <p className="font-medium text-emerald-600 dark:text-emerald-400 mb-2">
-                        {/* ✏️ PLACEHOLDER: Replace with your school */}
                         {edu.school}
                       </p>
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-4">
@@ -129,12 +95,12 @@ export default function Education() {
         >
           <h3 className="text-xl font-semibold text-center mb-6 flex items-center justify-center gap-2">
             <Award className="w-5 h-5 text-emerald-500" />
-            Certifications
+            {t.education.certificationsTitle}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {certifications.map((cert, idx) => (
+            {t.education.certifications.map((cert, idx) => (
               <motion.div
-                key={cert}
+                key={idx}
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.3, delay: 0.5 + idx * 0.1 }}

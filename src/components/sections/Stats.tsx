@@ -3,37 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import { Code2, Users, Coffee, GitBranch } from 'lucide-react'
-
-const stats = [
-  {
-    icon: Code2,
-    value: 50,
-    suffix: '+',
-    label: 'Projects Completed',
-    gradient: 'from-emerald-400 to-teal-500',
-  },
-  {
-    icon: Users,
-    value: 2,
-    suffix: 'M+',
-    label: 'Users Impacted',
-    gradient: 'from-teal-400 to-cyan-500',
-  },
-  {
-    icon: GitBranch,
-    value: 1200,
-    suffix: '+',
-    label: 'GitHub Commits',
-    gradient: 'from-cyan-400 to-blue-500',
-  },
-  {
-    icon: Coffee,
-    value: 365,
-    suffix: '∞',
-    label: 'Cups of Coffee',
-    gradient: 'from-amber-400 to-orange-500',
-  },
-]
+import { useLanguage } from '@/hooks/use-language'
 
 function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: string; isInView: boolean }) {
   const [count, setCount] = useState(0)
@@ -62,6 +32,38 @@ function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: s
 export default function Stats() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const { t } = useLanguage()
+
+  const stats = [
+    {
+      icon: Code2,
+      value: 50,
+      suffix: '+',
+      label: t.stats.projects,
+      gradient: 'from-emerald-400 to-teal-500',
+    },
+    {
+      icon: Users,
+      value: 2,
+      suffix: 'M+',
+      label: t.stats.users,
+      gradient: 'from-teal-400 to-cyan-500',
+    },
+    {
+      icon: GitBranch,
+      value: 1200,
+      suffix: '+',
+      label: t.stats.commits,
+      gradient: 'from-cyan-400 to-blue-500',
+    },
+    {
+      icon: Coffee,
+      value: 365,
+      suffix: '∞',
+      label: t.stats.coffee,
+      gradient: 'from-amber-400 to-orange-500',
+    },
+  ]
 
   return (
     <section id="stats" ref={ref} className="relative py-16 sm:py-20 overflow-hidden">
@@ -84,7 +86,7 @@ export default function Stats() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {stats.map((stat, index) => (
             <motion.div
-              key={stat.label}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}

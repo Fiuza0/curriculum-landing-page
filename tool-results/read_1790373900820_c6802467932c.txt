@@ -1,0 +1,849 @@
+     1→export type Locale = 'en' | 'pt'
+     2→
+     3→export const translations = {
+     4→  en: {
+     5→    // ─── Navigation ──────────────────────────────────────────────────────────
+     6→    nav: {
+     7→      about: 'About',
+     8→      skills: 'Skills',
+     9→      experience: 'Experience',
+    10→      projects: 'Projects',
+    11→      learning: 'Learning',
+    12→      contact: 'Contact',
+    13→    },
+    14→
+    15→    // ─── Hero ────────────────────────────────────────────────────────────────
+    16→    hero: {
+    17→      greeting: "Hi, I'm",
+    18→      name: 'Rodrigo Oliveira',
+    19→      location: 'São Paulo, Brazil',
+    20→      roles: [
+    21→        'Software Engineer',
+    22→        'Full-Stack Developer',
+    23→        'Cloud Architect',
+    24→        'UI/UX Enthusiast',
+    25→        'Open Source Contributor',
+    26→      ],
+    27→      tagline:
+    28→        'Passionate about building elegant solutions to complex problems. Specializing in full-stack development, cloud architecture, and creating impactful user experiences.',
+    29→      viewWork: 'View My Work',
+    30→      getInTouch: 'Get In Touch',
+    31→      downloadCV: 'Download CV',
+    32→      downloadFilename: 'RodrigoOliveira_Resume.pdf',
+    33→      available: 'Available',
+    34→    },
+    35→
+    36→    // ─── Stats ───────────────────────────────────────────────────────────────
+    37→    stats: {
+    38→      projects: 'Projects Completed',
+    39→      users: 'Users Impacted',
+    40→      commits: 'GitHub Commits',
+    41→      coffee: 'Cups of Coffee',
+    42→    },
+    43→
+    44→    // ─── About ───────────────────────────────────────────────────────────────
+    45→    about: {
+    46→      badge: 'About Me',
+    47→      title: 'Who I Am',
+    48→      description:
+    49→        "I'm a software engineer with a passion for creating innovative digital solutions. With experience spanning frontend and backend development, I thrive on turning complex challenges into elegant, user-friendly applications. My journey in tech has been driven by curiosity and a commitment to continuous learning.",
+    50→      frontend: {
+    51→        title: 'Frontend Development',
+    52→        description: 'React, Next.js, TypeScript, and modern UI frameworks',
+    53→      },
+    54→      backend: {
+    55→        title: 'Backend & Cloud',
+    56→        description: 'Node.js, Python, AWS, Docker, and microservices',
+    57→      },
+    58→      design: {
+    59→        title: 'UI/UX Design',
+    60→        description: 'User-centered design, accessibility, and responsive layouts',
+    61→      },
+    62→      performance: {
+    63→        title: 'Performance',
+    64→        description: 'Optimization, caching strategies, and scalable architecture',
+    65→      },
+    66→      learnMore: 'Learn more',
+    67→    },
+    68→
+    69→    // ─── Skills ──────────────────────────────────────────────────────────────
+    70→    skills: {
+    71→      badge: 'Skills',
+    72→      title: 'Skills & Expertise',
+    73→      subtitle:
+    74→        'A comprehensive overview of my technical skills and proficiency levels across different domains.',
+    75→      frontend: 'Frontend',
+    76→      backend: 'Backend',
+    77→      devops: 'DevOps',
+    78→      toolsTitle: 'Tools & Platforms',
+    79→    },
+    80→
+    81→    // ─── TechShowcase ────────────────────────────────────────────────────────
+    82→    techShowcase: {
+    83→      badge: 'Stack',
+    84→      title: 'My Tech',
+    85→      titleAccent: 'Universe',
+    86→      subtitle:
+    87→        'The full technology ecosystem I wield daily — from languages and frameworks to cloud infrastructure and data tools — each chosen to ship reliable, scalable software faster.',
+    88→      languages: 'Languages',
+    89→      frameworks: 'Frameworks',
+    90→      cloud: 'Cloud & Infra',
+    91→      data: 'Data & Testing',
+    92→    },
+    93→
+    94→    // ─── Contributions ───────────────────────────────────────────────────────
+    95→    contributions: {
+    96→      badge: 'Activity',
+    97→      title: 'Open Source Activity',
+    98→      subtitle:
+    99→        'My contribution history across open source projects and personal repositories.',
+   100→      legendLess: 'Less',
+   101→      legendMore: 'More',
+   102→      inLastYear: 'contributions in the last year',
+   103→    },
+   104→
+   105→    // ─── Experience ──────────────────────────────────────────────────────────
+   106→    experience: {
+   107→      badge: 'Career',
+   108→      title: 'Experience',
+   109→      subtitle: 'My professional journey building software that makes a difference.',
+   110→      current: 'Current',
+   111→      jobs: [
+   112→        {
+   113→          title: 'Senior Software Engineer',
+   114→          company: 'Tech Corp Inc.',
+   115→          location: 'São Paulo, SP',
+   116→          period: '2022 - Present',
+   117→          description:
+   118→            'Leading the frontend architecture for the core platform. Built micro-frontend infrastructure serving 2M+ users. Mentoring a team of 4 junior engineers.',
+   119→        },
+   120→        {
+   121→          title: 'Software Engineer',
+   122→          company: 'StartupXYZ',
+   123→          location: 'Remote',
+   124→          period: '2020 - 2022',
+   125→          description:
+   126→            'Full-stack development of a SaaS analytics platform. Reduced page load times by 60% and implemented real-time data pipelines.',
+   127→        },
+   128→        {
+   129→          title: 'Junior Software Engineer',
+   130→          company: 'Digital Agency Co.',
+   131→          location: 'São Paulo, SP',
+   132→          period: '2018 - 2020',
+   133→          description:
+   134→            'Developed responsive web applications for enterprise clients. Collaborated with design teams to deliver pixel-perfect implementations.',
+   135→        },
+   136→        {
+   137→          title: 'Software Engineering Intern',
+   138→          company: 'BigTech Ltd.',
+   139→          location: 'Remote',
+   140→          period: 'Summer 2017',
+   141→          description:
+   142→            'Contributed to the internal tooling team, building developer productivity tools and automated testing frameworks.',
+   143→        },
+   144→      ],
+   145→    },
+   146→
+   147→    // ─── Projects ────────────────────────────────────────────────────────────
+   148→    projects: {
+   149→      badge: 'Portfolio',
+   150→      title: 'Featured Projects',
+   151→      subtitle:
+   152→        "A selection of projects I've built that showcase my skills and passion for software development.",
+   153→      viewAll: 'View All Projects',
+   154→      showLess: 'Show Less',
+   155→      liveDemo: 'Live Demo',
+   156→      sourceCode: 'Source Code',
+   157→      featured: 'Featured',
+   158→      items: [
+   159→        {
+   160→          title: 'E-Commerce Platform',
+   161→          description:
+   162→            'A full-stack e-commerce solution with real-time inventory management, payment processing, and an admin dashboard. Handles 10K+ daily transactions.',
+   163→        },
+   164→        {
+   165→          title: 'AI Analytics Dashboard',
+   166→          description:
+   167→            'An intelligent analytics platform that leverages ML models to provide predictive insights and automated reporting for business metrics.',
+   168→        },
+   169→        {
+   170→          title: 'Real-Time Chat Application',
+   171→          description:
+   172→            'A scalable chat platform supporting WebSocket connections, file sharing, and end-to-end encryption. Built for enterprise communication.',
+   173→        },
+   174→        {
+   175→          title: 'DevOps Automation Toolkit',
+   176→          description:
+   177→            'A CLI toolkit that automates deployment pipelines, infrastructure provisioning, and monitoring setup for cloud-native applications.',
+   178→        },
+   179→        {
+   180→          title: 'Mobile Fitness Tracker',
+   181→          description:
+   182→            'A cross-platform mobile app with workout tracking, nutrition planning, and social features. 50K+ active users.',
+   183→        },
+   184→        {
+   185→          title: 'Open Source UI Component Library',
+   186→          description:
+   187→            'A comprehensive React component library with 50+ accessible components, theming support, and detailed documentation.',
+   188→        },
+   189→      ],
+   190→    },
+   191→
+   192→    // ─── Testimonials ────────────────────────────────────────────────────────
+   193→    testimonials: {
+   194→      badge: 'Testimonials',
+   195→      title: 'What People Say',
+   196→      subtitle: "Feedback from colleagues and clients I've worked with.",
+   197→      items: [
+   198→        {
+   199→          quote:
+   200→            'An exceptional engineer who consistently delivers high-quality solutions. Their attention to detail and ability to translate complex requirements into elegant code is remarkable.',
+   201→          name: 'Sarah Johnson',
+   202→          role: 'CTO, TechVentures',
+   203→        },
+   204→        {
+   205→          quote:
+   206→            'Working together was a game-changer for our product. They brought both technical excellence and creative problem-solving that elevated our entire platform.',
+   207→          name: 'Michael Chen',
+   208→          role: 'Product Manager, InnovateCo',
+   209→        },
+   210→        {
+   211→          quote:
+   212→            "One of the most talented engineers I've had the pleasure of working with. Their code is clean, well-documented, and always ships on time.",
+   213→          name: 'Emily Rodriguez',
+   214→          role: 'Engineering Lead, DataFlow',
+   215→        },
+   216→      ],
+   217→    },
+   218→
+   219→    // ─── Education ───────────────────────────────────────────────────────────
+   220→    education: {
+   221→      badge: 'Education',
+   222→      title: 'Education',
+   223→      subtitle: 'My academic background and professional certifications.',
+   224→      certificationsTitle: 'Certifications',
+   225→      items: [
+   226→        {
+   227→          degree: 'M.S. Computer Science',
+   228→          school: 'Stanford University',
+   229→          location: 'Stanford, CA',
+   230→          period: '2016 - 2018',
+   231→          gpa: '3.9 / 4.0',
+   232→          highlights: [
+   233→            'Specialization in Distributed Systems',
+   234→            'Research in Machine Learning Optimization',
+   235→            'Teaching Assistant for CS 229',
+   236→          ],
+   237→        },
+   238→        {
+   239→          degree: 'B.S. Computer Science',
+   240→          school: 'UC Berkeley',
+   241→          location: 'Berkeley, CA',
+   242→          period: '2012 - 2016',
+   243→          gpa: '3.8 / 4.0',
+   244→          highlights: [
+   245→            "Dean's List - All Semesters",
+   246→            'ACM Programming Team Captain',
+   247→            'Senior Capstone: AI-Powered Code Review Tool',
+   248→          ],
+   249→        },
+   250→      ],
+   251→      certifications: [
+   252→        'AWS Solutions Architect - Professional',
+   253→        'Google Cloud Professional Developer',
+   254→        'Certified Kubernetes Administrator (CKA)',
+   255→        'Meta Front-End Developer Certificate',
+   256→      ],
+   257→    },
+   258→
+   259→    // ─── Learning ────────────────────────────────────────────────────────────
+   260→    learning: {
+   261→      badge: 'Growth',
+   262→      title: 'Always Learning',
+   263→      subtitle:
+   264→        "Continuous learning is at the heart of great engineering. Here's what I'm currently reading, watching, and exploring to stay sharp and grow every day.",
+   265→      progress: 'Progress',
+   266→      viewFullList: 'View Full List',
+   267→      items: [
+   268→        {
+   269→          title: 'System Design Interview',
+   270→          type: 'Book',
+   271→          author: 'Alex Xu',
+   272→          count: undefined,
+   273→        },
+   274→        {
+   275→          title: 'Building Microservices',
+   276→          type: 'Book',
+   277→          author: 'Sam Newman',
+   278→          count: undefined,
+   279→        },
+   280→        {
+   281→          title: 'Syntax FM Podcast',
+   282→          type: 'Podcast',
+   283→          author: 'Weekly episodes',
+   284→          count: '40 episodes listened',
+   285→        },
+   286→        {
+   287→          title: 'Fireship',
+   288→          type: 'Video',
+   289→          author: '100 Seconds of Code',
+   290→          count: 'Daily watcher',
+   291→        },
+   292→        {
+   293→          title: 'Rust Programming',
+   294→          type: 'Course',
+   295→          author: 'Noam Goren',
+   296→          count: undefined,
+   297→        },
+   298→        {
+   299→          title: 'Advanced TypeScript',
+   300→          type: 'Course',
+   301→          author: 'Matt Pocock',
+   302→          count: undefined,
+   303→        },
+   304→      ],
+   305→    },
+   306→
+   307→    // ─── Blog ────────────────────────────────────────────────────────────────
+   308→    blog: {
+   309→      badge: 'Blog',
+   310→      title: 'Latest Articles',
+   311→      subtitle:
+   312→        'Sharing insights, tutorials, and lessons learned from building production-grade software.',
+   313→      readArticle: 'Read article',
+   314→      viewAll: 'View All Articles',
+   315→      items: [
+   316→        {
+   317→          title: 'Building Scalable Micro-Frontends with Next.js',
+   318→          excerpt:
+   319→            'A deep dive into architecting micro-frontend applications using Module Federation, Next.js, and TypeScript for enterprise-scale deployments.',
+   320→        },
+   321→        {
+   322→          title: 'Optimizing React Performance: Beyond React.memo',
+   323→          excerpt:
+   324→            'Advanced performance optimization techniques including virtualization, state colocation, and custom hooks that go beyond basic memoization strategies.',
+   325→        },
+   326→        {
+   327→          title: 'Designing Effective API Rate Limiting Strategies',
+   328→          excerpt:
+   329→            'How to implement token bucket, sliding window, and fixed window rate limiting algorithms with Redis and distributed systems.',
+   330→        },
+   331→      ],
+   332→    },
+   333→
+   334→    // ─── Terminal ─────────────────────────────────────────────────────────────
+   335→    terminal: {
+   336→      badge: 'Interactive',
+   337→      title: 'Developer at a Glance',
+   338→      subtitle: 'Quick terminal-style overview of development setup and stats',
+   339→      stats: {
+   340→        lines: 'Lines of Code',
+   341→        projects: 'Projects Shipped',
+   342→        countries: 'Countries Reached',
+   343→        uptime: 'Uptime Record',
+   344→      },
+   345→    },
+   346→
+   347→    // ─── CodePlayground ──────────────────────────────────────────────────────
+   348→    playground: {
+   349→      badge: 'Live Code',
+   350→      title: 'Code Snippets',
+   351→      subtitle: 'Real code from real projects',
+   352→      stats: {
+   353→        snippets: '50+ Snippets',
+   354→        languages: '10 Languages',
+   355→        openSource: 'Open Source',
+   356→      },
+   357→    },
+   358→
+   359→    // ─── CTA ─────────────────────────────────────────────────────────────────
+   360→    cta: {
+   361→      title1: 'Ready to Build Something',
+   362→      title2: 'Amazing Together?',
+   363→      subtitle:
+   364→        "Whether you need a full-stack application, a performance audit, or technical consulting — I'm here to help turn your vision into reality.",
+   365→      button1: "Let's Talk",
+   366→      button2: 'View My Work',
+   367→    },
+   368→
+   369→    // ─── Contact ─────────────────────────────────────────────────────────────
+   370→    contact: {
+   371→      badge: 'Contact',
+   372→      title: 'Get In Touch',
+   373→      subtitle:
+   374→        "I'm always open to discussing new projects, opportunities, or partnerships. Let's build something amazing together!",
+   375→      email: 'Email',
+   376→      phone: 'Phone',
+   377→      location: 'Location',
+   378→      formName: 'Name',
+   379→      formEmail: 'Email',
+   380→      formSubject: 'Subject',
+   381→      formMessage: 'Message',
+   382→      formSubmit: 'Send Message',
+   383→      sent: 'Message Sent!',
+   384→      sentMessage: "Thank you for reaching out. I'll get back to you soon!",
+   385→      followMe: 'Follow me',
+   386→    },
+   387→
+   388→    // ─── Footer ──────────────────────────────────────────────────────────────
+   389→    footer: {
+   390→      brandDescription:
+   391→        'Software Engineer passionate about building elegant solutions to complex problems. Always open to new challenges and collaborations.',
+   392→      navigation: 'Navigation',
+   393→      social: 'Social',
+   394→      copyright: 'All rights reserved.',
+   395→      madeWith: 'Crafted with',
+   396→      madeWithAnd: 'and',
+   397→    },
+   398→
+   399→    // ─── Command Palette ─────────────────────────────────────────────────────
+   400→    cmdk: {
+   401→      placeholder: 'Type a command or search...',
+   402→      navigation: 'Navigation',
+   403→      actions: 'Actions',
+   404→      noResults: 'No results found for',
+   405→      toggleDark: 'Toggle Dark Mode',
+   406→      downloadCV: 'Download CV',
+   407→      viewSource: 'View Source Code',
+   408→      scrollTop: 'Scroll to Top',
+   409→      navigate: 'navigate',
+   410→      select: 'select',
+   411→      close: 'close',
+   412→    },
+   413→
+   414→    // ─── Radar Chart ─────────────────────────────────────────────────────────
+   415→    radar: {
+   416→      badge: 'Visualization',
+   417→      title: 'Skill Radar',
+   418→      subtitle:
+   419→        'A multi-dimensional view of my core competencies, visualized as an interactive radar chart that reveals proficiency across every key discipline.',
+   420→      breakdown: 'Skill Breakdown',
+   421→    },
+   422→  },
+   423→
+   424→  // ═══════════════════════════════════════════════════════════════════════════
+   425→  // PORTUGUÊS (BR)
+   426→  // ═══════════════════════════════════════════════════════════════════════════
+   427→  pt: {
+   428→    // ─── Navigation ──────────────────────────────────────────────────────────
+   429→    nav: {
+   430→      about: 'Sobre',
+   431→      skills: 'Habilidades',
+   432→      experience: 'Experiência',
+   433→      projects: 'Projetos',
+   434→      learning: 'Aprendizado',
+   435→      contact: 'Contato',
+   436→    },
+   437→
+   438→    // ─── Hero ────────────────────────────────────────────────────────────────
+   439→    hero: {
+   440→      greeting: 'Olá, eu sou',
+   441→      name: 'Rodrigo Oliveira',
+   442→      location: 'São Paulo, Brasil',
+   443→      roles: [
+   444→        'Engenheiro de Software',
+   445→        'Desenvolvedor Full-Stack',
+   446→        'Arquiteto Cloud',
+   447→        'Entusiasta UI/UX',
+   448→        'Contribuidor Open Source',
+   449→      ],
+   450→      tagline:
+   451→        'Apaixonado por construir soluções elegantes para problemas complexos. Especializado em desenvolvimento full-stack, arquitetura cloud e criação de experiências de usuário impactantes.',
+   452→      viewWork: 'Ver Meu Trabalho',
+   453→      getInTouch: 'Entre em Contato',
+   454→      downloadCV: 'Baixar CV',
+   455→      downloadFilename: 'RodrigoOliveira_Curriculo.pdf',
+   456→      available: 'Disponível',
+   457→    },
+   458→
+   459→    // ─── Stats ───────────────────────────────────────────────────────────────
+   460→    stats: {
+   461→      projects: 'Projetos Concluídos',
+   462→      users: 'Usuários Impactados',
+   463→      commits: 'Commits no GitHub',
+   464→      coffee: 'Xícaras de Café',
+   465→    },
+   466→
+   467→    // ─── About ───────────────────────────────────────────────────────────────
+   468→    about: {
+   469→      badge: 'Sobre Mim',
+   470→      title: 'Quem Eu Sou',
+   471→      description:
+   472→        'Sou um engenheiro de software apaixonado por criar soluções digitais inovadoras. Com experiência em desenvolvimento frontend e backend, prospero ao transformar desafios complexos em aplicações elegantes e amigáveis. Minha trajetória na tecnologia é impulsionada pela curiosidade e pelo compromisso com o aprendizado contínuo.',
+   473→      frontend: {
+   474→        title: 'Desenvolvimento Frontend',
+   475→        description: 'React, Next.js, TypeScript e frameworks UI modernos',
+   476→      },
+   477→      backend: {
+   478→        title: 'Backend & Cloud',
+   479→        description: 'Node.js, Python, AWS, Docker e microsserviços',
+   480→      },
+   481→      design: {
+   482→        title: 'Design UI/UX',
+   483→        description: 'Design centrado no usuário, acessibilidade e layouts responsivos',
+   484→      },
+   485→      performance: {
+   486→        title: 'Performance',
+   487→        description: 'Otimização, estratégias de cache e arquitetura escalável',
+   488→      },
+   489→      learnMore: 'Saiba mais',
+   490→    },
+   491→
+   492→    // ─── Skills ──────────────────────────────────────────────────────────────
+   493→    skills: {
+   494→      badge: 'Habilidades',
+   495→      title: 'Habilidades e Expertise',
+   496→      subtitle:
+   497→        'Uma visão completa das minhas habilidades técnicas e níveis de proficiência em diferentes domínios.',
+   498→      frontend: 'Frontend',
+   499→      backend: 'Backend',
+   500→      devops: 'DevOps',
+   501→      toolsTitle: 'Ferramentas e Plataformas',
+   502→    },
+   503→
+   504→    // ─── TechShowcase ────────────────────────────────────────────────────────
+   505→    techShowcase: {
+   506→      badge: 'Stack',
+   507→      title: 'Meu Tech',
+   508→      titleAccent: 'Universo',
+   509→      subtitle:
+   510→        'O ecossistema tecnológico completo que utilizo diariamente — de linguagens e frameworks até infraestrutura cloud e ferramentas de dados — cada um escolhido para entregar software confiável e escalável mais rápido.',
+   511→      languages: 'Linguagens',
+   512→      frameworks: 'Frameworks',
+   513→      cloud: 'Cloud e Infra',
+   514→      data: 'Dados e Testes',
+   515→    },
+   516→
+   517→    // ─── Contributions ───────────────────────────────────────────────────────
+   518→    contributions: {
+   519→      badge: 'Atividade',
+   520→      title: 'Atividade Open Source',
+   521→      subtitle:
+   522→        'Meu histórico de contribuições em projetos open source e repositórios pessoais.',
+   523→      legendLess: 'Menos',
+   524→      legendMore: 'Mais',
+   525→      inLastYear: 'contribuições no último ano',
+   526→    },
+   527→
+   528→    // ─── Experience ──────────────────────────────────────────────────────────
+   529→    experience: {
+   530→      badge: 'Carreira',
+   531→      title: 'Experiência',
+   532→      subtitle: 'Minha trajetória profissional construindo software que faz a diferença.',
+   533→      current: 'Atual',
+   534→      jobs: [
+   535→        {
+   536→          title: 'Engenheiro de Software Sênior',
+   537→          company: 'Tech Corp Inc.',
+   538→          location: 'São Paulo, SP',
+   539→          period: '2022 - Presente',
+   540→          description:
+   541→            'Liderando a arquitetura frontend da plataforma principal. Construí infraestrutura de micro-frontends atendendo mais de 2M de usuários. Mentoria de uma equipe de 4 engenheiros juniores.',
+   542→        },
+   543→        {
+   544→          title: 'Engenheiro de Software',
+   545→          company: 'StartupXYZ',
+   546→          location: 'Remoto',
+   547→          period: '2020 - 2022',
+   548→          description:
+   549→            'Desenvolvimento full-stack de uma plataforma SaaS de analytics. Reduzi tempos de carregamento em 60% e implementei pipelines de dados em tempo real.',
+   550→        },
+   551→        {
+   552→          title: 'Engenheiro de Software Júnior',
+   553→          company: 'Digital Agency Co.',
+   554→          location: 'São Paulo, SP',
+   555→          period: '2018 - 2020',
+   556→          description:
+   557→            'Desenvolvimento de aplicações web responsivas para clientes enterprise. Colaborei com equipes de design para entregar implementações pixel-perfect.',
+   558→        },
+   559→        {
+   560→          title: 'Estagiário em Engenharia de Software',
+   561→          company: 'BigTech Ltd.',
+   562→          location: 'Remoto',
+   563→          period: 'Verão 2017',
+   564→          description:
+   565→            'Contribuí para a equipe de ferramentas internas, construindo ferramentas de produtividade para desenvolvedores e frameworks de testes automatizados.',
+   566→        },
+   567→      ],
+   568→    },
+   569→
+   570→    // ─── Projects ────────────────────────────────────────────────────────────
+   571→    projects: {
+   572→      badge: 'Portfólio',
+   573→      title: 'Projetos em Destaque',
+   574→      subtitle:
+   575→        'Uma seleção de projetos que construí, demonstrando minhas habilidades e paixão pelo desenvolvimento de software.',
+   576→      viewAll: 'Ver Todos os Projetos',
+   577→      showLess: 'Ver Menos',
+   578→      liveDemo: 'Demo ao Vivo',
+   579→      sourceCode: 'Código Fonte',
+   580→      featured: 'Destaque',
+   581→      items: [
+   582→        {
+   583→          title: 'Plataforma de E-Commerce',
+   584→          description:
+   585→            'Uma solução e-commerce full-stack com gerenciamento de inventário em tempo real, processamento de pagamentos e dashboard administrativo. Processa mais de 10K transações diárias.',
+   586→        },
+   587→        {
+   588→          title: 'Dashboard de Analytics com IA',
+   589→          description:
+   590→            'Uma plataforma inteligente de analytics que utiliza modelos de ML para fornecer insights preditivos e relatórios automatizados de métricas de negócio.',
+   591→        },
+   592→        {
+   593→          title: 'Aplicação de Chat em Tempo Real',
+   594→          description:
+   595→            'Uma plataforma de chat escalável com suporte a conexões WebSocket, compartilhamento de arquivos e criptografia ponta a ponta. Construída para comunicação enterprise.',
+   596→        },
+   597→        {
+   598→          title: 'Toolkit de Automação DevOps',
+   599→          description:
+   600→            'Um toolkit CLI que automatiza pipelines de deploy, provisionamento de infraestrutura e configuração de monitoramento para aplicações cloud-native.',
+   601→        },
+   602→        {
+   603→          title: 'App Fitness Móvel',
+   604→          description:
+   605→            'Um app móvel multiplataforma com rastreamento de treinos, planejamento nutricional e recursos sociais. Mais de 50K usuários ativos.',
+   606→        },
+   607→        {
+   608→          title: 'Biblioteca de Componentes UI Open Source',
+   609→          description:
+   610→            'Uma biblioteca React abrangente com mais de 50 componentes acessíveis, suporte a temas e documentação detalhada.',
+   611→        },
+   612→      ],
+   613→    },
+   614→
+   615→    // ─── Testimonials ────────────────────────────────────────────────────────
+   616→    testimonials: {
+   617→      badge: 'Depoimentos',
+   618→      title: 'O Que Dizem Sobre Mim',
+   619→      subtitle: 'Feedback de colegas e clientes com quem trabalhei.',
+   620→      items: [
+   621→        {
+   622→          quote:
+   623→            'Um engenheiro excepcional que entrega consistentemente soluções de alta qualidade. Sua atenção aos detalhes e capacidade de traduzir requisitos complexos em código elegante é notável.',
+   624→          name: 'Sarah Johnson',
+   625→          role: 'CTO, TechVentures',
+   626→        },
+   627→        {
+   628→          quote:
+   629→            'Trabalhar juntos foi um divisor de águas para nosso produto. Trouxeram tanto excelência técnica quanto resolução criativa de problemas que elevaram toda a nossa plataforma.',
+   630→          name: 'Michael Chen',
+   631→          role: 'Gerente de Produto, InnovateCo',
+   632→        },
+   633→        {
+   634→          quote:
+   635→            'Um dos engenheiros mais talentosos com quem tive o prazer de trabalhar. Seu código é limpo, bem documentado e sempre entregue no prazo.',
+   636→          name: 'Emily Rodriguez',
+   637→          role: 'Líder de Engenharia, DataFlow',
+   638→        },
+   639→      ],
+   640→    },
+   641→
+   642→    // ─── Education ───────────────────────────────────────────────────────────
+   643→    education: {
+   644→      badge: 'Educação',
+   645→      title: 'Educação',
+   646→      subtitle: 'Minha formação acadêmica e certificações profissionais.',
+   647→      certificationsTitle: 'Certificações',
+   648→      items: [
+   649→        {
+   650→          degree: 'Mestrado em Ciência da Computação',
+   651→          school: 'Stanford University',
+   652→          location: 'Stanford, CA',
+   653→          period: '2016 - 2018',
+   654→          gpa: '3.9 / 4.0',
+   655→          highlights: [
+   656→            'Especialização em Sistemas Distribuídos',
+   657→            'Pesquisa em Otimização de Machine Learning',
+   658→            'Monitor da disciplina CS 229',
+   659→          ],
+   660→        },
+   661→        {
+   662→          degree: 'Bacharelado em Ciência da Computação',
+   663→          school: 'UC Berkeley',
+   664→          location: 'Berkeley, CA',
+   665→          period: '2012 - 2016',
+   666→          gpa: '3.8 / 4.0',
+   667→          highlights: [
+   668→            'Lista de Honra — Todos os Semestres',
+   669→            'Capitão da Equipe de Programação ACM',
+   670→            'Projeto Final: Ferramenta de Code Review com IA',
+   671→          ],
+   672→        },
+   673→      ],
+   674→      certifications: [
+   675→        'AWS Solutions Architect — Professional',
+   676→        'Google Cloud Professional Developer',
+   677→        'Certified Kubernetes Administrator (CKA)',
+   678→        'Certificado Meta Front-End Developer',
+   679→      ],
+   680→    },
+   681→
+   682→    // ─── Learning ────────────────────────────────────────────────────────────
+   683→    learning: {
+   684→      badge: 'Crescimento',
+   685→      title: 'Sempre Aprendendo',
+   686→      subtitle:
+   687→        'O aprendizado contínuo está no coração da grande engenharia. Aqui está o que estou lendo, assistindo e explorando para me manter afiado e crescer a cada dia.',
+   688→      progress: 'Progresso',
+   689→      viewFullList: 'Ver Lista Completa',
+   690→      items: [
+   691→        {
+   692→          title: 'System Design Interview',
+   693→          type: 'Livro',
+   694→          author: 'Alex Xu',
+   695→          count: undefined,
+   696→        },
+   697→        {
+   698→          title: 'Building Microservices',
+   699→          type: 'Livro',
+   700→          author: 'Sam Newman',
+   701→          count: undefined,
+   702→        },
+   703→        {
+   704→          title: 'Syntax FM Podcast',
+   705→          type: 'Podcast',
+   706→          author: 'Episódios semanais',
+   707→          count: '40 episódios ouvidos',
+   708→        },
+   709→        {
+   710→          title: 'Fireship',
+   711→          type: 'Vídeo',
+   712→          author: '100 Seconds of Code',
+   713→          count: 'Assistente diário',
+   714→        },
+   715→        {
+   716→          title: 'Rust Programming',
+   717→          type: 'Curso',
+   718→          author: 'Noam Goren',
+   719→          count: undefined,
+   720→        },
+   721→        {
+   722→          title: 'Advanced TypeScript',
+   723→          type: 'Curso',
+   724→          author: 'Matt Pocock',
+   725→          count: undefined,
+   726→        },
+   727→      ],
+   728→    },
+   729→
+   730→    // ─── Blog ────────────────────────────────────────────────────────────────
+   731→    blog: {
+   732→      badge: 'Blog',
+   733→      title: 'Últimos Artigos',
+   734→      subtitle:
+   735→        'Compartilhando insights, tutoriais e lições aprendidas na construção de software de nível produtivo.',
+   736→      readArticle: 'Ler artigo',
+   737→      viewAll: 'Ver Todos os Artigos',
+   738→      items: [
+   739→        {
+   740→          title: 'Construindo Micro-Frontends Escaláveis com Next.js',
+   741→          excerpt:
+   742→            'Um mergulho profundo na arquitetura de aplicações micro-frontend usando Module Federation, Next.js e TypeScript para deploys em escala enterprise.',
+   743→        },
+   744→        {
+   745→          title: 'Otimizando Performance React: Além do React.memo',
+   746→          excerpt:
+   747→            'Técnicas avançadas de otimização de performance incluindo virtualização, colocalização de estado e hooks customizados que vão além de estratégias básicas de memoização.',
+   748→        },
+   749→        {
+   750→          title: 'Projetando Estratégias Eficazes de Rate Limiting para APIs',
+   751→          excerpt:
+   752→            'Como implementar algoritmos de rate limiting com token bucket, sliding window e fixed window usando Redis e sistemas distribuídos.',
+   753→        },
+   754→      ],
+   755→    },
+   756→
+   757→    // ─── Terminal ─────────────────────────────────────────────────────────────
+   758→    terminal: {
+   759→      badge: 'Interativo',
+   760→      title: 'Dev num Relance',
+   761→      subtitle: 'Visão geral rápida no estilo terminal do setup e estatísticas de desenvolvimento',
+   762→      stats: {
+   763→        lines: 'Linhas de Código',
+   764→        projects: 'Projetos Entregues',
+   765→        countries: 'Países Alcançados',
+   766→        uptime: 'Recorde de Uptime',
+   767→      },
+   768→    },
+   769→
+   770→    // ─── CodePlayground ──────────────────────────────────────────────────────
+   771→    playground: {
+   772→      badge: 'Código ao Vivo',
+   773→      title: 'Snippets de Código',
+   774→      subtitle: 'Código real de projetos reais',
+   775→      stats: {
+   776→        snippets: '50+ Snippets',
+   777→        languages: '10 Linguagens',
+   778→        openSource: 'Open Source',
+   779→      },
+   780→    },
+   781→
+   782→    // ─── CTA ─────────────────────────────────────────────────────────────────
+   783→    cta: {
+   784→      title1: 'Pronto para Construir Algo',
+   785→      title2: 'Incrível Juntos?',
+   786→      subtitle:
+   787→        'Seja uma aplicação full-stack, uma auditoria de performance ou consultoria técnica — estou aqui para ajudar a transformar sua visão em realidade.',
+   788→      button1: 'Vamos Conversar',
+   789→      button2: 'Ver Meu Trabalho',
+   790→    },
+   791→
+   792→    // ─── Contact ─────────────────────────────────────────────────────────────
+   793→    contact: {
+   794→      badge: 'Contato',
+   795→      title: 'Entre em Contato',
+   796→      subtitle:
+   797→        'Estou sempre aberto a discutir novos projetos, oportunidades ou parcerias. Vamos construir algo incrível juntos!',
+   798→      email: 'E-mail',
+   799→      phone: 'Telefone',
+   800→      location: 'Localização',
+   801→      formName: 'Nome',
+   802→      formEmail: 'E-mail',
+   803→      formSubject: 'Assunto',
+   804→      formMessage: 'Mensagem',
+   805→      formSubmit: 'Enviar Mensagem',
+   806→      sent: 'Mensagem Enviada!',
+   807→      sentMessage: 'Obrigado pelo contato. Responderei em breve!',
+   808→      followMe: 'Me siga',
+   809→    },
+   810→
+   811→    // ─── Footer ──────────────────────────────────────────────────────────────
+   812→    footer: {
+   813→      brandDescription:
+   814→        'Engenheiro de Software apaixonado por construir soluções elegantes para problemas complexos. Sempre aberto a novos desafios e colaborações.',
+   815→      navigation: 'Navegação',
+   816→      social: 'Social',
+   817→      copyright: 'Todos os direitos reservados.',
+   818→      madeWith: 'Feito com',
+   819→      madeWithAnd: 'e',
+   820→    },
+   821→
+   822→    // ─── Command Palette ─────────────────────────────────────────────────────
+   823→    cmdk: {
+   824→      placeholder: 'Digite um comando ou pesquise...',
+   825→      navigation: 'Navegação',
+   826→      actions: 'Ações',
+   827→      noResults: 'Nenhum resultado encontrado para',
+   828→      toggleDark: 'Alternar Modo Escuro',
+   829→      downloadCV: 'Baixar CV',
+   830→      viewSource: 'Ver Código Fonte',
+   831→      scrollTop: 'Voltar ao Topo',
+   832→      navigate: 'navegar',
+   833→      select: 'selecionar',
+   834→      close: 'fechar',
+   835→    },
+   836→
+   837→    // ─── Radar Chart ─────────────────────────────────────────────────────────
+   838→    radar: {
+   839→      badge: 'Visualização',
+   840→      title: 'Radar de Habilidades',
+   841→      subtitle:
+   842→        'Uma visão multidimensional das minhas competências centrais, visualizada como um radar interativo que revela a proficiência em cada disciplina-chave.',
+   843→      breakdown: 'Detalhamento',
+   844→    },
+   845→  },
+   846→}
+   847→
+   848→export type Translations = typeof translations.en
+   849→

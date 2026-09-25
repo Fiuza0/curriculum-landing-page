@@ -2,17 +2,18 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Code2, Moon, Sun } from 'lucide-react'
+import { Menu, X, Code2, Moon, Sun, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { useLanguage } from '@/hooks/use-language'
 
-const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Learning', href: '#learning' },
-  { label: 'Contact', href: '#contact' },
+const navLinkKeys = [
+  { key: 'about' as const, href: '#about' },
+  { key: 'skills' as const, href: '#skills' },
+  { key: 'experience' as const, href: '#experience' },
+  { key: 'projects' as const, href: '#projects' },
+  { key: 'learning' as const, href: '#learning' },
+  { key: 'contact' as const, href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -21,6 +22,7 @@ export default function Navbar() {
   const [dark, setDark] = useState(false)
   const [scrollPercent, setScrollPercent] = useState(0)
   const [activeSection, setActiveSection] = useState('')
+  const { locale, t, toggleLanguage } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => {
@@ -49,7 +51,7 @@ export default function Navbar() {
       { rootMargin: '-20% 0px -80% 0px' }
     )
 
-    navLinks.forEach((link) => {
+    navLinkKeys.forEach((link) => {
       const el = document.querySelector(link.href)
       if (el) observer.observe(el)
     })
@@ -62,6 +64,8 @@ export default function Navbar() {
     const el = document.querySelector(href)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
+
+  const isPT = locale === 'pt'
 
   return (
     <>
@@ -100,9 +104,9 @@ export default function Navbar() {
               </span>
             </motion.div>
 
-            {/* Desktop links + dark mode */}
+            {/* Desktop links + language toggle + dark mode */}
             <div className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => {
+              {navLinkKeys.map((link) => {
                 const sectionId = link.href.replace('#', '')
                 const isActive = activeSection === sectionId
                 return (
@@ -117,7 +121,7 @@ export default function Navbar() {
                         : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
-                    {link.label}
+                    {t.nav[link.key]}
                     {isActive && (
                       <motion.div
                         layoutId="nav-indicator"
@@ -140,6 +144,26 @@ export default function Navbar() {
                   ⌘K
                 </Badge>
               </Button>
+              {/* Language toggle */}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleLanguage}
+                className={`gap-1.5 transition-all duration-200 ${isPT ? 'text-emerald-600 dark:text-emerald-400' : 'text-muted-foreground hover:text-foreground'}`}
+                aria-label="Toggle language"
+              >
+                <Badge
+                  variant="outline"
+                  className={`text-[10px] font-mono px-1.5 py-0 h-5 transition-all duration-200 ${
+                    isPT
+                      ? 'border-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/10'
+                      : 'border-border/50 text-muted-foreground bg-transparent'
+                  }`}
+                >
+                  <Globe className="w-2.5 h-2.5 mr-0.5" />
+                  {isPT ? 'PT' : 'EN'}
+                </Badge>
+              </Button>
               <Button
                 variant="ghost"
                 size="icon"
@@ -153,6 +177,16 @@ export default function Navbar() {
 
             {/* Mobile toggle */}
             <div className="flex items-center gap-1 md:hidden">
+              {/* Mobile language toggle */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleLanguage}
+                className={`transition-all duration-200 ${isPT ? 'text-emerald-600 dark:text-emerald-400' : 'text-muted-foreground'}`}
+                aria-label="Toggle language"
+              >
+                <Globe className="w-4 h-4" />
+              </Button>
               <Button
                 variant="ghost"
                 size="icon"
@@ -183,7 +217,7 @@ export default function Navbar() {
               className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
             >
               <div className="px-4 py-4 flex flex-col gap-2">
-                {navLinks.map((link) => {
+                {navLinkKeys.map((link) => {
                   const sectionId = link.href.replace('#', '')
                   const isActive = activeSection === sectionId
                   return (
@@ -197,10 +231,19 @@ export default function Navbar() {
                       }`}
                       onClick={() => handleClick(link.href)}
                     >
-                      {link.label}
+                      {t.nav[link.key]}
                     </Button>
                   )
                 })}
+                {/* Mobile language toggle as full-width button */}
+                <Button
+                  variant="ghost"
+                  onClick={toggleLanguage}
+                  className={`justify-start gap-2 mt-2 ${isPT ? 'text-emerald-600 dark:text-emerald-400' : 'text-muted-foreground'}`}
+                >
+                  <Globe className="w-4 h-4" />
+                  {isPT ? 'PT — Português' : 'EN — English'}
+                </Button>
               </div>
             </motion.div>
           )}

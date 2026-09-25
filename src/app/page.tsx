@@ -1,5 +1,6 @@
 'use client'
 
+import { LanguageProvider } from '@/hooks/use-language'
 import Navbar from '@/components/sections/Navbar'
 import Hero from '@/components/sections/Hero'
 import TechMarquee from '@/components/sections/TechMarquee'
@@ -31,6 +32,7 @@ import CodePlayground from '@/components/sections/CodePlayground'
 
 export default function Home() {
   return (
+    <LanguageProvider>
     <div className="min-h-screen flex flex-col bg-background overflow-x-hidden">
       <PageLoader />
       <CustomCursor />
@@ -103,5 +105,6 @@ export default function Home() {
       <BackToTop />
       <NowPlaying />
     </div>
+    </LanguageProvider>
   )
 }

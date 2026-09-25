@@ -15,59 +15,7 @@ import {
   ArrowUp,
   Search,
 } from 'lucide-react'
-
-// ── Navigation items ──────────────────────────────────────────────
-const navigationItems = [
-  { id: 'about', label: 'About', icon: User, href: '#about' },
-  { id: 'skills', label: 'Skills', icon: Code2, href: '#skills' },
-  { id: 'experience', label: 'Experience', icon: Briefcase, href: '#experience' },
-  { id: 'projects', label: 'Projects', icon: FolderOpen, href: '#projects' },
-  { id: 'learning', label: 'Learning', icon: BookOpen, href: '#learning' },
-  { id: 'contact', label: 'Contact', icon: Mail, href: '#contact' },
-]
-
-// ── Action items ───────────────────────────────────────────────────
-const actionItems = [
-  {
-    id: 'toggle-dark',
-    label: 'Toggle Dark Mode',
-    icon: Moon,
-    shortcut: '⌘D',
-    action: () => {
-      document.documentElement.classList.toggle('dark')
-    },
-  },
-  {
-    id: 'download-cv',
-    label: 'Download CV',
-    icon: Download,
-    shortcut: undefined,
-    action: () => {
-      const a = document.createElement('a')
-      a.href = '/resume.pdf'
-      a.download = 'resume.pdf'
-      a.click()
-    },
-  },
-  {
-    id: 'view-source',
-    label: 'View Source Code',
-    icon: Github,
-    shortcut: undefined,
-    action: () => {
-      window.open('https://github.com', '_blank', 'noopener')
-    },
-  },
-  {
-    id: 'scroll-top',
-    label: 'Scroll to Top',
-    icon: ArrowUp,
-    shortcut: undefined,
-    action: () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    },
-  },
-]
+import { useLanguage } from '@/hooks/use-language'
 
 // ── All items for the command palette ─────────────────────────────
 interface CommandItem {
@@ -79,11 +27,6 @@ interface CommandItem {
   action?: () => void
   group: 'navigation' | 'actions'
 }
-
-const allItems: CommandItem[] = [
-  ...navigationItems.map((item) => ({ ...item, group: 'navigation' as const, shortcut: undefined })),
-  ...actionItems.map((item) => ({ ...item, group: 'actions' as const, href: undefined })),
-]
 
 // ── Fuzzy search ──────────────────────────────────────────────────
 function fuzzyMatch(query: string, text: string): boolean {
@@ -98,7 +41,66 @@ function fuzzyMatch(query: string, text: string): boolean {
 }
 
 export default function CommandPalette() {
+  const { t } = useLanguage()
   const [open, setOpen] = useState(false)
+
+  // ── Navigation items ──────────────────────────────────────────────
+  const navigationItems = [
+    { id: 'about', label: t.nav.about, icon: User, href: '#about' },
+    { id: 'skills', label: t.nav.skills, icon: Code2, href: '#skills' },
+    { id: 'experience', label: t.nav.experience, icon: Briefcase, href: '#experience' },
+    { id: 'projects', label: t.nav.projects, icon: FolderOpen, href: '#projects' },
+    { id: 'learning', label: t.nav.learning, icon: BookOpen, href: '#learning' },
+    { id: 'contact', label: t.nav.contact, icon: Mail, href: '#contact' },
+  ]
+
+  // ── Action items ───────────────────────────────────────────────────
+  const actionItems = [
+    {
+      id: 'toggle-dark',
+      label: t.cmdk.toggleDark,
+      icon: Moon,
+      shortcut: '⌘D',
+      action: () => {
+        document.documentElement.classList.toggle('dark')
+      },
+    },
+    {
+      id: 'download-cv',
+      label: t.cmdk.downloadCV,
+      icon: Download,
+      shortcut: undefined,
+      action: () => {
+        const a = document.createElement('a')
+        a.href = '/resume.pdf'
+        a.download = 'resume.pdf'
+        a.click()
+      },
+    },
+    {
+      id: 'view-source',
+      label: t.cmdk.viewSource,
+      icon: Github,
+      shortcut: undefined,
+      action: () => {
+        window.open('https://github.com', '_blank', 'noopener')
+      },
+    },
+    {
+      id: 'scroll-top',
+      label: t.cmdk.scrollTop,
+      icon: ArrowUp,
+      shortcut: undefined,
+      action: () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      },
+    },
+  ]
+
+  const allItems: CommandItem[] = [
+    ...navigationItems.map((item) => ({ ...item, group: 'navigation' as const, shortcut: undefined })),
+    ...actionItems.map((item) => ({ ...item, group: 'actions' as const, href: undefined })),
+  ]
   const [query, setQuery] = useState('')
   const [selectedIndex, setSelectedIndex] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -262,7 +264,7 @@ export default function CommandPalette() {
                     setQuery(e.target.value)
                     setSelectedIndex(0)
                   }}
-                  placeholder="Type a command or search..."
+                  placeholder={t.cmdk.placeholder}
                   className="flex-1 h-12 bg-transparent text-sm outline-none placeholder:text-muted-foreground/60"
                   autoFocus
                 />
@@ -276,12 +278,12 @@ export default function CommandPalette() {
                 {flatItems.length === 0 ? (
                   <div className="py-12 text-center text-sm text-muted-foreground">
                     <div className="text-2xl mb-2">🔍</div>
-                    No results found for &ldquo;{query}&rdquo;
+                    {t.cmdk.noResults} &ldquo;{query}&rdquo;
                   </div>
                 ) : (
                   <>
-                    {renderGroup('Navigation', navGroup)}
-                    {renderGroup('Actions', actionGroup)}
+                    {renderGroup(t.cmdk.navigation, navGroup)}
+                    {renderGroup(t.cmdk.actions, actionGroup)}
                   </>
                 )}
               </div>
@@ -291,15 +293,15 @@ export default function CommandPalette() {
                 <div className="flex items-center gap-3">
                   <span className="flex items-center gap-1">
                     <kbd className="bg-muted/40 px-1 py-0.5 rounded border border-border/40 font-mono">↑↓</kbd>
-                    navigate
+                    {t.cmdk.navigate}
                   </span>
                   <span className="flex items-center gap-1">
                     <kbd className="bg-muted/40 px-1 py-0.5 rounded border border-border/40 font-mono">↵</kbd>
-                    select
+                    {t.cmdk.select}
                   </span>
                   <span className="flex items-center gap-1">
                     <kbd className="bg-muted/40 px-1 py-0.5 rounded border border-border/40 font-mono">esc</kbd>
-                    close
+                    {t.cmdk.close}
                   </span>
                 </div>
                 <span className="text-muted-foreground/30">cmd+k</span>

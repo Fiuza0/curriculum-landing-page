@@ -5,45 +5,47 @@ import { useRef } from 'react'
 import { Code, Server, Palette, Zap, ArrowRight } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-
-const highlights = [
-  {
-    icon: Code,
-    title: 'Frontend Development',
-    description: 'React, Next.js, TypeScript, and modern UI frameworks',
-    gradient: 'from-emerald-500 to-teal-500',
-    bg: 'bg-emerald-500/10',
-    hover: 'group-hover:bg-emerald-500/20',
-  },
-  {
-    icon: Server,
-    title: 'Backend & Cloud',
-    description: 'Node.js, Python, AWS, Docker, and microservices',
-    gradient: 'from-teal-500 to-cyan-500',
-    bg: 'bg-teal-500/10',
-    hover: 'group-hover:bg-teal-500/20',
-  },
-  {
-    icon: Palette,
-    title: 'UI/UX Design',
-    description: 'User-centered design, accessibility, and responsive layouts',
-    gradient: 'from-cyan-500 to-sky-500',
-    bg: 'bg-cyan-500/10',
-    hover: 'group-hover:bg-cyan-500/20',
-  },
-  {
-    icon: Zap,
-    title: 'Performance',
-    description: 'Optimization, caching strategies, and scalable architecture',
-    gradient: 'from-amber-500 to-orange-500',
-    bg: 'bg-amber-500/10',
-    hover: 'group-hover:bg-amber-500/20',
-  },
-]
+import { useLanguage } from '@/hooks/use-language'
 
 export default function About() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const { t } = useLanguage()
+
+  const highlights = [
+    {
+      icon: Code,
+      title: t.about.frontend.title,
+      description: t.about.frontend.description,
+      gradient: 'from-emerald-500 to-teal-500',
+      bg: 'bg-emerald-500/10',
+      hover: 'group-hover:bg-emerald-500/20',
+    },
+    {
+      icon: Server,
+      title: t.about.backend.title,
+      description: t.about.backend.description,
+      gradient: 'from-teal-500 to-cyan-500',
+      bg: 'bg-teal-500/10',
+      hover: 'group-hover:bg-teal-500/20',
+    },
+    {
+      icon: Palette,
+      title: t.about.design.title,
+      description: t.about.design.description,
+      gradient: 'from-cyan-500 to-sky-500',
+      bg: 'bg-cyan-500/10',
+      hover: 'group-hover:bg-cyan-500/20',
+    },
+    {
+      icon: Zap,
+      title: t.about.performance.title,
+      description: t.about.performance.description,
+      gradient: 'from-amber-500 to-orange-500',
+      bg: 'bg-amber-500/10',
+      hover: 'group-hover:bg-amber-500/20',
+    },
+  ]
 
   return (
     <section id="about" className="py-20 sm:py-28 relative overflow-hidden" ref={ref}>
@@ -60,17 +62,12 @@ export default function About() {
           className="text-center mb-16"
         >
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
-            About Me
+            {t.about.badge}
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Who I Am</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t.about.title}</h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
-            {/* ✏️ PLACEHOLDER: Replace with your about description */}
-            I&apos;m a software engineer with a passion for creating innovative
-            digital solutions. With experience spanning frontend and backend
-            development, I thrive on turning complex challenges into elegant,
-            user-friendly applications. My journey in tech has been driven by
-            curiosity and a commitment to continuous learning.
+            {t.about.description}
           </p>
         </motion.div>
 
@@ -78,7 +75,7 @@ export default function About() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {highlights.map((item, index) => (
             <motion.div
-              key={item.title}
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -97,7 +94,7 @@ export default function About() {
                     {item.description}
                   </p>
                   <div className="flex items-center justify-center gap-1 text-emerald-500 text-xs font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    Learn more <ArrowRight className="w-3 h-3" />
+                    {t.about.learnMore} <ArrowRight className="w-3 h-3" />
                   </div>
                 </CardContent>
               </Card>

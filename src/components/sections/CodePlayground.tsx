@@ -7,6 +7,7 @@ import { Zap, Copy, Check, Code2, FileCode, GitBranch, Globe } from 'lucide-reac
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useLanguage } from '@/hooks/use-language'
 
 // --- Code snippets ---
 const CODE_SNIPPETS = [
@@ -202,13 +203,14 @@ function highlightLine(line: string): HighlightSegment[] {
 }
 
 // --- Stats ---
-const stats = [
-  { icon: Code2, label: '50+ Snippets', color: 'text-emerald-500' },
-  { icon: Globe, label: '10 Languages', color: 'text-teal-500' },
-  { icon: GitBranch, label: 'Open Source', color: 'text-cyan-500' },
+const statsData = [
+  { icon: Code2, labelKey: 'snippets' as const, color: 'text-emerald-500' },
+  { icon: Globe, labelKey: 'languages' as const, color: 'text-teal-500' },
+  { icon: GitBranch, labelKey: 'openSource' as const, color: 'text-cyan-500' },
 ]
 
 export default function CodePlayground() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [activeTab, setActiveTab] = useState(0)
@@ -252,14 +254,14 @@ export default function CodePlayground() {
             className="mb-4 px-4 py-1.5 bg-emerald-500/10 text-emerald-600 border-emerald-500/20"
           >
             <Zap className="w-3.5 h-3.5 mr-1.5" />
-            Live Code
+            {t.playground.badge}
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Code Snippets
+            {t.playground.title}
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto rounded-full mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Real code from real projects
+            {t.playground.subtitle}
           </p>
         </motion.div>
 
@@ -370,9 +372,9 @@ export default function CodePlayground() {
 
         {/* Stats cards */}
         <div className="grid grid-cols-3 gap-4 mt-8 max-w-3xl mx-auto">
-          {stats.map((stat, index) => (
+          {statsData.map((stat, index) => (
             <motion.div
-              key={stat.label}
+              key={stat.labelKey}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
@@ -383,7 +385,7 @@ export default function CodePlayground() {
                     <stat.icon className="w-5 h-5" />
                   </div>
                   <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">
-                    {stat.label}
+                    {t.playground.stats[stat.labelKey]}
                   </span>
                 </CardContent>
               </Card>
