@@ -98,7 +98,7 @@ export default function Experience() {
               )}
 
               {/* Content card */}
-              <Card className="border border-border/50 rounded-xl hover:shadow-lg hover:border-emerald-500/15 hover:-translate-y-0.5 transition-all duration-300 group">
+              <Card className="border border-border/50 rounded-xl hover:shadow-lg hover:border-emerald-500/15 hover:-translate-y-0.5 transition-all duration-300 group backdrop-blur-sm bg-card/80">
               <CardContent className="p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
                   <h3 className="text-lg font-semibold">{exp.title}</h3>

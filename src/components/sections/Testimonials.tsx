@@ -72,7 +72,7 @@ export default function Testimonials() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.15 }}
             >
-              <Card className="h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-emerald-500/15 relative overflow-hidden group">
+              <Card className="h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-emerald-500/15 relative overflow-hidden group backdrop-blur-sm bg-card/80">
                 {/* Gradient top border */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${testimonial.gradient.replace('/10', '').replace('/5', '')} opacity-0 group-hover:opacity-100`} />
                 <CardContent className="p-6">

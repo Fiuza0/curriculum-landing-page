@@ -6,6 +6,7 @@ import TechMarquee from '@/components/sections/TechMarquee'
 import Stats from '@/components/sections/Stats'
 import About from '@/components/sections/About'
 import Skills from '@/components/sections/Skills'
+import SkillsRadarChart from '@/components/sections/SkillsRadarChart'
 import ContributionGraph from '@/components/sections/ContributionGraph'
 import Experience from '@/components/sections/Experience'
 import Projects from '@/components/sections/Projects'
@@ -14,6 +15,8 @@ import Education from '@/components/sections/Education'
 import Blog from '@/components/sections/Blog'
 import CTASection from '@/components/sections/CTASection'
 import Contact from '@/components/sections/Contact'
+import Learning from '@/components/sections/Learning'
+import InteractiveTerminal from '@/components/sections/InteractiveTerminal'
 import Footer from '@/components/sections/Footer'
 import BackToTop from '@/components/sections/BackToTop'
 import PageLoader from '@/components/sections/PageLoader'
@@ -30,12 +33,15 @@ export default function Home() {
         <Stats />
         <About />
         <Skills />
+        <SkillsRadarChart />
         <ContributionGraph />
         <Experience />
         <Projects />
         <Testimonials />
         <Education />
+        <Learning />
         <Blog />
+        <InteractiveTerminal />
         <CTASection />
         <Contact />
       </main>

@@ -83,7 +83,7 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="group h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-emerald-500/20 relative overflow-hidden">
+              <Card className="group h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-emerald-500/20 relative overflow-hidden backdrop-blur-sm bg-card/80">
                 {/* Gradient top border on hover */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                 <CardContent className="p-6 text-center">

@@ -169,7 +169,7 @@ export default function Hero() {
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
               Hi, I&apos;m{' '}
-              <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block">
+              <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block gradient-text-animated">
                 {/* ✏️ PLACEHOLDER: Replace with your name */}
                 Your Name
               </span>

@@ -75,7 +75,7 @@ export default function Blog() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.12 }}
             >
-              <Card className="group h-full hover:shadow-xl transition-all duration-300 border-border/50 hover:border-emerald-500/15 cursor-pointer relative overflow-hidden">
+              <Card className="group h-full hover:shadow-xl transition-all duration-300 border-border/50 hover:border-emerald-500/15 cursor-pointer relative overflow-hidden backdrop-blur-sm bg-card/80">
                 {/* Gradient top accent */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

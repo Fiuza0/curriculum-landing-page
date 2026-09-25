@@ -73,7 +73,7 @@ export default function Stats() {
       <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-white/5 rounded-full blur-2xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -82,17 +82,17 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center group"
             >
-              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm mb-3 group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
-                <stat.icon className="w-7 h-7 text-white" />
+              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm mb-4 group-hover:scale-110 group-hover:bg-white/15 transition-all duration-300 shadow-inner`}>
+                <stat.icon className="w-8 h-8 text-white" />
               </div>
-              <div className="text-3xl sm:text-4xl font-bold mb-1 text-white drop-shadow-sm">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2 text-white drop-shadow-sm tracking-tight">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
                   isInView={isInView}
                 />
               </div>
-              <p className="text-sm text-white/70">
+              <p className="text-sm sm:text-base text-white/80 font-medium">
                 {stat.label}
               </p>
             </motion.div>
