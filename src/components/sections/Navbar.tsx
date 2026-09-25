@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Code2, Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -110,17 +111,35 @@ export default function Navbar() {
                     variant="ghost"
                     size="sm"
                     onClick={() => handleClick(link.href)}
-                    className={`transition-all duration-200 ${
+                    className={`relative transition-all duration-200 ${
                       isActive
                         ? 'text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-500/10'
                         : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
                     {link.label}
+                    {isActive && (
+                      <motion.div
+                        layoutId="nav-indicator"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500"
+                        transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                      />
+                    )}
                   </Button>
                 )
               })}
               <div className="w-px h-6 bg-border mx-2" />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => window.dispatchEvent(new CustomEvent('open-command-palette'))}
+                className="text-muted-foreground hover:text-foreground gap-1.5"
+                aria-label="Open command palette"
+              >
+                <Badge variant="outline" className="text-[10px] font-mono px-1.5 py-0 h-5 border-emerald-500/30 text-emerald-600 dark:text-emerald-400 bg-emerald-500/5">
+                  ⌘K
+                </Badge>
+              </Button>
               <Button
                 variant="ghost"
                 size="icon"

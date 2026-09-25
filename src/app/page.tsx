@@ -23,16 +23,21 @@ import BackToTop from '@/components/sections/BackToTop'
 import PageLoader from '@/components/sections/PageLoader'
 import NowPlaying from '@/components/sections/NowPlaying'
 import CustomCursor from '@/components/sections/CustomCursor'
+import CommandPalette from '@/components/sections/CommandPalette'
 import SectionReveal from '@/components/sections/SectionReveal'
 import SectionDivider from '@/components/sections/SectionDivider'
+import ParallaxStars from '@/components/sections/ParallaxStars'
+import CodePlayground from '@/components/sections/CodePlayground'
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background overflow-x-hidden">
       <PageLoader />
       <CustomCursor />
+      <CommandPalette />
       <Navbar />
       <main className="flex-1">
+        <ParallaxStars />
         <Hero />
         <TechMarquee />
         <SectionReveal>
@@ -81,6 +86,10 @@ export default function Home() {
         <SectionDivider />
         <SectionReveal>
           <InteractiveTerminal />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <CodePlayground />
         </SectionReveal>
         <SectionDivider />
         <SectionReveal>

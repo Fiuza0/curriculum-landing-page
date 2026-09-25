@@ -169,7 +169,7 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6">
               Hi, I&apos;m{' '}
               <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent inline-block gradient-text-animated">
                 {/* ✏️ PLACEHOLDER: Replace with your name */}
@@ -177,22 +177,23 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-foreground mb-2 font-medium">
+            <p className="text-lg sm:text-xl md:text-2xl text-foreground mb-3 font-semibold">
               <Typewriter texts={roles} />
             </p>
 
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mb-10 leading-relaxed">
               {/* ✏️ PLACEHOLDER: Replace with your tagline */}
               Passionate about building elegant solutions to complex problems.
               Specializing in full-stack development, cloud architecture, and
               creating impactful user experiences.
             </p>
 
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start mb-8">
+            {/* CTA buttons - clear visual hierarchy */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
+              {/* Primary CTA - most prominent */}
               <Button
                 size="lg"
-                className="gap-2 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0 relative overflow-hidden"
+                className="gap-2 shadow-xl shadow-emerald-500/30 hover:shadow-2xl hover:shadow-emerald-500/40 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0 relative overflow-hidden px-8 py-6 text-base font-semibold"
                 onClick={() =>
                   document
                     .querySelector('#projects')
@@ -202,12 +203,13 @@ export default function Hero() {
                 {/* Shimmer effect */}
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_3s_infinite]" />
                 View My Work
-                <ArrowDown className="w-4 h-4" />
+                <ArrowDown className="w-5 h-5" />
               </Button>
+              {/* Secondary CTA - medium emphasis */}
               <Button
                 variant="outline"
                 size="lg"
-                className="gap-2 border-emerald-500/30 text-emerald-600 hover:bg-emerald-500/10 hover:text-emerald-600 hover:border-emerald-500/50 hover:shadow-md hover:shadow-emerald-500/10"
+                className="gap-2 border-emerald-500/30 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-600 dark:hover:text-emerald-400 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 px-6 py-5"
                 onClick={() =>
                   document
                     .querySelector('#contact')
@@ -217,12 +219,12 @@ export default function Hero() {
                 <Mail className="w-4 h-4" />
                 Get In Touch
               </Button>
+              {/* Tertiary CTA - subtle */}
               <Button
                 variant="ghost"
-                size="lg"
-                className="gap-2 text-muted-foreground hover:text-foreground border border-dashed border-border/50 hover:border-emerald-500/30 hover:bg-emerald-500/5"
+                size="default"
+                className="gap-2 text-muted-foreground hover:text-foreground border border-dashed border-border/50 hover:border-emerald-500/30 hover:bg-emerald-500/5 py-4"
                 onClick={() => {
-                  /* 📄 PLACEHOLDER: Add your CV download link */
                   const link = document.createElement('a')
                   link.href = '/resume.pdf'
                   link.download = 'YourName_Resume.pdf'
@@ -234,8 +236,8 @@ export default function Hero() {
               </Button>
             </div>
 
-            {/* Social links */}
-            <div className="flex items-center gap-3 justify-center lg:justify-start">
+            {/* Social links - more refined */}
+            <div className="flex items-center gap-2.5 justify-center lg:justify-start">
               {[
                 { Icon: Github, href: '#', label: 'GitHub' },
                 { Icon: Linkedin, href: '#', label: 'LinkedIn' },
@@ -248,10 +250,10 @@ export default function Hero() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-muted/80 border border-border/50 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-teal-500 hover:text-white hover:border-transparent transition-all duration-300"
+                  className="p-2.5 rounded-xl bg-muted/60 border border-border/40 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-teal-500 hover:text-white hover:border-transparent hover:shadow-md hover:shadow-emerald-500/20 transition-all duration-300"
                   aria-label={label}
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-4.5 h-4.5" />
                 </motion.a>
               ))}
             </div>
@@ -259,24 +261,23 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - minimal & elegant */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+          className="flex flex-col items-center gap-1.5"
         >
-          <span className="text-xs tracking-widest uppercase text-emerald-500/70">Scroll</span>
-          <div className="w-6 h-10 rounded-full border-2 border-emerald-500/30 flex items-start justify-center p-1.5">
+          <div className="w-5 h-8 rounded-full border border-emerald-500/25 flex items-start justify-center pt-1.5">
             <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1.5 h-1.5 rounded-full bg-emerald-500"
+              animate={{ y: [0, 10, 0], opacity: [1, 0.4, 1] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-1 h-1 rounded-full bg-emerald-500"
             />
           </div>
         </motion.div>

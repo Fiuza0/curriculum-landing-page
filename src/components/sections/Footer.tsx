@@ -99,12 +99,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground/80">
-            &copy; {new Date().getFullYear()} Your Name. All rights reserved.
+        <div className="mt-12 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground/70">
+            &copy; {new Date().getFullYear()} <span className="font-medium text-foreground/80">Your Name</span>. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground/80 flex items-center gap-1">
-            Made with <Heart className="w-3 h-3 text-emerald-500 fill-emerald-500" /> and lots of <span className="inline-block hover:rotate-12 transition-transform duration-200">☕</span>
+          <p className="text-sm text-muted-foreground/70 flex items-center gap-1.5">
+            Crafted with <Heart className="w-3.5 h-3.5 text-emerald-500 fill-emerald-500 breathe" /> and <span className="inline-block hover:rotate-12 hover:scale-110 transition-transform duration-200">☕</span>
           </p>
         </div>
       </div>
