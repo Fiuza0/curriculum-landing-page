@@ -40,11 +40,11 @@ const categories: TechCategory[] = [
       textAccent: 'text-emerald-600 dark:text-emerald-400',
     },
     items: [
-      { name: 'TypeScript', emoji: '🔷', proficiency: 5 },
-      { name: 'JavaScript', emoji: '⚡', proficiency: 5 },
-      { name: 'Python', emoji: '🐍', proficiency: 4 },
-      { name: 'Go', emoji: '🦫', proficiency: 4 },
-      { name: 'Rust', emoji: '🦀', proficiency: 3 },
+      { name: 'C#', emoji: '🔷', proficiency: 5 },
+      { name: 'Python', emoji: '🐍', proficiency: 5 },
+      { name: 'Java', emoji: '☕', proficiency: 4 },
+      { name: 'R', emoji: '📊', proficiency: 3 },
+      { name: 'HTML5/CSS3', emoji: '🌐', proficiency: 4 },
       { name: 'SQL', emoji: '🗃️', proficiency: 4 },
     ],
   },
@@ -59,12 +59,12 @@ const categories: TechCategory[] = [
       textAccent: 'text-teal-600 dark:text-teal-400',
     },
     items: [
-      { name: 'Next.js', emoji: '▲', proficiency: 5 },
-      { name: 'React', emoji: '⚛️', proficiency: 5 },
-      { name: 'FastAPI', emoji: '🚀', proficiency: 4 },
-      { name: 'Express', emoji: '🛤️', proficiency: 4 },
-      { name: 'Prisma', emoji: '💎', proficiency: 4 },
-      { name: 'Tailwind CSS', emoji: '🎨', proficiency: 5 },
+      { name: '.NET/ASP.NET', emoji: '🟣', proficiency: 5 },
+      { name: 'Pandas', emoji: '🐼', proficiency: 4 },
+      { name: 'NumPy', emoji: '🔢', proficiency: 4 },
+      { name: 'VRED', emoji: '🏎️', proficiency: 3 },
+      { name: 'Unreal Engine', emoji: '🎮', proficiency: 3 },
+      { name: 'Unity', emoji: '🎯', proficiency: 3 },
     ],
   },
   {
@@ -79,11 +79,11 @@ const categories: TechCategory[] = [
     },
     items: [
       { name: 'AWS', emoji: '☁️', proficiency: 4 },
-      { name: 'Docker', emoji: '🐳', proficiency: 5 },
-      { name: 'Kubernetes', emoji: '☸️', proficiency: 4 },
-      { name: 'Terraform', emoji: '🏗️', proficiency: 3 },
-      { name: 'GitHub Actions', emoji: '⚙️', proficiency: 4 },
-      { name: 'Vercel', emoji: '▲', proficiency: 5 },
+      { name: 'Kubernetes', emoji: '☸️', proficiency: 3 },
+      { name: 'Linux/Fedora', emoji: '🐧', proficiency: 4 },
+      { name: 'Docker', emoji: '🐳', proficiency: 3 },
+      { name: 'Windows Server', emoji: '🪟', proficiency: 4 },
+      { name: 'Networks', emoji: '🔗', proficiency: 4 },
     ],
   },
   {
@@ -97,12 +97,12 @@ const categories: TechCategory[] = [
       textAccent: 'text-amber-600 dark:text-amber-400',
     },
     items: [
-      { name: 'PostgreSQL', emoji: '🐘', proficiency: 5 },
-      { name: 'Redis', emoji: '🔴', proficiency: 4 },
-      { name: 'MongoDB', emoji: '🍃', proficiency: 4 },
-      { name: 'Jest', emoji: '🃏', proficiency: 4 },
-      { name: 'Cypress', emoji: '🌲', proficiency: 3 },
-      { name: 'Playwright', emoji: '🎭', proficiency: 4 },
+      { name: 'PostgreSQL', emoji: '🐘', proficiency: 4 },
+      { name: 'R Studio', emoji: '📊', proficiency: 3 },
+      { name: 'Jupyter', emoji: '📓', proficiency: 3 },
+      { name: 'Adobe PS/AI', emoji: '🎨', proficiency: 4 },
+      { name: 'Arduino', emoji: '🔌', proficiency: 3 },
+      { name: 'Git', emoji: '📦', proficiency: 5 },
     ],
   },
 ]
@@ -110,8 +110,8 @@ const categories: TechCategory[] = [
 // ─── Decorative 3D Rotating Cube ────────────────────────────────────────────
 
 const cubeIcons = [
-  'TS', '⚛️', '☁️', '🐳', '🐘', '▲',
-  '🐍', '💎', '☸️', '🃏', '🦀', '⚡',
+  'C#', '🐍', '☁️', '☸️', '🐘', '▲',
+  '🐼', '🔢', '🐧', '🎨', '🎮', '🔌',
 ]
 
 function RotatingCube() {

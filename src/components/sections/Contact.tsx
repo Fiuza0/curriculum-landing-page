@@ -20,33 +20,6 @@ import { Badge } from '@/components/ui/badge'
 import { useConfetti } from '@/hooks/use-confetti'
 import { useLanguage } from '@/hooks/use-language'
 
-const contactInfo = [
-  {
-    icon: Mail,
-    value: 'hello@yourname.dev', // ✏️ PLACEHOLDER: Replace with your email
-    href: 'mailto:hello@yourname.dev',
-    color: 'text-emerald-500',
-    bg: 'bg-emerald-500/10 group-hover:bg-emerald-500',
-    labelKey: 'email' as const,
-  },
-  {
-    icon: Phone,
-    value: '+1 (555) 123-4567', // ✏️ PLACEHOLDER: Replace with your phone
-    href: 'tel:+15551234567',
-    color: 'text-teal-500',
-    bg: 'bg-teal-500/10 group-hover:bg-teal-500',
-    labelKey: 'phone' as const,
-  },
-  {
-    icon: MapPin,
-    value: 'San Francisco, CA', // ✏️ PLACEHOLDER: Replace with your location
-    href: '#',
-    color: 'text-cyan-500',
-    bg: 'bg-cyan-500/10 group-hover:bg-cyan-500',
-    labelKey: 'location' as const,
-  },
-]
-
 const socialLinks = [
   { icon: Github, label: 'GitHub', href: '#' },
   { icon: Linkedin, label: 'LinkedIn', href: '#' },
@@ -59,6 +32,33 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const { fire: fireConfetti } = useConfetti()
   const { t } = useLanguage()
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      value: t.contact.values.email,
+      href: `mailto:${t.contact.values.email}`,
+      color: 'text-emerald-500',
+      bg: 'bg-emerald-500/10 group-hover:bg-emerald-500',
+      labelKey: 'email' as const,
+    },
+    {
+      icon: Phone,
+      value: t.contact.values.phone,
+      href: 'tel:+5571981086001',
+      color: 'text-teal-500',
+      bg: 'bg-teal-500/10 group-hover:bg-teal-500',
+      labelKey: 'phone' as const,
+    },
+    {
+      icon: MapPin,
+      value: t.contact.values.location,
+      href: '#',
+      color: 'text-cyan-500',
+      bg: 'bg-cyan-500/10 group-hover:bg-cyan-500',
+      labelKey: 'location' as const,
+    },
+  ]
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -164,13 +164,13 @@ export default function Contact() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="text-sm font-medium">{t.contact.formName}</label>
-                        <Input placeholder="John Doe" required className="focus-visible:ring-emerald-500/30" />
+                        <Input placeholder={t.contact.placeholders.name} required className="focus-visible:ring-emerald-500/30" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-medium">{t.contact.formEmail}</label>
                         <Input
                           type="email"
-                          placeholder="john@example.com"
+                          placeholder={t.contact.placeholders.email}
                           required
                           className="focus-visible:ring-emerald-500/30"
                         />
@@ -178,12 +178,12 @@ export default function Contact() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">{t.contact.formSubject}</label>
-                      <Input placeholder="Project Discussion" required className="focus-visible:ring-emerald-500/30" />
+                      <Input placeholder={t.contact.placeholders.subject} required className="focus-visible:ring-emerald-500/30" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">{t.contact.formMessage}</label>
                       <Textarea
-                        placeholder="Tell me about your project or opportunity..."
+                        placeholder={t.contact.placeholders.message}
                         rows={5}
                         required
                         className="focus-visible:ring-emerald-500/30"

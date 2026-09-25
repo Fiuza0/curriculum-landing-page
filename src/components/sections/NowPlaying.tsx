@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Music, Headphones } from 'lucide-react'
+import { useLanguage } from '@/hooks/use-language'
 
 const tracks = [
   { title: 'Coding Flow', artist: 'Lo-fi Beats', duration: '3:42' },
@@ -11,6 +12,7 @@ const tracks = [
 ]
 
 export default function NowPlaying() {
+  const { t } = useLanguage()
   const [currentTrack, setCurrentTrack] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [progress, setProgress] = useState(0)
@@ -44,7 +46,7 @@ export default function NowPlaying() {
           <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
             <Headphones className="w-3.5 h-3.5 text-white" />
           </div>
-          <span className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">Now Playing</span>
+          <span className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">{t.nowPlaying.title}</span>
           <div className="ml-auto flex items-center gap-0.5">
             {[0, 1, 2].map((i) => (
               <motion.div

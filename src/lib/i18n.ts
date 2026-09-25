@@ -17,16 +17,16 @@ export const translations = {
     hero: {
       greeting: "Hi, I'm",
       name: 'Rodrigo Oliveira',
-      location: 'São Paulo, Brazil',
+      location: 'Salvador, BA, Brazil',
       roles: [
         'Software Engineer',
-        'Full-Stack Developer',
-        'Cloud Architect',
-        'UI/UX Enthusiast',
-        'Open Source Contributor',
+        'Python Developer',
+        '.NET Developer',
+        'VR/AR Researcher',
+        'Data Automation Specialist',
       ],
       tagline:
-        'Passionate about building elegant solutions to complex problems. Specializing in full-stack development, cloud architecture, and creating impactful user experiences.',
+        'Software Engineer & Researcher with a Bachelor\'s in Software Engineering from UCSAL. Experienced in .NET, Python, cloud infrastructure, and VR/AR research at Ford Motors. Currently automating pricing processes and leading operational teams.',
       viewWork: 'View My Work',
       getInTouch: 'Get In Touch',
       downloadCV: 'Download CV',
@@ -47,22 +47,22 @@ export const translations = {
       badge: 'About Me',
       title: 'Who I Am',
       description:
-        "I'm a software engineer with a passion for creating innovative digital solutions. With experience spanning frontend and backend development, I thrive on turning complex challenges into elegant, user-friendly applications. My journey in tech has been driven by curiosity and a commitment to continuous learning.",
+        "I'm a Software Engineer and Researcher graduated from the fifth class of Software Engineering at Universidade Católica de Salvador (UCSAL). I have solid knowledge of algorithms, software patterns and projects, logic, and programming languages such as Java, C#, Python, and R. In recent years, I've worked with .NET Framework, IT infrastructure, and most recently, Python automation and data optimization. I also have experience as a research scholar at Ford Motors, working with international teams on Virtual and Augmented Reality projects.",
       frontend: {
-        title: 'Frontend Development',
-        description: 'React, Next.js, TypeScript, and modern UI frameworks',
+        title: 'Development & Automation',
+        description: 'Python, C#, .NET, Pandas, NumPy, and process automation',
       },
       backend: {
-        title: 'Backend & Cloud',
-        description: 'Node.js, Python, AWS, Docker, and microservices',
+        title: 'Infrastructure & Cloud',
+        description: 'AWS, Kubernetes, PostgreSQL, Linux, and network security',
       },
       design: {
-        title: 'UI/UX Design',
-        description: 'User-centered design, accessibility, and responsive layouts',
+        title: 'VR/AR & Design',
+        description: 'Unreal, Unity, VRED, Adobe Photoshop & Illustrator',
       },
       performance: {
-        title: 'Performance',
-        description: 'Optimization, caching strategies, and scalable architecture',
+        title: 'Research & Leadership',
+        description: 'International teams, agile methodologies, and project management',
       },
       learnMore: 'Learn more',
     },
@@ -85,7 +85,7 @@ export const translations = {
       title: 'My Tech',
       titleAccent: 'Universe',
       subtitle:
-        'The full technology ecosystem I wield daily — from languages and frameworks to cloud infrastructure and data tools — each chosen to ship reliable, scalable software faster.',
+        'The full technology ecosystem I work with daily — from languages and frameworks to cloud infrastructure and data tools — each chosen to deliver reliable, scalable software.',
       languages: 'Languages',
       frameworks: 'Frameworks',
       cloud: 'Cloud & Infra',
@@ -111,36 +111,36 @@ export const translations = {
       current: 'Current',
       jobs: [
         {
-          title: 'Senior Software Engineer',
-          company: 'Tech Corp Inc.',
-          location: 'São Paulo, SP',
-          period: '2022 - Present',
+          title: 'Developer',
+          company: 'Rede Central Variedades',
+          location: 'Salvador, BA',
+          period: '2025 - Present',
           description:
-            'Leading the frontend architecture for the core platform. Built micro-frontend infrastructure serving 2M+ users. Mentoring a team of 4 junior engineers.',
+            'Developing solutions for pricing process automation in the retail sector, ensuring data quality and standardization. Applying exploratory data analysis, descriptive statistics, and data manipulation using Python and specialized libraries like Pandas and NumPy to build automated pipelines. Leading operational teams with Kanban and micro-management tools to increase productivity and mitigate risks.',
         },
         {
-          title: 'Software Engineer',
-          company: 'StartupXYZ',
-          location: 'Remote',
-          period: '2020 - 2022',
+          title: 'Research Scholar',
+          company: 'Ford Motors',
+          location: 'Salvador, BA',
+          period: '2022 - 2023',
           description:
-            'Full-stack development of a SaaS analytics platform. Reduced page load times by 60% and implemented real-time data pipelines.',
+            'Research in Virtual Reality and Augmented Reality for Engineering and Graphic Design, developing immersive interaction solutions for visualization and manipulation of hyper-realistic automotive models with VR/AR headsets. Worked with international teams including Ford USA, deepening software engineering, project management, and English language skills.',
         },
         {
-          title: 'Junior Software Engineer',
-          company: 'Digital Agency Co.',
-          location: 'São Paulo, SP',
-          period: '2018 - 2020',
+          title: 'Junior .NET Developer',
+          company: 'SINQIA',
+          location: 'Salvador, BA',
+          period: '2019 - 2021',
           description:
-            'Developed responsive web applications for enterprise clients. Collaborated with design teams to deliver pixel-perfect implementations.',
+            'After completing internship, was hired as Junior .NET Developer. Worked alongside tech leads and software engineers to deepen knowledge of the Framework, PostgreSQL, and soft skills like clear communication of results, agile methodologies (sprints, kanban, task prioritization through graphs), and system architecture planning, creating new features and optimizations.',
         },
         {
           title: 'Software Engineering Intern',
-          company: 'BigTech Ltd.',
-          location: 'Remote',
-          period: 'Summer 2017',
+          company: 'Atena Tecnologia (now SINQIA)',
+          location: 'Salvador, BA',
+          period: '2018 - 2019',
           description:
-            'Contributed to the internal tooling team, building developer productivity tools and automated testing frameworks.',
+            'Initially as a developer, worked with .NET Framework and ASP.NET, implementing solutions for robust private social security systems. Developed skills in software projects, data structures, algorithms, and ubiquitous language. Later worked in IT infrastructure, enhancing knowledge of computer networks, information security, Windows Server, and systems management.',
         },
       ],
     },
@@ -158,34 +158,34 @@ export const translations = {
       featured: 'Featured',
       items: [
         {
-          title: 'E-Commerce Platform',
+          title: 'Pricing Automation Pipeline',
           description:
-            'A full-stack e-commerce solution with real-time inventory management, payment processing, and an admin dashboard. Handles 10K+ daily transactions.',
+            'Automated pricing process system for the retail sector using Python, Pandas, and NumPy. Builds data pipelines that optimize pricing decisions and identify product behavior patterns with exploratory data analysis and descriptive statistics.',
         },
         {
-          title: 'AI Analytics Dashboard',
+          title: 'VR/AR Automotive Visualization',
           description:
-            'An intelligent analytics platform that leverages ML models to provide predictive insights and automated reporting for business metrics.',
+            'Immersive virtual and augmented reality solutions for hyper-realistic automotive model visualization and manipulation at Ford Motors, using VR headsets for interactive design reviews with international teams.',
         },
         {
-          title: 'Real-Time Chat Application',
+          title: 'Social Security Platform',
           description:
-            'A scalable chat platform supporting WebSocket connections, file sharing, and end-to-end encryption. Built for enterprise communication.',
+            'Robust private social security system built with .NET Framework and ASP.NET with PostgreSQL, implementing complex business rules, data structures, and algorithms for the Brazilian previdência social market.',
         },
         {
-          title: 'DevOps Automation Toolkit',
+          title: 'IT Infrastructure Management',
           description:
-            'A CLI toolkit that automates deployment pipelines, infrastructure provisioning, and monitoring setup for cloud-native applications.',
+            'Implementation and management of IT infrastructure including Windows Server, computer networks, information security protocols, and systems monitoring for enterprise social security platforms.',
         },
         {
-          title: 'Mobile Fitness Tracker',
+          title: 'Data Quality & Standardization',
           description:
-            'A cross-platform mobile app with workout tracking, nutrition planning, and social features. 50K+ active users.',
+            'Python-based data quality assurance system ensuring standardization across large retail datasets. Applies statistical validation, anomaly detection, and automated correction pipelines.',
         },
         {
-          title: 'Open Source UI Component Library',
+          title: 'Cybersecurity Research Tools',
           description:
-            'A comprehensive React component library with 50+ accessible components, theming support, and detailed documentation.',
+            'Personal research projects in cybersecurity leveraging Linux environments, network analysis tools, and Python scripting as part of ongoing postgraduate studies at USP-ESALQ.',
         },
       ],
     },
@@ -222,38 +222,50 @@ export const translations = {
       badge: 'Education',
       title: 'Education',
       subtitle: 'My academic background and professional certifications.',
-      certificationsTitle: 'Certifications',
+      certificationsTitle: 'Certifications & Courses',
       items: [
         {
-          degree: 'M.S. Computer Science',
-          school: 'Stanford University',
-          location: 'Stanford, CA',
-          period: '2016 - 2018',
-          gpa: '3.9 / 4.0',
+          degree: 'Postgraduate in Cybersecurity',
+          school: 'USP - ESALQ',
+          location: 'Piracicaba, SP',
+          period: '2026 - Present',
+          gpa: '',
           highlights: [
-            'Specialization in Distributed Systems',
-            'Research in Machine Learning Optimization',
-            'Teaching Assistant for CS 229',
+            'Advanced cybersecurity techniques and network defense',
+            'Linux security and penetration testing',
+            'Information security governance and compliance',
           ],
         },
         {
-          degree: 'B.S. Computer Science',
-          school: 'UC Berkeley',
-          location: 'Berkeley, CA',
-          period: '2012 - 2016',
-          gpa: '3.8 / 4.0',
+          degree: 'Bachelor in Software Engineering',
+          school: 'Universidade Católica de Salvador (UCSAL)',
+          location: 'Salvador, BA',
+          period: '2018 - 2024',
+          gpa: '',
           highlights: [
-            "Dean's List - All Semesters",
-            'ACM Programming Team Captain',
-            'Senior Capstone: AI-Powered Code Review Tool',
+            '5th class of Software Engineering program',
+            'Solid foundation in algorithms, patterns, and software projects',
+            'Programming: Java, C#, Python, R',
+          ],
+        },
+        {
+          degree: 'Professional Course in Graphic Design',
+          school: 'SAGA ART',
+          location: 'Salvador, BA',
+          period: '2016 - 2018',
+          gpa: '',
+          highlights: [
+            'Adobe Photoshop and Illustrator',
+            'Unreal Engine and Unity',
+            'Visual communication and UI design principles',
           ],
         },
       ],
       certifications: [
-        'AWS Solutions Architect - Professional',
-        'Google Cloud Professional Developer',
-        'Certified Kubernetes Administrator (CKA)',
-        'Meta Front-End Developer Certificate',
+        'Caelum — Statistics with R',
+        'Caelum — PHP with Object-Oriented Programming',
+        'Caelum — AWS with Lightsail, EC2, S3, VPC, RDS & DynamoDB',
+        'ABED — BIM Management (Engineering Management)',
       ],
     },
 
@@ -267,39 +279,39 @@ export const translations = {
       viewFullList: 'View Full List',
       items: [
         {
-          title: 'System Design Interview',
-          type: 'Book',
-          author: 'Alex Xu',
+          title: 'Cybersecurity Postgraduate',
+          type: 'Course',
+          author: 'USP - ESALQ',
+          count: 'In progress',
+        },
+        {
+          title: 'AWS Cloud Architecture',
+          type: 'Course',
+          author: 'Caelum',
           count: undefined,
         },
         {
-          title: 'Building Microservices',
-          type: 'Book',
-          author: 'Sam Newman',
+          title: 'Statistics with R',
+          type: 'Course',
+          author: 'Caelum',
           count: undefined,
         },
         {
-          title: 'Syntax FM Podcast',
-          type: 'Podcast',
-          author: 'Weekly episodes',
-          count: '40 episodes listened',
-        },
-        {
-          title: 'Fireship',
+          title: 'Python Automation',
           type: 'Video',
-          author: '100 Seconds of Code',
-          count: 'Daily watcher',
+          author: 'Personal projects',
+          count: 'Daily practice',
         },
         {
-          title: 'Rust Programming',
-          type: 'Course',
-          author: 'Noam Goren',
+          title: 'Linux & Cybersecurity',
+          type: 'Book',
+          author: 'Fedora daily driver',
           count: undefined,
         },
         {
-          title: 'Advanced TypeScript',
+          title: 'Data Science with Pandas',
           type: 'Course',
-          author: 'Matt Pocock',
+          author: 'Applied at work',
           count: undefined,
         },
       ],
@@ -315,19 +327,19 @@ export const translations = {
       viewAll: 'View All Articles',
       items: [
         {
-          title: 'Building Scalable Micro-Frontends with Next.js',
+          title: 'Automating Retail Pricing with Python and Pandas',
           excerpt:
-            'A deep dive into architecting micro-frontend applications using Module Federation, Next.js, and TypeScript for enterprise-scale deployments.',
+            'A practical guide to building automated pricing pipelines using Python, Pandas, and NumPy for exploratory data analysis and pattern identification in retail product data.',
         },
         {
-          title: 'Optimizing React Performance: Beyond React.memo',
+          title: 'VR/AR in Automotive Engineering: Lessons from Ford',
           excerpt:
-            'Advanced performance optimization techniques including virtualization, state colocation, and custom hooks that go beyond basic memoization strategies.',
+            'Insights from working on Virtual and Augmented Reality projects at Ford Motors, developing immersive solutions for automotive design visualization with international teams.',
         },
         {
-          title: 'Designing Effective API Rate Limiting Strategies',
+          title: 'From .NET to Python: A Developer\'s Journey',
           excerpt:
-            'How to implement token bucket, sliding window, and fixed window rate limiting algorithms with Redis and distributed systems.',
+            'Reflecting on transitioning from .NET Framework and ASP.NET enterprise development to Python automation and data engineering, and the skills that bridge both worlds.',
         },
       ],
     },
@@ -337,17 +349,17 @@ export const translations = {
       badge: 'Interactive',
       title: 'Developer at a Glance',
       subtitle: 'Quick terminal-style overview of development setup and stats',
-      content: {
-        whoami: 'rodrigo — Senior Software Engineer',
-        uptime: '5+ years building production software',
-        quote: '"First, solve the problem. Then, write the code." — John Johnson',
-        windowTitle: 'developer-stats',
-      },
       stats: {
         lines: 'Lines of Code',
         projects: 'Projects Shipped',
         countries: 'Countries Reached',
         uptime: 'Uptime Record',
+      },
+      content: {
+        whoami: 'rodrigo — Software Engineer & Researcher',
+        uptime: '7+ years building production software',
+        quote: '"First, solve the problem. Then, write the code." — John Johnson',
+        windowTitle: 'developer-stats',
       },
     },
 
@@ -356,13 +368,13 @@ export const translations = {
       badge: 'Live Code',
       title: 'Code Snippets',
       subtitle: 'Real code from real projects',
-      copy: 'Copy',
-      copied: 'Copied!',
       stats: {
         snippets: '50+ Snippets',
         languages: '10 Languages',
         openSource: 'Open Source',
       },
+      copy: 'Copy',
+      copied: 'Copied!',
     },
 
     // ─── CTA ─────────────────────────────────────────────────────────────────
@@ -370,7 +382,7 @@ export const translations = {
       title1: 'Ready to Build Something',
       title2: 'Amazing Together?',
       subtitle:
-        "Whether you need a full-stack application, a performance audit, or technical consulting — I'm here to help turn your vision into reality.",
+        "Whether you need a full-stack application, process automation, data pipelines, or technical consulting — I'm here to help turn your vision into reality.",
       button1: "Let's Talk",
       button2: 'View My Work',
     },
@@ -393,9 +405,9 @@ export const translations = {
       sentMessage: "Thank you for reaching out. I'll get back to you soon!",
       followMe: 'Follow me',
       values: {
-        email: 'rodrigo@oliveira.dev',
-        phone: '+55 11 99999-9999',
-        location: 'São Paulo, SP, Brasil',
+        email: 'fiuza0122@gmail.com',
+        phone: '(71) 98108-6001',
+        location: 'Salvador, BA, Brazil',
       },
       placeholders: {
         name: 'Your name',
@@ -409,7 +421,7 @@ export const translations = {
     footer: {
       name: 'Rodrigo Oliveira',
       brandDescription:
-        'Software Engineer passionate about building elegant solutions to complex problems. Always open to new challenges and collaborations.',
+        'Software Engineer & Researcher passionate about building elegant solutions. Experienced in .NET, Python, cloud infrastructure, and VR/AR. Always open to new challenges and collaborations.',
       navigation: 'Navigation',
       social: 'Social',
       copyright: 'All rights reserved.',
@@ -441,12 +453,12 @@ export const translations = {
       breakdown: 'Skill Breakdown',
     },
 
-    // ─── Now Playing ────────────────────────────────────────────────────────
+    // ─── Now Playing ─────────────────────────────────────────────────────────
     nowPlaying: {
       title: 'Now Playing',
     },
 
-    // ─── Page Loader ────────────────────────────────────────────────────────
+    // ─── Page Loader ─────────────────────────────────────────────────────────
     pageLoader: {
       loading: 'Loading',
     },
@@ -471,16 +483,16 @@ export const translations = {
     hero: {
       greeting: 'Olá, eu sou',
       name: 'Rodrigo Oliveira',
-      location: 'São Paulo, Brasil',
+      location: 'Salvador, BA, Brasil',
       roles: [
         'Engenheiro de Software',
-        'Desenvolvedor Full-Stack',
-        'Arquiteto Cloud',
-        'Entusiasta UI/UX',
-        'Contribuidor Open Source',
+        'Desenvolvedor Python',
+        'Desenvolvedor .NET',
+        'Pesquisador VR/AR',
+        'Especialista em Automação de Dados',
       ],
       tagline:
-        'Apaixonado por construir soluções elegantes para problemas complexos. Especializado em desenvolvimento full-stack, arquitetura cloud e criação de experiências de usuário impactantes.',
+        'Engenheiro de Software & Pesquisador formado em Engenharia de Software pela UCSAL. Experiência em .NET, Python, infraestrutura cloud e pesquisa em VR/AR na Ford Motors. Atualmente automatizando processos de precificação e liderando equipes operacionais.',
       viewWork: 'Ver Meu Trabalho',
       getInTouch: 'Entre em Contato',
       downloadCV: 'Baixar CV',
@@ -501,22 +513,22 @@ export const translations = {
       badge: 'Sobre Mim',
       title: 'Quem Eu Sou',
       description:
-        'Sou um engenheiro de software apaixonado por criar soluções digitais inovadoras. Com experiência em desenvolvimento frontend e backend, prospero ao transformar desafios complexos em aplicações elegantes e amigáveis. Minha trajetória na tecnologia é impulsionada pela curiosidade e pelo compromisso com o aprendizado contínuo.',
+        'Engenheiro de Software e Pesquisador formado na quinta turma de bacharelado em Engenharia de Software da Universidade Católica de Salvador (UCSAL). Possuo conhecimentos sólidos de algoritmos, padrões e projetos de software, lógica e linguagens de programação, tais como Java, C#, Python e R. Nos últimos anos, atuei no desenvolvimento de sistemas com .NET Framework, na implementação de infraestrutura de TI e, mais recentemente, na criação de otimizações e automações em Python. Além disso, possuo experiência de pesquisador bolsista na Ford Motors, atuando com times internacionais em projetos de Realidade Virtual e Aumentada.',
       frontend: {
-        title: 'Desenvolvimento Frontend',
-        description: 'React, Next.js, TypeScript e frameworks UI modernos',
+        title: 'Desenvolvimento & Automação',
+        description: 'Python, C#, .NET, Pandas, NumPy e automação de processos',
       },
       backend: {
-        title: 'Backend & Cloud',
-        description: 'Node.js, Python, AWS, Docker e microsserviços',
+        title: 'Infraestrutura & Cloud',
+        description: 'AWS, Kubernetes, PostgreSQL, Linux e segurança de redes',
       },
       design: {
-        title: 'Design UI/UX',
-        description: 'Design centrado no usuário, acessibilidade e layouts responsivos',
+        title: 'VR/AR & Design',
+        description: 'Unreal, Unity, VRED, Adobe Photoshop e Illustrator',
       },
       performance: {
-        title: 'Performance',
-        description: 'Otimização, estratégias de cache e arquitetura escalável',
+        title: 'Pesquisa & Liderança',
+        description: 'Times internacionais, metodologias ágeis e gestão de projetos',
       },
       learnMore: 'Saiba mais',
     },
@@ -565,36 +577,36 @@ export const translations = {
       current: 'Atual',
       jobs: [
         {
-          title: 'Engenheiro de Software Sênior',
-          company: 'Tech Corp Inc.',
-          location: 'São Paulo, SP',
-          period: '2022 - Presente',
+          title: 'Desenvolvedor',
+          company: 'Rede Central Variedades',
+          location: 'Salvador, BA',
+          period: '2025 - Presente',
           description:
-            'Liderando a arquitetura frontend da plataforma principal. Construí infraestrutura de micro-frontends atendendo mais de 2M de usuários. Mentoria de uma equipe de 4 engenheiros juniores.',
+            'Trabalhando com a criação de soluções envolvendo a automação de processos de precificação de produtos no setor do varejo, garantindo a qualidade e a padronização de dados. Aplica técnicas de análise exploratória de dados, estatística descritiva e manipulação de informações utilizando Python e bibliotecas especializadas, como Pandas e NumPy. Liderança de times operacionais com Kanban e microgerenciamento de processos.',
         },
         {
-          title: 'Engenheiro de Software',
-          company: 'StartupXYZ',
-          location: 'Remoto',
-          period: '2020 - 2022',
+          title: 'Bolsista',
+          company: 'Ford Motors',
+          location: 'Salvador, BA',
+          period: '2022 - 2023',
           description:
-            'Desenvolvimento full-stack de uma plataforma SaaS de analytics. Reduzi tempos de carregamento em 60% e implementei pipelines de dados em tempo real.',
+            'Bolsista em projeto de Realidade Virtual e Realidade Aumentada na área de Engenharia e Design Gráfico, com foco em desenvolver soluções de interação imersiva para a visualização e manipulação de modelos automobilísticos hiper-realistas com óculos de VR/AR. Aprofundou conhecimentos de engenharia de software, projetos, língua inglesa e trabalho em equipe com times internacionais como a equipe Ford dos EUA.',
         },
         {
-          title: 'Engenheiro de Software Júnior',
-          company: 'Digital Agency Co.',
-          location: 'São Paulo, SP',
-          period: '2018 - 2020',
+          title: 'Desenvolvedor .NET Jr',
+          company: 'SINQIA',
+          location: 'Salvador, BA',
+          period: '2019 - 2021',
           description:
-            'Desenvolvimento de aplicações web responsivas para clientes enterprise. Colaborei com equipes de design para entregar implementações pixel-perfect.',
+            'Após conclusão do estágio, foi efetivado como desenvolvedor .NET Jr. Trabalhou em conjunto com tech leads e engenheiros de software, aprimorando conhecimentos do Framework, PostgreSQL e soft skills como comunicação clara de resultados, metodologias ágeis (sprints, kanban, priorização de tarefas através de grafos) e planejamento de arquitetura de sistemas.',
         },
         {
-          title: 'Estagiário em Engenharia de Software',
-          company: 'BigTech Ltd.',
-          location: 'Remoto',
-          period: 'Verão 2017',
+          title: 'Estagiário',
+          company: 'Atena Tecnologia (atual SINQIA)',
+          location: 'Salvador, BA',
+          period: '2018 - 2019',
           description:
-            'Contribuí para a equipe de ferramentas internas, construindo ferramentas de produtividade para desenvolvedores e frameworks de testes automatizados.',
+            'Como desenvolvedor, trabalhou com .NET Framework e ASP.NET, implementando soluções para sistemas robustos de previdência social privada. Desenvolveu habilidades em projetos de software, estruturas de dados, algoritmos e linguagem ubíqua. Posteriormente, trabalhou na seção de infraestrutura de TI, aprimorando conhecimentos de redes, segurança da informação, Windows Server e gestão de sistemas.',
         },
       ],
     },
@@ -612,34 +624,34 @@ export const translations = {
       featured: 'Destaque',
       items: [
         {
-          title: 'Plataforma de E-Commerce',
+          title: 'Pipeline de Automação de Precificação',
           description:
-            'Uma solução e-commerce full-stack com gerenciamento de inventário em tempo real, processamento de pagamentos e dashboard administrativo. Processa mais de 10K transações diárias.',
+            'Sistema automatizado de processos de precificação para o setor varejista usando Python, Pandas e NumPy. Constrói pipelines de dados que otimizam decisões de precificação e identificam padrões no comportamento de produtos com análise exploratória e estatística descritiva.',
         },
         {
-          title: 'Dashboard de Analytics com IA',
+          title: 'Visualização Automobilística em VR/AR',
           description:
-            'Uma plataforma inteligente de analytics que utiliza modelos de ML para fornecer insights preditivos e relatórios automatizados de métricas de negócio.',
+            'Soluções imersivas de realidade virtual e aumentada para visualização e manipulação de modelos automobilísticos hiper-realistas na Ford Motors, usando óculos VR para revisões interativas de design com times internacionais.',
         },
         {
-          title: 'Aplicação de Chat em Tempo Real',
+          title: 'Plataforma de Previdência Social',
           description:
-            'Uma plataforma de chat escalável com suporte a conexões WebSocket, compartilhamento de arquivos e criptografia ponta a ponta. Construída para comunicação enterprise.',
+            'Sistema robusto de previdência social privada construído com .NET Framework e ASP.NET com PostgreSQL, implementando regras de negócio complexas, estruturas de dados e algoritmos para o mercado brasileiro.',
         },
         {
-          title: 'Toolkit de Automação DevOps',
+          title: 'Gestão de Infraestrutura de TI',
           description:
-            'Um toolkit CLI que automatiza pipelines de deploy, provisionamento de infraestrutura e configuração de monitoramento para aplicações cloud-native.',
+            'Implementação e gestão de infraestrutura de TI incluindo Windows Server, redes de computadores, protocolos de segurança da informação e monitoramento de sistemas para plataformas enterprise.',
         },
         {
-          title: 'App Fitness Móvel',
+          title: 'Qualidade e Padronização de Dados',
           description:
-            'Um app móvel multiplataforma com rastreamento de treinos, planejamento nutricional e recursos sociais. Mais de 50K usuários ativos.',
+            'Sistema de garantia de qualidade de dados em Python assegurando padronização em grandes conjuntos de dados do varejo. Aplica validação estatística, detecção de anomalias e pipelines de correção automatizados.',
         },
         {
-          title: 'Biblioteca de Componentes UI Open Source',
+          title: 'Ferramentas de Pesquisa em Cibersegurança',
           description:
-            'Uma biblioteca React abrangente com mais de 50 componentes acessíveis, suporte a temas e documentação detalhada.',
+            'Projetos pessoais de pesquisa em cibersegurança utilizando ambientes Linux, ferramentas de análise de redes e scripts Python como parte dos estudos de pós-graduação na USP-ESALQ.',
         },
       ],
     },
@@ -676,38 +688,50 @@ export const translations = {
       badge: 'Educação',
       title: 'Educação',
       subtitle: 'Minha formação acadêmica e certificações profissionais.',
-      certificationsTitle: 'Certificações',
+      certificationsTitle: 'Certificações e Cursos',
       items: [
         {
-          degree: 'Mestrado em Ciência da Computação',
-          school: 'Stanford University',
-          location: 'Stanford, CA',
-          period: '2016 - 2018',
-          gpa: '3.9 / 4.0',
+          degree: 'Pós-Graduação em Cibersegurança',
+          school: 'USP - ESALQ',
+          location: 'Piracicaba, SP',
+          period: '2026 - Presente',
+          gpa: '',
           highlights: [
-            'Especialização em Sistemas Distribuídos',
-            'Pesquisa em Otimização de Machine Learning',
-            'Monitor da disciplina CS 229',
+            'Técnicas avançadas de cibersegurança e defesa de redes',
+            'Segurança Linux e testes de penetração',
+            'Governança e conformidade em segurança da informação',
           ],
         },
         {
-          degree: 'Bacharelado em Ciência da Computação',
-          school: 'UC Berkeley',
-          location: 'Berkeley, CA',
-          period: '2012 - 2016',
-          gpa: '3.8 / 4.0',
+          degree: 'Bacharelado em Engenharia de Software',
+          school: 'Universidade Católica de Salvador (UCSAL)',
+          location: 'Salvador, BA',
+          period: '2018 - 2024',
+          gpa: '',
           highlights: [
-            'Lista de Honra — Todos os Semestres',
-            'Capitão da Equipe de Programação ACM',
-            'Projeto Final: Ferramenta de Code Review com IA',
+            'Quinta turma do curso de Engenharia de Software',
+            'Base sólida em algoritmos, padrões e projetos de software',
+            'Programação: Java, C#, Python, R',
+          ],
+        },
+        {
+          degree: 'Curso Profissionalizante em Design Gráfico',
+          school: 'SAGA ART',
+          location: 'Salvador, BA',
+          period: '2016 - 2018',
+          gpa: '',
+          highlights: [
+            'Adobe Photoshop e Illustrator',
+            'Unreal Engine e Unity',
+            'Comunicação visual e princípios de design UI',
           ],
         },
       ],
       certifications: [
-        'AWS Solutions Architect — Professional',
-        'Google Cloud Professional Developer',
-        'Certified Kubernetes Administrator (CKA)',
-        'Certificado Meta Front-End Developer',
+        'Caelum — Estatística com R',
+        'Caelum — PHP com Orientação a Objetos',
+        'Caelum — AWS com Lightsail, EC2, S3, VPC, RDS e DynamoDB',
+        'ABED — Gestão em BIM (Gestão em Engenharia)',
       ],
     },
 
@@ -716,44 +740,44 @@ export const translations = {
       badge: 'Crescimento',
       title: 'Sempre Aprendendo',
       subtitle:
-        'O aprendizado contínuo está no coração da grande engenharia. Aqui está o que estou lendo, assistindo e explorando para me manter afiado e crescer a cada dia.',
+        'O aprendizado contínuo está no coração da grande engenharia. Aqui está o que estou estudando e explorando para me manter afiado e crescer a cada dia.',
       progress: 'Progresso',
       viewFullList: 'Ver Lista Completa',
       items: [
         {
-          title: 'System Design Interview',
-          type: 'Livro',
-          author: 'Alex Xu',
+          title: 'Pós-Graduação em Cibersegurança',
+          type: 'Curso',
+          author: 'USP - ESALQ',
+          count: 'Em andamento',
+        },
+        {
+          title: 'Arquitetura Cloud AWS',
+          type: 'Curso',
+          author: 'Caelum',
           count: undefined,
         },
         {
-          title: 'Building Microservices',
-          type: 'Livro',
-          author: 'Sam Newman',
+          title: 'Estatística com R',
+          type: 'Curso',
+          author: 'Caelum',
           count: undefined,
         },
         {
-          title: 'Syntax FM Podcast',
-          type: 'Podcast',
-          author: 'Episódios semanais',
-          count: '40 episódios ouvidos',
-        },
-        {
-          title: 'Fireship',
+          title: 'Automação Python',
           type: 'Vídeo',
-          author: '100 Seconds of Code',
-          count: 'Assistente diário',
+          author: 'Projetos pessoais',
+          count: 'Prática diária',
         },
         {
-          title: 'Rust Programming',
-          type: 'Curso',
-          author: 'Noam Goren',
+          title: 'Linux e Cibersegurança',
+          type: 'Livro',
+          author: 'Fedora como SO principal',
           count: undefined,
         },
         {
-          title: 'Advanced TypeScript',
+          title: 'Data Science com Pandas',
           type: 'Curso',
-          author: 'Matt Pocock',
+          author: 'Aplicado no trabalho',
           count: undefined,
         },
       ],
@@ -769,19 +793,19 @@ export const translations = {
       viewAll: 'Ver Todos os Artigos',
       items: [
         {
-          title: 'Construindo Micro-Frontends Escaláveis com Next.js',
+          title: 'Automatizando Precificação no Varejo com Python e Pandas',
           excerpt:
-            'Um mergulho profundo na arquitetura de aplicações micro-frontend usando Module Federation, Next.js e TypeScript para deploys em escala enterprise.',
+            'Um guia prático para construir pipelines automatizados de precificação usando Python, Pandas e NumPy para análise exploratória de dados e identificação de padrões em dados de produtos varejistas.',
         },
         {
-          title: 'Otimizando Performance React: Além do React.memo',
+          title: 'VR/AR na Engenharia Automobilística: Lições da Ford',
           excerpt:
-            'Técnicas avançadas de otimização de performance incluindo virtualização, colocalização de estado e hooks customizados que vão além de estratégias básicas de memoização.',
+            'Insights sobre projetos de Realidade Virtual e Aumentada na Ford Motors, desenvolvendo soluções imersivas para visualização de design automobilístico com times internacionais.',
         },
         {
-          title: 'Projetando Estratégias Eficazes de Rate Limiting para APIs',
+          title: 'De .NET a Python: A Jornada de um Desenvolvedor',
           excerpt:
-            'Como implementar algoritmos de rate limiting com token bucket, sliding window e fixed window usando Redis e sistemas distribuídos.',
+            'Reflexões sobre a transição do desenvolvimento enterprise com .NET Framework e ASP.NET para automação Python e engenharia de dados, e as habilidades que conectam ambos os mundos.',
         },
       ],
     },
@@ -791,17 +815,17 @@ export const translations = {
       badge: 'Interativo',
       title: 'Dev num Relance',
       subtitle: 'Visão geral rápida no estilo terminal do setup e estatísticas de desenvolvimento',
-      content: {
-        whoami: 'rodrigo — Engenheiro de Software Sênior',
-        uptime: '5+ anos construindo software de produção',
-        quote: '"Primeiro, resolva o problema. Depois, escreva o código." — John Johnson',
-        windowTitle: 'estatisticas-dev',
-      },
       stats: {
         lines: 'Linhas de Código',
         projects: 'Projetos Entregues',
         countries: 'Países Alcançados',
         uptime: 'Recorde de Uptime',
+      },
+      content: {
+        whoami: 'rodrigo — Engenheiro de Software & Pesquisador',
+        uptime: '7+ anos construindo software de produção',
+        quote: '"Primeiro, resolva o problema. Depois, escreva o código." — John Johnson',
+        windowTitle: 'estatisticas-dev',
       },
     },
 
@@ -810,13 +834,13 @@ export const translations = {
       badge: 'Código ao Vivo',
       title: 'Snippets de Código',
       subtitle: 'Código real de projetos reais',
-      copy: 'Copiar',
-      copied: 'Copiado!',
       stats: {
         snippets: '50+ Snippets',
         languages: '10 Linguagens',
         openSource: 'Open Source',
       },
+      copy: 'Copiar',
+      copied: 'Copiado!',
     },
 
     // ─── CTA ─────────────────────────────────────────────────────────────────
@@ -824,7 +848,7 @@ export const translations = {
       title1: 'Pronto para Construir Algo',
       title2: 'Incrível Juntos?',
       subtitle:
-        'Seja uma aplicação full-stack, uma auditoria de performance ou consultoria técnica — estou aqui para ajudar a transformar sua visão em realidade.',
+        'Seja uma aplicação full-stack, automação de processos, pipelines de dados ou consultoria técnica — estou aqui para ajudar a transformar sua visão em realidade.',
       button1: 'Vamos Conversar',
       button2: 'Ver Meu Trabalho',
     },
@@ -847,9 +871,9 @@ export const translations = {
       sentMessage: 'Obrigado pelo contato. Responderei em breve!',
       followMe: 'Me siga',
       values: {
-        email: 'rodrigo@oliveira.dev',
-        phone: '+55 11 99999-9999',
-        location: 'São Paulo, SP, Brasil',
+        email: 'fiuza0122@gmail.com',
+        phone: '(71) 98108-6001',
+        location: 'Salvador, BA, Brasil',
       },
       placeholders: {
         name: 'Seu nome',
@@ -863,7 +887,7 @@ export const translations = {
     footer: {
       name: 'Rodrigo Oliveira',
       brandDescription:
-        'Engenheiro de Software apaixonado por construir soluções elegantes para problemas complexos. Sempre aberto a novos desafios e colaborações.',
+        'Engenheiro de Software & Pesquisador apaixonado por construir soluções elegantes. Experiência em .NET, Python, infraestrutura cloud e VR/AR. Sempre aberto a novos desafios e colaborações.',
       navigation: 'Navegação',
       social: 'Social',
       copyright: 'Todos os direitos reservados.',
@@ -895,12 +919,12 @@ export const translations = {
       breakdown: 'Detalhamento',
     },
 
-    // ─── Now Playing ────────────────────────────────────────────────────────
+    // ─── Now Playing ─────────────────────────────────────────────────────────
     nowPlaying: {
       title: 'Tocando Agora',
     },
 
-    // ─── Page Loader ────────────────────────────────────────────────────────
+    // ─── Page Loader ─────────────────────────────────────────────────────────
     pageLoader: {
       loading: 'Carregando',
     },

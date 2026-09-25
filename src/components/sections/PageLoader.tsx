@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '@/hooks/use-language'
 
 export default function PageLoader() {
+  const { t } = useLanguage()
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -41,7 +43,7 @@ export default function PageLoader() {
             </div>
 
             <p className="text-sm text-muted-foreground tracking-widest uppercase">
-              Loading
+              {t.pageLoader.loading}
             </p>
           </div>
         </motion.div>

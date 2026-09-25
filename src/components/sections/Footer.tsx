@@ -111,7 +111,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground/70">
-            &copy; {new Date().getFullYear()} <span className="font-medium text-foreground/80">Your Name</span>. {t.footer.copyright}
+            &copy; {new Date().getFullYear()} <span className="font-medium text-foreground/80">{t.footer.name}</span>. {t.footer.copyright}
           </p>
           <p className="text-sm text-muted-foreground/70 flex items-center gap-1.5">
             {t.footer.madeWith} <Heart className="w-3.5 h-3.5 text-emerald-500 fill-emerald-500 breathe" /> {t.footer.madeWithAnd} <span className="inline-block hover:rotate-12 hover:scale-110 transition-transform duration-200">☕</span>

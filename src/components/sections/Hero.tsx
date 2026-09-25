@@ -10,12 +10,12 @@ import Particles from '@/components/sections/Particles'
 import { useLanguage } from '@/hooks/use-language'
 
 const techIcons = [
-  { label: 'React', color: 'from-cyan-400 to-blue-500', x: '10%', y: '20%', delay: 0 },
-  { label: 'TS', color: 'from-blue-400 to-blue-600', x: '85%', y: '15%', delay: 0.5 },
-  { label: 'Node', color: 'from-green-400 to-emerald-600', x: '5%', y: '70%', delay: 1 },
+  { label: 'C#', color: 'from-purple-400 to-purple-600', x: '10%', y: '20%', delay: 0 },
+  { label: 'Py', color: 'from-blue-400 to-yellow-500', x: '85%', y: '15%', delay: 0.5 },
+  { label: '.NET', color: 'from-purple-500 to-indigo-600', x: '5%', y: '70%', delay: 1 },
   { label: 'AWS', color: 'from-orange-400 to-amber-500', x: '90%', y: '65%', delay: 1.5 },
   { label: 'Git', color: 'from-red-400 to-rose-500', x: '15%', y: '45%', delay: 0.7 },
-  { label: 'Docker', color: 'from-sky-400 to-blue-500', x: '80%', y: '40%', delay: 1.2 },
+  { label: 'K8s', color: 'from-sky-400 to-blue-500', x: '80%', y: '40%', delay: 1.2 },
 ]
 
 function Typewriter({ texts }: { texts: string[] }) {
@@ -125,7 +125,7 @@ export default function Hero() {
                   alt={t.hero.name}
                 />
                 <AvatarFallback className="text-3xl sm:text-4xl font-bold bg-gradient-to-br from-emerald-500/20 to-teal-500/10 text-emerald-600 dark:text-emerald-400">
-                  RO
+                  RL
                 </AvatarFallback>
               </Avatar>
               {/* Status badge */}

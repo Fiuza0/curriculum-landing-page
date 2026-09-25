@@ -1,35 +1,39 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState, useEffect, useCallback, useMemo } from 'react'
 import { Terminal, Copy, Check, ChevronRight } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { useLanguage } from '@/hooks/use-language'
 
-const terminalLines: { text: string; type: 'prompt' | 'output' | 'json-key' | 'json-value' | 'json-bracket' | 'blank' | 'cursor' }[] = [
-  { text: '$ whoami', type: 'prompt' },
-  { text: 'your-name — Senior Software Engineer', type: 'output' },
-  { text: '', type: 'blank' },
-  { text: '$ cat skills.json', type: 'prompt' },
-  { text: '{', type: 'json-bracket' },
-  { text: '  "languages": ["TypeScript", "Python", "Go", "Rust"],', type: 'json-key' },
-  { text: '  "frameworks": ["Next.js", "React", "FastAPI"],', type: 'json-key' },
-  { text: '  "cloud": ["AWS", "GCP", "Docker", "K8s"]', type: 'json-key' },
-  { text: '}', type: 'json-bracket' },
-  { text: '', type: 'blank' },
-  { text: '$ gh stats', type: 'prompt' },
-  { text: '⭐ 1,200+ stars  |  🔄 500+ PRs  |  📦 30+ repos', type: 'output' },
-  { text: '', type: 'blank' },
-  { text: '$ uptime', type: 'prompt' },
-  { text: '5+ years building production software', type: 'output' },
-  { text: '', type: 'blank' },
-  { text: '$ cat .favorite-quote', type: 'prompt' },
-  { text: '"First, solve the problem. Then, write the code." — John Johnson', type: 'output' },
-  { text: '', type: 'blank' },
-  { text: '$ _', type: 'cursor' },
-]
+type TerminalLine = { text: string; type: 'prompt' | 'output' | 'json-key' | 'json-value' | 'json-bracket' | 'blank' | 'cursor' }
+
+function getTerminalLines(t: { terminal: { content: { whoami: string; uptime: string; quote: string } } }): TerminalLine[] {
+  return [
+    { text: '$ whoami', type: 'prompt' },
+    { text: t.terminal.content.whoami, type: 'output' },
+    { text: '', type: 'blank' },
+    { text: '$ cat skills.json', type: 'prompt' },
+    { text: '{', type: 'json-bracket' },
+    { text: '  "languages": ["C#", "Python", "Java", "R"],', type: 'json-key' },
+    { text: '  "frameworks": [".NET", "ASP.NET", "Pandas", "NumPy"],', type: 'json-key' },
+    { text: '  "cloud": ["AWS", "K8s", "Linux", "VRED"]', type: 'json-key' },
+    { text: '}', type: 'json-bracket' },
+    { text: '', type: 'blank' },
+    { text: '$ gh stats', type: 'prompt' },
+    { text: '⭐ 1,200+ stars  |  🔄 500+ PRs  |  📦 30+ repos', type: 'output' },
+    { text: '', type: 'blank' },
+    { text: '$ uptime', type: 'prompt' },
+    { text: t.terminal.content.uptime, type: 'output' },
+    { text: '', type: 'blank' },
+    { text: '$ cat .favorite-quote', type: 'prompt' },
+    { text: t.terminal.content.quote, type: 'output' },
+    { text: '', type: 'blank' },
+    { text: '$ _', type: 'cursor' },
+  ]
+}
 
 const quickStatsData = [
   { icon: '⌨', value: '500K+', labelKey: 'lines' as const },
@@ -59,15 +63,21 @@ function getLineColor(type: string): string {
   }
 }
 
-const fullTerminalText = terminalLines
-  .filter((l) => l.type !== 'cursor')
-  .map((l) => l.text)
-  .join('\n')
+
 
 export default function InteractiveTerminal() {
   const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  const terminalLines = useMemo(() => getTerminalLines(t), [t])
+  const fullTerminalText = useMemo(() =>
+    terminalLines
+      .filter((l) => l.type !== 'cursor')
+      .map((l) => l.text)
+      .join('\n'),
+    [terminalLines]
+  )
 
   const [visibleLines, setVisibleLines] = useState(0)
   const [copied, setCopied] = useState(false)
@@ -117,7 +127,7 @@ export default function InteractiveTerminal() {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     }
-  }, [])
+  }, [fullTerminalText])
 
   return (
     <section id="terminal" ref={ref} className="relative py-20 sm:py-28 overflow-hidden">
@@ -165,7 +175,7 @@ export default function InteractiveTerminal() {
                 <div className="w-3 h-3 rounded-full bg-yellow-500/90 hover:bg-yellow-500 transition-colors" />
                 <div className="w-3 h-3 rounded-full bg-green-500/90 hover:bg-green-500 transition-colors" />
               </div>
-              <span className="text-gray-400 text-xs font-mono tracking-wider">developer-stats</span>
+              <span className="text-gray-400 text-xs font-mono tracking-wider">{t.terminal.content.windowTitle}</span>
               <Button
                 variant="ghost"
                 size="icon"

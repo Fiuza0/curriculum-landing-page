@@ -9,19 +9,19 @@ import { useLanguage } from '@/hooks/use-language'
 
 const experiences = [
   {
-    tech: ['React', 'TypeScript', 'AWS', 'GraphQL', 'Micro-frontends'],
+    tech: ['Python', 'Pandas', 'NumPy', 'Kanban', 'Data Analysis', 'Automation'],
     current: true,
   },
   {
-    tech: ['Next.js', 'Python', 'PostgreSQL', 'Docker', 'Redis'],
+    tech: ['VR/AR', 'VRED', 'Unreal', 'Unity', 'International Teams', 'English'],
     current: false,
   },
   {
-    tech: ['React', 'Node.js', 'MongoDB', 'SASS', 'Jest'],
+    tech: ['.NET', 'ASP.NET', 'PostgreSQL', 'Agile', 'Kanban', 'Sprints'],
     current: false,
   },
   {
-    tech: ['Python', 'Flask', 'Selenium', 'Jenkins'],
+    tech: ['.NET', 'ASP.NET', 'Windows Server', 'Networks', 'InfoSec', 'IT Infra'],
     current: false,
   },
 ]

@@ -410,3 +410,46 @@ Work Log:
 - Added en.pageLoader.loading 'Loading' and pt.pageLoader.loading 'Carregando'
 - All existing translation content preserved — only additions and targeted updates
 - Lint: clean, zero errors
+
+---
+Task ID: i18n-real-data
+Agent: Main
+Task: Implement Portuguese/English i18n with Rodrigo's real CV data
+
+Work Log:
+- Completely rewrote src/lib/i18n.ts with Rodrigo's real professional information:
+  - Name: Rodrigo Lisboa Fiuza e Silva de Oliveira (display: Rodrigo Oliveira)
+  - Title: Software Engineer & Researcher
+  - Location: Salvador, BA, Brazil
+  - Email: fiuza0122@gmail.com, Phone: (71) 98108-6001
+  - 4 real jobs: Rede Central Variedades (current), Ford Motors, SINQIA, Atena Tecnologia
+  - 3 real education entries: Postgrad Cybersecurity (USP-ESALQ), Bachelor Software Engineering (UCSAL), Graphic Design (SAGA ART)
+  - Real certifications: Caelum (R, PHP, AWS), ABED (BIM)
+  - Real tech stack: C#, Python, Java, .NET, PostgreSQL, Pandas, NumPy, AWS, Kubernetes, VRED, Unreal, Unity, etc.
+- Updated all components to use translation keys:
+  - Contact.tsx: moved contactInfo inside component, uses t.contact.values.* and t.contact.placeholders.*
+  - Footer.tsx: uses t.footer.name for copyright
+  - InteractiveTerminal.tsx: terminal lines now use t.terminal.content.* (whoami, uptime, quote, windowTitle)
+  - CodePlayground.tsx: uses t.playground.copy and t.playground.copied
+  - NowPlaying.tsx: uses t.nowPlaying.title
+  - PageLoader.tsx: uses t.pageLoader.loading
+- Updated Skills.tsx with Rodrigo's real tech stack (Python, C#/.NET, Java, Pandas/NumPy, AWS, K8s, etc.)
+- Updated TechShowcase.tsx with real categories (Languages: C#/Python/Java/R, Frameworks: .NET/Pandas/VRED/Unreal/Unity, Cloud: AWS/K8s/Linux/Docker, Data: PostgreSQL/R Studio/Jupyter/Adobe)
+- Updated SkillsRadarChart.tsx: Development/Backend/DevOps/VR-AR/Data/Architecture axes
+- Updated TechMarquee.tsx with C#, Python, Java, .NET, PostgreSQL, Pandas, NumPy, AWS, K8s, Linux, VRED, etc.
+- Updated Experience.tsx tech badges per job
+- Updated Hero.tsx floating icons (C#, Py, .NET, AWS, Git, K8s) and avatar fallback "RL"
+- Updated StructuredData.tsx with Rodrigo's full name, email, phone, address, real skills, employer, university
+- All projects rewritten to match real work (Pricing Automation, VR/AR at Ford, Social Security Platform, IT Infrastructure, Data Quality, Cybersecurity Research)
+- All blog articles rewritten to match real experience
+- Fixed useCallback dependency in InteractiveTerminal.tsx (lint error)
+
+Stage Summary:
+- Full i18n system working: Portuguese (default) ↔ English with one-click toggle
+- All placeholder data replaced with Rodrigo's real CV information
+- Language toggle in Navbar works instantly (both desktop and mobile)
+- Lint clean, dev server compiling, browser tested both languages
+- Contact section shows real email, phone, location in both languages
+- Experience section shows all 4 real jobs with translated descriptions
+- Education section shows postgrad, bachelor, and design course
+- Skills/Tech reflect C#, Python, .NET, VR/AR, data automation focus

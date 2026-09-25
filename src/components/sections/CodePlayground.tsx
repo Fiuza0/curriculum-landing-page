@@ -318,12 +318,12 @@ export default function CodePlayground() {
                 {copied ? (
                   <>
                     <Check className="h-3.5 w-3.5 text-emerald-500" />
-                    <span className="text-emerald-500">Copied!</span>
+                    <span className="text-emerald-500">{t.playground.copied}</span>
                   </>
                 ) : (
                   <>
                     <Copy className="h-3.5 w-3.5" />
-                    Copy
+                    {t.playground.copy}
                   </>
                 )}
               </Button>
