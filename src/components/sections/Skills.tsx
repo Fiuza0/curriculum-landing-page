@@ -8,42 +8,41 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useLanguage } from '@/hooks/use-language'
 
 const skillCategories = [
-  {
-    id: 'frontend',
-    labelKey: 'frontend' as const,
-    skills: [
-      { name: 'Python', level: 92 },
-      { name: 'C# / .NET', level: 90 },
-      { name: 'Java', level: 80 },
-      { name: 'HTML5 / CSS3', level: 88 },
-      { name: 'R', level: 75 },
-      { name: 'Bash / Shell', level: 78 },
-    ],
-  },
-  {
+    {
     id: 'backend',
     labelKey: 'backend' as const,
     skills: [
-      { name: '.NET Framework / ASP.NET', level: 90 },
-      { name: 'Pandas / NumPy', level: 88 },
+      { name: 'Python', level: 73 },
+      { name: 'C# / .NET', level: 90 },
+      { name: 'Pandas / NumPy', level: 79 },
       { name: 'PostgreSQL', level: 85 },
-      { name: 'REST APIs', level: 87 },
+      { name: 'REST APIs', level: 62 },
+      { name: 'Java', level: 80 },
       { name: 'Data Pipelines', level: 85 },
-      { name: 'Process Automation', level: 90 },
+      { name: 'Process Automation', level: 88 },
     ],
   },
-  {
+    {
     id: 'devops',
     labelKey: 'devops' as const,
     skills: [
-      { name: 'AWS (EC2, S3, RDS)', level: 78 },
-      { name: 'Kubernetes', level: 70 },
-      { name: 'Linux / Fedora', level: 82 },
+      { name: 'AWS (EC2, S3, RDS)', level: 60 },
+      { name: 'Kubernetes', level: 54 },
+      { name: 'Linux bash', level: 82 },
       { name: 'Docker', level: 75 },
       { name: 'Git / GitHub', level: 90 },
       { name: 'Networks & Security', level: 80 },
     ],
   },
+  {
+    id: 'frontend',
+    labelKey: 'frontend' as const,
+    skills: [
+      { name: 'HTML5 / CSS3', level: 70 },
+      { name: 'R', level: 65 },
+    ],
+  },
+
 ]
 
 const toolGroups = [

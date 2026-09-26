@@ -4,15 +4,15 @@ import { LanguageProvider } from '@/hooks/use-language'
 import Navbar from '@/components/sections/Navbar'
 import Hero from '@/components/sections/Hero'
 import TechMarquee from '@/components/sections/TechMarquee'
-import Stats from '@/components/sections/Stats'
+//import Stats from '@/components/sections/Stats'  <-- future feature 
 import About from '@/components/sections/About'
 import Skills from '@/components/sections/Skills'
 import SkillsRadarChart from '@/components/sections/SkillsRadarChart'
 import TechShowcase from '@/components/sections/TechShowcase'
-import ContributionGraph from '@/components/sections/ContributionGraph'
+//import ContributionGraph from '@/components/sections/ContributionGraph'
 import Experience from '@/components/sections/Experience'
 import Projects from '@/components/sections/Projects'
-import Testimonials from '@/components/sections/Testimonials'
+//import Testimonials from '@/components/sections/Testimonials'
 import Education from '@/components/sections/Education'
 import Blog from '@/components/sections/Blog'
 import CTASection from '@/components/sections/CTASection'
@@ -42,9 +42,6 @@ export default function Home() {
         <ParallaxStars />
         <Hero />
         <TechMarquee />
-        <SectionReveal>
-          <Stats />
-        </SectionReveal>
         <SectionDivider />
         <SectionReveal>
           <About />
@@ -53,6 +50,11 @@ export default function Home() {
         <SectionReveal>
           <Skills />
         </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
+          <Experience />
+        </SectionReveal>
+        <SectionDivider />
         <SectionReveal>
           <SkillsRadarChart />
         </SectionReveal>
@@ -60,21 +62,11 @@ export default function Home() {
         <SectionReveal>
           <TechShowcase />
         </SectionReveal>
-        <SectionReveal>
-          <ContributionGraph />
-        </SectionReveal>
-        <SectionDivider />
-        <SectionReveal>
-          <Experience />
-        </SectionReveal>
         <SectionDivider />
         <SectionReveal>
           <Projects />
         </SectionReveal>
         <SectionDivider />
-        <SectionReveal>
-          <Testimonials />
-        </SectionReveal>
         <SectionReveal>
           <Education />
         </SectionReveal>

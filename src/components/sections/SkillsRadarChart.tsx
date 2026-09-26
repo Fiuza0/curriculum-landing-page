@@ -23,10 +23,9 @@ interface SkillAxis {
 }
 
 const SKILLS: SkillAxis[] = [
-  { label: 'Development',  value: 90, icon: Monitor,   color: '#10b981' },
+  { label: 'Development',  value: 84, icon: Monitor,   color: '#10b981' },
   { label: 'Backend',      value: 88, icon: Server,    color: '#14b8a6' },
-  { label: 'DevOps',       value: 78, icon: Settings2, color: '#06b6d4' },
-  { label: 'VR/AR',        value: 75, icon: Palette,   color: '#22d3ee' },
+  { label: 'DevOps',       value: 79, icon: Settings2, color: '#06b6d4' },
   { label: 'Data',         value: 85, icon: TestTube2, color: '#2dd4bf' },
   { label: 'Architecture', value: 80, icon: Box,       color: '#34d399' },
 ]
