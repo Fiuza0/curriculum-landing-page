@@ -121,7 +121,7 @@ export default function Hero() {
               <div className="absolute -inset-6 rounded-full border border-dashed border-teal-500/10 animate-spin [animation-duration:45s] [animation-direction:reverse]" />
               <Avatar className="w-40 h-40 sm:w-52 sm:h-52 relative border-4 border-background shadow-2xl ring-4 ring-emerald-500/20">
                 <AvatarImage
-                  src="/photo-placeholder.jpg"
+                  src="/public/photo-placeholder.jpg"
                   alt={t.hero.name}
                 />
                 <AvatarFallback className="text-3xl sm:text-4xl font-bold bg-gradient-to-br from-emerald-500/20 to-teal-500/10 text-emerald-600 dark:text-emerald-400">
