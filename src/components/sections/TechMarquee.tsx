@@ -47,9 +47,9 @@ function MarqueeRow({ items, reverse = false }: { items: typeof techItems; rever
             className="flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-border/50 bg-card/80 backdrop-blur-sm hover:bg-emerald-500/10 hover:border-emerald-500/20 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300 cursor-default group shrink-0"
           >
             <div
-              className="w-3 h-3 rounded-full ring-2 ring-offset-1 ring-offset-background group-hover:scale-125 transition-transform duration-300"
-              <div className="ring-2 ring-blue-500">
+              className="w-3 h-3 rounded-full ring-2 ring-offset-1 ring-offset-background group-hover:scale-125 transition-transform duration-300" 
             />
+            <div className="ring-2 ring-blue-500"/>
             <span className="text-sm font-medium whitespace-nowrap group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
               {item.name}
             </span>
