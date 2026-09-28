@@ -48,7 +48,7 @@ function MarqueeRow({ items, reverse = false }: { items: typeof techItems; rever
           >
             <div
               className="w-3 h-3 rounded-full ring-2 ring-offset-1 ring-offset-background group-hover:scale-125 transition-transform duration-300"
-              style={{ backgroundColor: item.color, ringColor: `${item.color}40` }}
+              <div className="ring-2 ring-blue-500">
             />
             <span className="text-sm font-medium whitespace-nowrap group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
               {item.name}
