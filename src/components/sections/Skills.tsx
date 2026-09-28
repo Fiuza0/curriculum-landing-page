@@ -63,7 +63,7 @@ const toolGroups = [
   },
   {
     category: 'Infrastructure',
-    items: ['AWS Console', 'Windows Server', 'Linux/Fedora', 'Arduino'],
+    items: ['AWS Console', 'Windows Server', 'Linux', 'Arduino'],
     color: 'from-amber-500 to-orange-500',
   },
 ]
@@ -103,7 +103,7 @@ export default function Skills() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Tabs defaultValue="frontend" className="w-full">
+          <Tabs defaultValue="backend" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-10">
               {skillCategories.map((cat) => (
                 <TabsTrigger key={cat.id} value={cat.id} className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white">

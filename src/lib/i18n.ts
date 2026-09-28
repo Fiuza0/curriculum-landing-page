@@ -22,8 +22,10 @@ export const translations = {
         'Software Engineer',
         'Python Developer',
         '.NET Developer',
-        'VR/AR Researcher',
-        'Data Automation Specialist',
+        'Researcher',
+        'Software Architect',
+        'Agentic Coding',
+        'Cybersecurity MBA',
       ],
       tagline:
         'Software Engineer & Researcher with a Bachelor\'s in Software Engineering from UCSAL. Experienced in .NET, Python, cloud infrastructure, and VR/AR research at Ford Motors. Currently automating pricing processes and leading operational teams.',
@@ -488,8 +490,10 @@ export const translations = {
         'Engenheiro de Software',
         'Desenvolvedor Python',
         'Desenvolvedor .NET',
-        'Pesquisador VR/AR',
-        'Especialista em Automação de Dados',
+        'Pesquisador',
+        'Arquiteto de Software',
+        'Gestão de Agentes de IA',
+        'MBA em Cybersegurança'
       ],
       tagline:
         'Engenheiro de Software & Pesquisador formado em Engenharia de Software pela UCSAL. Experiência em .NET, Python, infraestrutura cloud e pesquisa em VR/AR na Ford Motors. Atualmente automatizando processos de precificação e liderando equipes operacionais.',

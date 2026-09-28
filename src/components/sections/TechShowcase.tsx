@@ -352,7 +352,7 @@ export default function TechShowcase() {
           {[
             { label: 'Technologies', value: '24+', icon: Code2 },
             { label: 'Categories', value: '4', icon: Shield },
-            { label: 'Expert Level', value: '10', icon: BadgeIcon },
+            { label: 'Expert Level', value: '9', icon: BadgeIcon },
             { label: 'Always Learning', value: '∞', icon: Cloud },
           ].map(({ label, value, icon: StatIcon }) => (
             <div key={label} className="flex flex-col items-center gap-1">

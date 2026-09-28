@@ -228,9 +228,9 @@ export default function Hero() {
             {/* Social links - more refined */}
             <div className="flex items-center gap-2.5 justify-center lg:justify-start">
               {[
-                { Icon: Github, href: '#', label: 'GitHub' },
-                { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-                { Icon: Mail, href: '#', label: 'Email' },
+                { Icon: Github, href: 'https://github.com/Fiuza0', label: 'GitHub' },
+                { Icon: Linkedin, href: 'https://www.linkedin.com/in/future-r-fiuza/', label: 'LinkedIn' },
+                { Icon: Mail, href: 'fiuza0122@gmail.com', label: 'Email' },
               ].map(({ Icon, href, label }) => (
                 <motion.a
                   key={label}

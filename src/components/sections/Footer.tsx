@@ -14,9 +14,7 @@ const footerNavLinks = [
 
 const footerSocialLinks = [
   { label: 'GitHub', href: '#' },
-  { label: 'LinkedIn', href: '#' },
-  { label: 'Twitter', href: '#' },
-  { label: 'Blog', href: '#' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/future-r-fiuza/' },
 ]
 
 export default function Footer() {
@@ -59,7 +57,6 @@ export default function Footer() {
               {[
                 { Icon: Github, label: 'GitHub' },
                 { Icon: Linkedin, label: 'LinkedIn' },
-                { Icon: Twitter, label: 'Twitter' },
               ].map(({ Icon, label }) => (
                 <a
                   key={label}

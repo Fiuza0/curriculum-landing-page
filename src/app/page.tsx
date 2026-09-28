@@ -14,11 +14,11 @@ import Experience from '@/components/sections/Experience'
 import Projects from '@/components/sections/Projects'
 //import Testimonials from '@/components/sections/Testimonials'
 import Education from '@/components/sections/Education'
-import Blog from '@/components/sections/Blog'
+//import Blog from '@/components/sections/Blog'
 import CTASection from '@/components/sections/CTASection'
 import Contact from '@/components/sections/Contact'
-import Learning from '@/components/sections/Learning'
-import InteractiveTerminal from '@/components/sections/InteractiveTerminal'
+//import Learning from '@/components/sections/Learning'
+//import InteractiveTerminal from '@/components/sections/InteractiveTerminal'
 import Footer from '@/components/sections/Footer'
 import BackToTop from '@/components/sections/BackToTop'
 import PageLoader from '@/components/sections/PageLoader'
@@ -56,6 +56,10 @@ export default function Home() {
         </SectionReveal>
         <SectionDivider />
         <SectionReveal>
+          <Education />
+        </SectionReveal>
+        <SectionDivider />
+        <SectionReveal>
           <SkillsRadarChart />
         </SectionReveal>
         <SectionDivider />
@@ -65,21 +69,6 @@ export default function Home() {
         <SectionDivider />
         <SectionReveal>
           <Projects />
-        </SectionReveal>
-        <SectionDivider />
-        <SectionReveal>
-          <Education />
-        </SectionReveal>
-        <SectionDivider />
-        <SectionReveal>
-          <Learning />
-        </SectionReveal>
-        <SectionReveal>
-          <Blog />
-        </SectionReveal>
-        <SectionDivider />
-        <SectionReveal>
-          <InteractiveTerminal />
         </SectionReveal>
         <SectionDivider />
         <SectionReveal>
