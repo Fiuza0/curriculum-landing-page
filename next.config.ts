@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Necessário para exportação estática, desativa a otimização de imagens do Next.js
   },
+   webpack: (config) => {
+    if (process.env.NODE_ENV === 'production') {
+      config.module.rules.push({
+        test: /app\/api\/.*/,
+        loader: 'ignore-loader',
+      });
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
