@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Necessário para exportação estática, desativa a otimização de imagens do Next.js
   },
+ turbopack: {},
    webpack: (config) => {
     if (process.env.NODE_ENV === 'production') {
       config.module.rules.push({
