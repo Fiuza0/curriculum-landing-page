@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Rodrigo Oliveira" }],
   creator: "Rodrigo Oliveira",
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/logo.svg",
   },
   openGraph: {
     title: "Rodrigo Oliveira — Engenheiro de Software | Software Engineer",
